@@ -1,9 +1,10 @@
 
-#ifndef PRINTF_FT_PRINTF_H
-# define PRINTF_FT_PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdarg.h>
+# include "libft.h"
 
-
+void		ft_printf(char *text);
 
 #endif

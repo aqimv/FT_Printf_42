@@ -1,9 +1,11 @@
 
 #include "ft_printf.h"
 
-int		ft_printf(char *format, ...)
+void		ft_printf(char *text)
 {
-	va_list args;
+    ft_putstr(text);
 
-	va_start(args, format);
+//	va_list args;
+//
+//	va_start(args, format);
 }

@@ -28,7 +28,7 @@ OBJ_DIR = ./obj/
 OBJS = $(addprefix $(OBJ_DIR), $(OBJ))
 
 INC = libft.h get_next_line.h
-INC_DIR = ./includes/
+INC_DIR = ../includes/
 INCS = $(addprefix $(INC_DIR), $(INC))
 
 FLAGS = -g -Wall -Werror -Wextra -I$(INC_DIR)
