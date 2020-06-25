@@ -5,6 +5,11 @@
 # include <stdarg.h>
 # include "libft.h"
 
-void		ft_printf(char *text);
+typedef struct		s_pfstruct
+{
+    char *str;
+}					t_pfstruct;
+
+int		ft_printf(const char *format, ...);
 
 #endif

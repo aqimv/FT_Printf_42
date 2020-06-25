@@ -1,11 +1,39 @@
 
 #include "ft_printf.h"
 
-void		ft_printf(char *text)
+static int parsformat(t_pfstruct *data)
 {
-    ft_putstr(text);
+	//int result;
+	int p;
 
-//	va_list args;
-//
-//	va_start(args, format);
+	p = 0;
+	while (data->str[p])
+	{
+		ft_putchar(data->str[p]);
+		p++;
+	}
+	return p;
+}
+
+static t_pfstruct *pf_init()
+{
+	t_pfstruct *pf;
+
+	pf = (t_pfstruct*)malloc(sizeof(t_pfstruct));
+	return (pf);
+}
+
+int		ft_printf(const char *format, ...)
+{
+	va_list args;
+	int result;
+	t_pfstruct *data;
+
+	va_start(args, format);
+	data = pf_init();
+	data->str = (char *)format;
+
+	result = parsformat(data);
+
+	return (result);
 }
