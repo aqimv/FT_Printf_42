@@ -8,6 +8,7 @@
 typedef struct		s_pfstruct
 {
     char *str;
+    int pfreturn;
 }					t_pfstruct;
 
 int		ft_printf(const char *format, ...);

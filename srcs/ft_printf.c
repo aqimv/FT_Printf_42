@@ -1,18 +1,32 @@
 
 #include "ft_printf.h"
 
+static int parsformat2(char *flag, t_pfstruct *data)
+{
+	//while ()
+	write(1, flag, 1);
+	data->pfreturn++;
+	return 0;
+}
+
 static int parsformat(t_pfstruct *data)
 {
-	//int result;
 	int p;
 
 	p = 0;
 	while (data->str[p])
 	{
-		ft_putchar(data->str[p]);
-		p++;
+		if (data->str[p] && data->str[p] != '%')
+		{
+			data->pfreturn += write(1, &data->str[p], 1);
+			p++;
+		}
+		else if (data->str[++p])
+		{
+			parsformat2(&data->str[p], data);
+		}
 	}
-	return p;
+	return data->pfreturn;
 }
 
 static t_pfstruct *pf_init()
@@ -20,6 +34,7 @@ static t_pfstruct *pf_init()
 	t_pfstruct *pf;
 
 	pf = (t_pfstruct*)malloc(sizeof(t_pfstruct));
+	pf->pfreturn = 0;
 	return (pf);
 }
 
