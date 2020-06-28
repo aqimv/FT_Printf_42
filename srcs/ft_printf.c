@@ -1,7 +1,7 @@
 
 #include "ft_printf.h"
 
-static int parsformat2(char *flag, t_pfstruct *data)
+static int pars_fs(char *flag, t_pfstruct *data)
 {
 	char *check;
 
@@ -31,11 +31,20 @@ static int parsformat(t_pfstruct *data)
 			p++;
 		}
 		else if (data->str[++p])
-		{
-			data->pfreturn += parsformat2(&data->str[p], data);
-		}
+			data->pfreturn += pars_fs(&data->str[p], data);
 	}
 	return data->pfreturn;
+}
+
+t_fstring *fs_init()
+{
+	t_fstring *fs;
+
+	fs = (t_fstring*)malloc(sizeof(t_fstring));
+	fs->width = 0;
+	fs->accuracy = 0;
+	fs->size = 0;
+	return (fs);
 }
 
 static t_pfstruct *pf_init()
@@ -44,6 +53,7 @@ static t_pfstruct *pf_init()
 
 	pf = (t_pfstruct*)malloc(sizeof(t_pfstruct));
 	pf->pfreturn = 0;
+	pf->fs = fs_init();
 	return (pf);
 }
 

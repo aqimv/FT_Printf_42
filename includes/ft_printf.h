@@ -22,6 +22,7 @@ typedef struct		s_pfstruct
 	va_list args;
     char *str;
     int pfreturn;
+    t_fstring *fs;
 }					t_pfstruct;
 
 int		ft_printf(const char *format, ...);
