@@ -5,6 +5,8 @@
 # include <stdarg.h>
 # include "libft.h"
 
+# define FLAGSPF "1234567890. +-*%cdifosuxXpn"
+
 typedef struct		s_pfstruct
 {
     char *str;
