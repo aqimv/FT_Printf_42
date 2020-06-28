@@ -3,9 +3,18 @@
 
 static int parsformat2(char *flag, t_pfstruct *data)
 {
-	//while ()
-	write(1, flag, 1);
-	data->pfreturn++;
+	char *check;
+
+	check = flag;
+	//if (!ft_strchr(FLAGS, flag)
+	while (check && !ft_strchr(FLAGS, check))
+		check++;
+	if (!check)
+		return 0;
+
+//	ft_putstr(flag);
+//	write(1, flag, 1);
+//	data->pfreturn++;
 	return 0;
 }
 
@@ -23,7 +32,7 @@ static int parsformat(t_pfstruct *data)
 		}
 		else if (data->str[++p])
 		{
-			parsformat2(&data->str[p], data);
+			data->pfreturn += parsformat2(&data->str[p], data);
 		}
 	}
 	return data->pfreturn;
@@ -40,12 +49,11 @@ static t_pfstruct *pf_init()
 
 int		ft_printf(const char *format, ...)
 {
-	va_list args;
 	int result;
 	t_pfstruct *data;
 
-	va_start(args, format);
 	data = pf_init();
+	va_start(data->args, format);
 	data->str = (char *)format;
 
 	result = parsformat(data);
