@@ -29,7 +29,7 @@ static char *pars_fs(char *flag, t_pfstruct *data)
 	if (*flag)
 	{
 		data->fs->str = dup;
-		newfs(data);
+//		newfs(data);
 	}
 	return flag;
 }
