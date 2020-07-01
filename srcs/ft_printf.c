@@ -2,28 +2,17 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-static int pars_fs(char *flag, t_pfstruct *data)
+static char *pars_fs(char *flag, t_pfstruct *data)
 {
-//	char *check;
-//
-//	check = *flag;
-	printf("!!!");
-//	ft_putchar(**flag);
-	flag+=4;
-//	ft_putchar(**flag);
+//	char *dup;
 
-//	while (!ft_strchr(FLAGS, **flag))
-//	{
-//		if (!**flag || !ft_strchr(SYMBOLSINFLAG, **flag))
-//			return 0;
-//		flag++;
-//	}
-	//while ()
+	while (!ft_strchr(FLAGS, *flag) && *flag)
+	{
+		flag++;
 
-//	ft_putstr(flag);
-//	write(1, flag, 1);
+	}
 	data->pfreturn++;
-	return 0;
+	return flag;
 }
 
 static int parsformat(t_pfstruct *data)
@@ -36,17 +25,10 @@ static int parsformat(t_pfstruct *data)
 		if (*p && *p != '%')
 		{
 			data->pfreturn += write(1, p, 1);
-//			if
-//			printf("%s", p);
-			//ft_putchar('!');
 			p++;
 		}
 		else if (p++)
-		{
-			//ft_putchar('?');
-			data->pfreturn += pars_fs(p, data);
-			//ft_putchar('?');
-		}
+			p = pars_fs(p, data);
 	}
 	return data->pfreturn;
 }
