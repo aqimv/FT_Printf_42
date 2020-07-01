@@ -65,6 +65,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_printf.dir/libft/srcs/get_next_line.c.o"
   "CMakeFiles/ft_printf.dir/main.c.o"
   "CMakeFiles/ft_printf.dir/srcs/ft_printf.c.o"
+  "CMakeFiles/ft_printf.dir/srcs/init.c.o"
   "ft_printf"
   "ft_printf.pdb"
 )

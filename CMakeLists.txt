@@ -74,4 +74,4 @@ add_executable(ft_printf
         libft/srcs/ft_wordcounter.c
         libft/srcs/get_next_line.c
         srcs/ft_printf.c
-        main.c)
+        main.c srcs/init.c)

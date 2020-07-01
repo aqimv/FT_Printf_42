@@ -1905,6 +1905,33 @@ srcs/ft_printf.c.s:
 	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/srcs/ft_printf.c.s
 .PHONY : srcs/ft_printf.c.s
 
+srcs/init.o: srcs/init.c.o
+
+.PHONY : srcs/init.o
+
+# target to build an object file
+srcs/init.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/srcs/init.c.o
+.PHONY : srcs/init.c.o
+
+srcs/init.i: srcs/init.c.i
+
+.PHONY : srcs/init.i
+
+# target to preprocess a source file
+srcs/init.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/srcs/init.c.i
+.PHONY : srcs/init.c.i
+
+srcs/init.s: srcs/init.c.s
+
+.PHONY : srcs/init.s
+
+# target to generate assembly for a file
+srcs/init.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/srcs/init.c.s
+.PHONY : srcs/init.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2112,6 +2139,9 @@ help:
 	@echo "... srcs/ft_printf.o"
 	@echo "... srcs/ft_printf.i"
 	@echo "... srcs/ft_printf.s"
+	@echo "... srcs/init.o"
+	@echo "... srcs/init.i"
+	@echo "... srcs/init.s"
 .PHONY : help
 
 

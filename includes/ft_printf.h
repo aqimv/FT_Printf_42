@@ -10,6 +10,7 @@
 
 typedef struct		s_fstring
 {
+	char *str;
 	char flag;
 	int width;
 	int accuracy;
@@ -26,5 +27,7 @@ typedef struct		s_pfstruct
 }					t_pfstruct;
 
 int		ft_printf(const char *format, ...);
+t_fstring *fs_init();
+static t_pfstruct *pf_init();
 
 #endif

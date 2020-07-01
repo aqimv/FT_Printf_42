@@ -70,6 +70,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/skennith/Desktop/printf/libft/srcs/get_next_line.c" "/Users/skennith/Desktop/printf/cmake-build-debug/CMakeFiles/ft_printf.dir/libft/srcs/get_next_line.c.o"
   "/Users/skennith/Desktop/printf/main.c" "/Users/skennith/Desktop/printf/cmake-build-debug/CMakeFiles/ft_printf.dir/main.c.o"
   "/Users/skennith/Desktop/printf/srcs/ft_printf.c" "/Users/skennith/Desktop/printf/cmake-build-debug/CMakeFiles/ft_printf.dir/srcs/ft_printf.c.o"
+  "/Users/skennith/Desktop/printf/srcs/init.c" "/Users/skennith/Desktop/printf/cmake-build-debug/CMakeFiles/ft_printf.dir/srcs/init.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

@@ -287,6 +287,9 @@
 		<Unit filename="/Users/skennith/Desktop/printf/srcs/ft_printf.c">
 			<Option target="ft_printf"/>
 		</Unit>
+		<Unit filename="/Users/skennith/Desktop/printf/srcs/init.c">
+			<Option target="ft_printf"/>
+		</Unit>
 		<Unit filename="/Users/skennith/Desktop/printf/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

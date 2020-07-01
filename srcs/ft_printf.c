@@ -1,17 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skennith <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/01 19:57:21 by skennith          #+#    #+#             */
+/*   Updated: 2020/07/01 19:57:28 by skennith         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "ft_printf.h"
-#include <stdio.h>
+#include <stdio.h> // убрать нахой
 
 static char *pars_fs(char *flag, t_pfstruct *data)
 {
-//	char *dup;
+	char *dup;
+	int i;
 
+	i = 0;
+	dup = (char *)malloc(sizeof(flag));
 	while (!ft_strchr(FLAGS, *flag) && *flag)
 	{
+		dup[i] = *flag;
 		flag++;
-
 	}
-	data->pfreturn++;
+	if (*flag)
+	{
+		data->fs->str = dup;
+		newfs(data);
+	}
 	return flag;
 }
 
@@ -31,27 +50,6 @@ static int parsformat(t_pfstruct *data)
 			p = pars_fs(p, data);
 	}
 	return data->pfreturn;
-}
-
-t_fstring *fs_init()
-{
-	t_fstring *fs;
-
-	fs = (t_fstring*)malloc(sizeof(t_fstring));
-	fs->width = 0;
-	fs->accuracy = 0;
-	fs->size = 0;
-	return (fs);
-}
-
-static t_pfstruct *pf_init()
-{
-	t_pfstruct *pf;
-
-	pf = (t_pfstruct*)malloc(sizeof(t_pfstruct));
-	pf->pfreturn = 0;
-	pf->fs = fs_init();
-	return (pf);
 }
 
 int		ft_printf(const char *format, ...)
