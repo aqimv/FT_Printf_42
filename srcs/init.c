@@ -23,7 +23,7 @@ t_fstring *fs_init()
 	return (fs);
 }
 
-static t_pfstruct *pf_init()
+t_pfstruct *pf_init()
 {
 	t_pfstruct *pf;
 

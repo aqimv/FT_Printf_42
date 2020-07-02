@@ -2,7 +2,8 @@
 NAME = libftprintf.a
 
 SRC_DIR = ./srcs/
-SRC = ft_printf.c
+SRC = ft_printf.c \
+		init.c
 SRCS = $(addprefix $(SRC_DIR), $(SRC))
 
 OBJ_DIR = ./obj/

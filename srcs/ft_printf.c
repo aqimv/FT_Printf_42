@@ -23,14 +23,20 @@ static char *pars_fs(char *flag, t_pfstruct *data)
 	dup = (char *)malloc(sizeof(flag));
 	while (!ft_strchr(FLAGS, *flag) && *flag)
 	{
-		dup[i] = *flag;
+		dup[i++] = *flag;
 		flag++;
 	}
 	if (*flag)
 	{
+		dup[i++] = *flag++;
+		dup[i] = '\0';
 		data->fs->str = dup;
-//		newfs(data);
+		newfs(data);
 	}
+	free(dup);
+	ft_putchar('(');
+	ft_putstr(data->fs->str);
+	ft_putchar(')');
 	return flag;
 }
 

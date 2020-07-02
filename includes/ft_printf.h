@@ -28,6 +28,6 @@ typedef struct		s_pfstruct
 
 int		ft_printf(const char *format, ...);
 t_fstring *fs_init();
-static t_pfstruct *pf_init();
+t_pfstruct *pf_init();
 
 #endif
