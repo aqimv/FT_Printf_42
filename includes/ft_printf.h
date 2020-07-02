@@ -6,7 +6,8 @@
 # include "libft.h"
 
 # define SYMBOLSINFS "1234567890.+-#*%cdifosuxXpn lhjztL"
-# define FLAGS "%cdifosuxXpn"
+# define TYPESPF "%cdifosuxXpn"
+# define FLAGSPF "-+#0 "
 
 typedef struct		s_fstring
 {

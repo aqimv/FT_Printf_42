@@ -14,10 +14,27 @@
 #include "ft_printf.h"
 #include <stdio.h> // убрать нахой
 
-//static void newfs(t_pfstruct *data)
-//{
-//
-//}
+static void newfs(t_pfstruct *data)
+{
+	int i;
+	int dotFlag;
+	char *widthStr;
+
+	i = 0;
+	dotFlag = 0;
+	while(data->fs->str[i] && ft_strchr("0123456789.*", data->fs->str[i]))
+	{
+		if (i == 0 && ft_strchr(FLAGSPF, data->fs->str[i]))
+			data->fs->flag = data->fs->str[i];
+		else if ((data->fs->str[i] >= '0' && data->fs->str[i] <= '9' \
+		|| data->fs->str[i] == '*') && !dotFlag)
+		{
+
+		}
+		dotFlag++;
+		i++;
+	}
+}
 
 static char *pars_fs(char *flag, t_pfstruct *data)
 {
@@ -26,8 +43,7 @@ static char *pars_fs(char *flag, t_pfstruct *data)
 
 	i = 0;
 	dup = ft_strnew(sizeof(flag));
-	data->fs->str = ft_strnew(1);
-	while (!ft_strchr(FLAGS, *flag) && *flag && ft_strchr(SYMBOLSINFS, *flag))
+	while (!ft_strchr(TYPESPF, *flag) && *flag && ft_strchr(SYMBOLSINFS, *flag))
 	{
 		dup[i++] = *flag;
 		flag++;
@@ -62,7 +78,10 @@ static int parsformat(t_pfstruct *data)
 		{
 			p = pars_fs(p, data);
 			if (*data->fs->str)
+			{
 				newfs(data);
+				data->fs = fs_init();
+			}
 		}
 	}
 	return data->pfreturn;
