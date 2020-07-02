@@ -14,26 +14,32 @@
 #include "ft_printf.h"
 #include <stdio.h> // убрать нахой
 
+static void newfs(t_pfstruct *data)
+{
+
+}
+
 static char *pars_fs(char *flag, t_pfstruct *data)
 {
 	char *dup;
 	int i;
 
 	i = 0;
-	dup = (char *)malloc(sizeof(flag));
-	while (!ft_strchr(FLAGS, *flag) && *flag)
+	dup = ft_strnew(sizeof(flag));
+	data->fs->str = ft_strnew(1);
+	while (!ft_strchr(FLAGS, *flag) && *flag && ft_strchr(SYMBOLSINFS, *flag))
 	{
 		dup[i++] = *flag;
 		flag++;
 	}
-	if (*flag)
+	if (*flag && ft_strchr(SYMBOLSINFS, *flag))
 	{
 		dup[i++] = *flag++;
 		dup[i] = '\0';
+		ft_strdel(&data->fs->str);
 		data->fs->str = dup;
-		newfs(data);
 	}
-	free(dup);
+	ft_strdel(&dup);
 	ft_putchar('(');
 	ft_putstr(data->fs->str);
 	ft_putchar(')');
@@ -53,7 +59,11 @@ static int parsformat(t_pfstruct *data)
 			p++;
 		}
 		else if (p++)
+		{
 			p = pars_fs(p, data);
+			if (*data->fs->str)
+				newfs(data);
+		}
 	}
 	return data->pfreturn;
 }

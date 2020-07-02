@@ -5,7 +5,7 @@
 # include <stdarg.h>
 # include "libft.h"
 
-# define SYMBOLSINFLAG "1234567890. +-*%cdifosuxXpn"
+# define SYMBOLSINFS "1234567890.+-#*%cdifosuxXpn lhjztL"
 # define FLAGS "%cdifosuxXpn"
 
 typedef struct		s_fstring

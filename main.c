@@ -6,7 +6,7 @@ int main() {
 	double c = 31.929;
 
 //	printf("Hello, World! %010.3f, %s, %f, %     \n", a, b, c);
-	ft_printf("Hello, World! %010.3f, %s, %f", a, b, c);
+	ft_printf("Hello, World! %010.3f, %s, %f\n", a, b, c);
 
 	return 0;
 }

@@ -17,6 +17,7 @@ t_fstring *fs_init()
 	t_fstring *fs;
 
 	fs = (t_fstring*)malloc(sizeof(t_fstring));
+	fs->str = ft_strnew(1);
 	fs->width = 0;
 	fs->accuracy = 0;
 	fs->size = 0;
