@@ -14,10 +14,10 @@
 #include "ft_printf.h"
 #include <stdio.h> // убрать нахой
 
-static void newfs(t_pfstruct *data)
-{
-
-}
+//static void newfs(t_pfstruct *data)
+//{
+//
+//}
 
 static char *pars_fs(char *flag, t_pfstruct *data)
 {
