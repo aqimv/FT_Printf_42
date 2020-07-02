@@ -8,7 +8,7 @@ int main() {
 //	printf("Hello, World! %010.3f, %s, %f, %     \n", a, b, c);
 //	int x = printf("3 - %,d", 13);
 //	printf("%d", x);
-	ft_printf("Hello, World! %010.3f, %s, %f\n", a, b, c);
+	ft_printf("Hello, World! %-10.3f, %s, %f\n", a, b, c);
 //
 	return 0;
 }

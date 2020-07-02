@@ -14,26 +14,48 @@
 #include "ft_printf.h"
 #include <stdio.h> // убрать нахой
 
+static void formWidth(t_pfstruct *data, char ch)
+{
+	if (data->fs->width == 0)
+		data->fs->width += ft_atoi(&ch);
+	else
+		data->fs->width = (data->fs->width * 10) + ft_atoi(&ch);
+}
+static void formAccuracy(t_pfstruct *data, char ch)
+{
+	if (data->fs->accuracy == 0)
+		data->fs->accuracy += ft_atoi(&ch);
+	else
+		data->fs->accuracy = (data->fs->accuracy * 10) + ft_atoi(&ch);
+}
+
 static void newfs(t_pfstruct *data)
 {
 	int i;
 	int dotFlag;
-	char *widthStr;
 
 	i = 0;
 	dotFlag = 0;
-	while(data->fs->str[i] && ft_strchr("0123456789.*", data->fs->str[i]))
+	while(data->fs->str[i] && ft_strchr("0123456789.*# -+", data->fs->str[i]))
 	{
 		if (i == 0 && ft_strchr(FLAGSPF, data->fs->str[i]))
 			data->fs->flag = data->fs->str[i];
-		else if ((data->fs->str[i] >= '0' && data->fs->str[i] <= '9' \
-		|| data->fs->str[i] == '*') && !dotFlag)
-		{
 
+		else if (data->fs->str[i] == '.')
+			dotFlag++;
+
+		else if ((data->fs->str[i] >= '0' && data->fs->str[i] <= '9') || data->fs->str[i] == '*')
+		{
+			if (!dotFlag)
+				formWidth(data, data->fs->str[i]);
+			else
+				formAccuracy(data, data->fs->str[i]);
 		}
-		dotFlag++;
 		i++;
 	}
+	printf("| %d - width|", data->fs->width);
+	printf("| %d - accuracy|", data->fs->accuracy);
+	printf("| %c - flag|", data->fs->flag);
 }
 
 static char *pars_fs(char *flag, t_pfstruct *data)
