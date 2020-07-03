@@ -53,9 +53,11 @@ static void newfs(t_pfstruct *data)
 		}
 		i++;
 	}
-	printf("| %d - width|", data->fs->width);
-	printf("| %d - accuracy|", data->fs->accuracy);
-	printf("| %c - flag|", data->fs->flag);
+//	printf("| %d - width|", data->fs->width);
+//	printf("| %d - accuracy|", data->fs->accuracy);
+//	printf("| %c - flag|", data->fs->flag);
+	ft_strdel(&data->fs->str);
+	free(data->fs);
 }
 
 static char *pars_fs(char *flag, t_pfstruct *data)
