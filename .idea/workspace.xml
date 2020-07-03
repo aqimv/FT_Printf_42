@@ -32,9 +32,10 @@
     <list default="true" id="98a25812-fc30-40e6-af91-20c0127005f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/ft_printf.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/ft_printf.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libftprintf.a" beforeDir="false" afterPath="$PROJECT_DIR$/libftprintf.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/ft_printf.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/ft_printf.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/init.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/init.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/ft_printf.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_printf.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +78,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1593692444036</updated>
-      <workItem from="1593692453989" duration="5631000" />
+      <workItem from="1593692453989" duration="6673000" />
+      <workItem from="1593777631802" duration="2881000" />
     </task>
     <servers />
   </component>

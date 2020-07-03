@@ -16,14 +16,18 @@
 
 static void formWidth(t_pfstruct *data, char ch)
 {
-	if (data->fs->width == 0)
+	if (ch == '*')
+		data->fs->width = va_arg(data->args, int);
+	else if (data->fs->width == 0)
 		data->fs->width += ft_atoi(&ch);
 	else
 		data->fs->width = (data->fs->width * 10) + ft_atoi(&ch);
 }
 static void formAccuracy(t_pfstruct *data, char ch)
 {
-	if (data->fs->accuracy == 0)
+	if (ch == '*')
+		data->fs->accuracy = va_arg(data->args, int);
+	else if (data->fs->accuracy == 0)
 		data->fs->accuracy += ft_atoi(&ch);
 	else
 		data->fs->accuracy = (data->fs->accuracy * 10) + ft_atoi(&ch);
@@ -40,11 +44,10 @@ static void newfs(t_pfstruct *data)
 	{
 		if (i == 0 && ft_strchr(FLAGSPF, data->fs->str[i]))
 			data->fs->flag = data->fs->str[i];
-
 		else if (data->fs->str[i] == '.')
 			dotFlag++;
-
-		else if ((data->fs->str[i] >= '0' && data->fs->str[i] <= '9') || data->fs->str[i] == '*')
+		else if ((data->fs->str[i] >= '0' && data->fs->str[i] <= '9') \
+		|| data->fs->str[i] == '*')
 		{
 			if (!dotFlag)
 				formWidth(data, data->fs->str[i]);
@@ -53,11 +56,16 @@ static void newfs(t_pfstruct *data)
 		}
 		i++;
 	}
-//	printf("| %d - width|", data->fs->width);
-//	printf("| %d - accuracy|", data->fs->accuracy);
-//	printf("| %c - flag|", data->fs->flag);
-	ft_strdel(&data->fs->str);
-	free(data->fs);
+	va_arg(data->args, int);
+//	while(data->fs->str[i])
+//	{
+//
+//	}
+	printf("| %d - width|", data->fs->width);
+	printf("| %d - accuracy|", data->fs->accuracy);
+	printf("| %c - flag|", data->fs->flag);
+//	ft_strdel(&data->fs->str);
+//	free(data->fs);
 }
 
 static char *pars_fs(char *flag, t_pfstruct *data)
@@ -67,12 +75,12 @@ static char *pars_fs(char *flag, t_pfstruct *data)
 
 	i = 0;
 	dup = ft_strnew(sizeof(flag));
-	while (!ft_strchr(TYPESPF, *flag) && *flag && ft_strchr(SYMBOLSINFS, *flag))
+	while (ft_strchr(SYMBOLSINFS, *flag) && *flag)
 	{
 		dup[i++] = *flag;
 		flag++;
 	}
-	if (*flag && ft_strchr(SYMBOLSINFS, *flag))
+	if (*flag && ft_strchr(TYPESPF, *flag))
 	{
 		dup[i++] = *flag++;
 		dup[i] = '\0';

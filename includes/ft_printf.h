@@ -5,7 +5,7 @@
 # include <stdarg.h>
 # include "libft.h"
 
-# define SYMBOLSINFS "1234567890.+-#*%cdifosuxXpn lhjztL"
+# define SYMBOLSINFS "1234567890.+-#* lhjztL"
 # define TYPESPF "%cdifosuxXpn"
 # define FLAGSPF "-+#0 "
 
