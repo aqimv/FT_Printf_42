@@ -14,52 +14,7 @@
 #include "ft_printf.h"
 #include <stdio.h> // убрать нахой
 
-static void sizeSet(t_pfstruct *data, char ch)
-{
-	char *buf;
-	int count;
-	int i;
 
-	count = 0;
-	i = 0;
-	while (data->fs->size[count])
-		count++;
-	if (count != 0)
-	{
-
-		buf = data->fs->size;
-		ft_putstr(buf);
-		data->fs->size = ft_strnew(ft_strlen(buf) + 1);
-		while (buf[i])
-		{
-			data->fs->size[i] = buf[i];
-			i++;
-		}
-		data->fs->size[i] = ch;
-		ft_strdel(&buf);
-	}
-	else
-		data->fs->size[0] = ch;
-}
-
-static void formWidth(t_pfstruct *data, char ch)
-{
-	if (ch == '*')
-		data->fs->width = va_arg(data->args, int);
-	else if (data->fs->width == 0)
-		data->fs->width += ft_atoi(&ch);
-	else
-		data->fs->width = (data->fs->width * 10) + ft_atoi(&ch);
-}
-static void formAccuracy(t_pfstruct *data, char ch)
-{
-	if (ch == '*')
-		data->fs->accuracy = va_arg(data->args, int);
-	else if (data->fs->accuracy == 0)
-		data->fs->accuracy += ft_atoi(&ch);
-	else
-		data->fs->accuracy = (data->fs->accuracy * 10) + ft_atoi(&ch);
-}
 
 static void newfs(t_pfstruct *data)
 {
@@ -70,17 +25,20 @@ static void newfs(t_pfstruct *data)
 	dotFlag = 0;
 	while(data->fs->str[i] && ft_strchr("0123456789.*# -+", data->fs->str[i]))
 	{
-		if (i == 0 && ft_strchr(FLAGSPF, data->fs->str[i]))
-			data->fs->flag = data->fs->str[i];
-		else if (data->fs->str[i] == '.')
+		if (i == 0)
+		{
+			while (ft_strchr(FLAGSPF, data->fs->str[i]))
+				setFlag(data, data->fs->str[i++]);
+		}
+		if (data->fs->str[i] == '.')
 			dotFlag++;
 		else if ((data->fs->str[i] >= '0' && data->fs->str[i] <= '9') \
 		|| data->fs->str[i] == '*')
 		{
 			if (!dotFlag)
-				formWidth(data, data->fs->str[i]);
+				setWidth(data, data->fs->str[i]);
 			else
-				formAccuracy(data, data->fs->str[i]);
+				setAccuracy(data, data->fs->str[i]);
 		}
 		i++;
 	}
@@ -88,14 +46,14 @@ static void newfs(t_pfstruct *data)
 	while(data->fs->str[i])
 	{
 		if (!ft_strchr(TYPESPF, data->fs->str[i]))
-			sizeSet(data, data->fs->str[i]);
+			setSize(data, data->fs->str[i]);
 		else
 			data->fs->type = data->fs->str[i];
 		i++;
 	}
 	printf("| %d - width|", data->fs->width);
 	printf("| %d - accuracy|", data->fs->accuracy);
-	printf("| %c - flag|", data->fs->flag);
+	printf("| %s - flag|", data->fs->flag);
 	printf("| %s - size|", data->fs->size);
 	printf("| %c - type|", data->fs->type);
 //	ft_strdel(&data->fs->str);

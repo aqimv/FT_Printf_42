@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/pavel/Documents/c_projects/ft_printf
+CMAKE_SOURCE_DIR = /Users/skennith/Desktop/printf
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/pavel/Documents/c_projects/ft_printf/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/skennith/Desktop/printf/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/pavel/Documents/c_projects/ft_printf/cmake-build-debug/CMakeFiles /Users/pavel/Documents/c_projects/ft_printf/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/skennith/Desktop/printf/cmake-build-debug/CMakeFiles /Users/skennith/Desktop/printf/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/pavel/Documents/c_projects/ft_printf/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/skennith/Desktop/printf/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -1932,6 +1932,33 @@ srcs/init.c.s:
 	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/srcs/init.c.s
 .PHONY : srcs/init.c.s
 
+srcs/setters.o: srcs/setters.c.o
+
+.PHONY : srcs/setters.o
+
+# target to build an object file
+srcs/setters.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/srcs/setters.c.o
+.PHONY : srcs/setters.c.o
+
+srcs/setters.i: srcs/setters.c.i
+
+.PHONY : srcs/setters.i
+
+# target to preprocess a source file
+srcs/setters.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/srcs/setters.c.i
+.PHONY : srcs/setters.c.i
+
+srcs/setters.s: srcs/setters.c.s
+
+.PHONY : srcs/setters.s
+
+# target to generate assembly for a file
+srcs/setters.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/srcs/setters.c.s
+.PHONY : srcs/setters.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2142,6 +2169,9 @@ help:
 	@echo "... srcs/init.o"
 	@echo "... srcs/init.i"
 	@echo "... srcs/init.s"
+	@echo "... srcs/setters.o"
+	@echo "... srcs/setters.i"
+	@echo "... srcs/setters.s"
 .PHONY : help
 
 
