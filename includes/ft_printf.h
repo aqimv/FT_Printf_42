@@ -15,7 +15,7 @@ typedef struct		s_fstring
 	char flag;
 	int width;
 	int accuracy;
-	int size;
+	char *size;
 	char type;
 }					t_fstring;
 

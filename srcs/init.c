@@ -20,7 +20,7 @@ t_fstring *fs_init()
 	fs->str = ft_strnew(1);
 	fs->width = 0;
 	fs->accuracy = 0;
-	fs->size = 0;
+	fs->size = ft_strnew(1);
 	return (fs);
 }
 

@@ -14,6 +14,34 @@
 #include "ft_printf.h"
 #include <stdio.h> // убрать нахой
 
+static void sizeSet(t_pfstruct *data, char ch)
+{
+	char *buf;
+	int count;
+	int i;
+
+	count = 0;
+	i = 0;
+	while (data->fs->size[count])
+		count++;
+	if (count != 0)
+	{
+
+		buf = data->fs->size;
+		ft_putstr(buf);
+		data->fs->size = ft_strnew(ft_strlen(buf) + 1);
+		while (buf[i])
+		{
+			data->fs->size[i] = buf[i];
+			i++;
+		}
+		data->fs->size[i] = ch;
+		ft_strdel(&buf);
+	}
+	else
+		data->fs->size[0] = ch;
+}
+
 static void formWidth(t_pfstruct *data, char ch)
 {
 	if (ch == '*')
@@ -56,14 +84,20 @@ static void newfs(t_pfstruct *data)
 		}
 		i++;
 	}
-	va_arg(data->args, int);
-//	while(data->fs->str[i])
-//	{
-//
-//	}
+//	va_arg(data->args, int);
+	while(data->fs->str[i])
+	{
+		if (!ft_strchr(TYPESPF, data->fs->str[i]))
+			sizeSet(data, data->fs->str[i]);
+		else
+			data->fs->type = data->fs->str[i];
+		i++;
+	}
 	printf("| %d - width|", data->fs->width);
 	printf("| %d - accuracy|", data->fs->accuracy);
 	printf("| %c - flag|", data->fs->flag);
+	printf("| %s - size|", data->fs->size);
+	printf("| %c - type|", data->fs->type);
 //	ft_strdel(&data->fs->str);
 //	free(data->fs);
 }
