@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h> // убрать нахой
 
 void setFlag(t_pfstruct *data, char ch)
 {

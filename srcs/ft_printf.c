@@ -23,6 +23,10 @@ static void newfs(t_pfstruct *data)
 
 	i = 0;
 	dotFlag = 0;
+	printf("%s\n\n", data->fs->str);
+	ft_putchar(data->fs->str[2]);
+	printf("%c", data->fs->str[2]);
+	ft_putstr("\n\n");
 	while(data->fs->str[i] && ft_strchr("0123456789.*# -+", data->fs->str[i]))
 	{
 		if (i == 0)
