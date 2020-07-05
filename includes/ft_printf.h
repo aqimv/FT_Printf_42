@@ -7,10 +7,11 @@
 
 # define SYMBOLSINFS "1234567890.+-#* lhjztL"
 # define TYPESPF "%cdifosuxXpn"
-# define FLAGSPF "-+#0 "
+# define FLAGSPF "+#0 -"
 
 typedef struct		s_fstring
 {
+	char *finalstr;
 	char *str;
 	char *flag;
 	int width;

@@ -10,7 +10,7 @@ int main() {
 
 //	int x = printf("3 - %,d", 13);
 //	printf("%d", x);
-	ft_printf("Hello, World! %-0-+10.3lllf, %s, %-f\n", a, b, 10, 3, c);
+	ft_printf("Hello, World! %-0-+10.0000003lllf, %s, %-f\n", a, b, 10, 3, c);
 //
 	return 0;
 }
