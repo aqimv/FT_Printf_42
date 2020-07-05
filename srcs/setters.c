@@ -16,52 +16,87 @@
 void setFlag(t_pfstruct *data, char ch)
 {
 	char *buf;
-	int count;
-	int i;
 
-	count = 0;
-	i = 0;
-	while (data->fs->flag[count])
-		count++;
-	if (count != 0)
+	printf("| - %s - |", data->fs->str);
+	if (ft_strlen(data->fs->flag) != 0)
 	{
+		printf("| - %s - 2|", data->fs->str);
+		buf = ft_strnew(ft_strlen(data->fs->flag) + 1);
 
-		buf = data->fs->flag;
-		data->fs->flag = ft_strnew(ft_strlen(buf) + 1);
-		while (buf[i])
-		{
-			data->fs->flag[i] = buf[i];
-			i++;
-		}
-		data->fs->flag[i] = ch;
-		ft_strdel(&buf);
+		buf = ft_strcpy(buf, data->fs->flag);
+		buf[ft_strlen(data->fs->flag)] = ch;
+		ft_strdel(&data->fs->flag);
+		data->fs->flag = buf;
 	}
 	else
 		data->fs->flag[0] = ch;
+
 }
 
+//void setFlag(t_pfstruct *data, char ch)
+//{
+//	char *buf;
+//	int count;
+//	int i;
+//
+//	count = 0;
+//	i = 0;
+//	while (data->fs->flag[count])
+//		count++;
+//	if (count != 0)
+//	{
+//		buf = data->fs->flag;
+//		data->fs->flag = ft_strnew(ft_strlen(buf) + 1); // ТУТ ЕБУЧИЙ БАГ КОТОРЫЙ Я НИХУЯ НЕ ПОЙМУ!!!!!
+//		while (buf[i])
+//		{
+//			data->fs->flag[i] = buf[i];
+//			i++;
+//		}
+//		data->fs->flag[i] = ch;
+//		ft_strdel(&buf);
+//	}
+//	else
+//		data->fs->flag[0] = ch;
+//
+//}
+
+//void setSize(t_pfstruct *data, char ch)
+//{
+//	char *buf;
+//	int count;
+//	int i;
+//
+//	count = 0;
+//	i = 0;
+//	while (data->fs->size[count])
+//		count++;
+//	if (count != 0)
+//	{
+//		buf = data->fs->size;
+//		data->fs->size = ft_strnew(ft_strlen(buf) + 1);
+////		data->fs->size = ft_strcpy(data->fs->size, buf);
+//		while (buf[i])
+//		{
+//			data->fs->size[i] = buf[i];
+//			i++;
+//		}
+//		data->fs->size[i] = ch;
+//		ft_strdel(&buf);
+//	}
+//	else
+//		data->fs->size[0] = ch;
+//}
 void setSize(t_pfstruct *data, char ch)
 {
 	char *buf;
-	int count;
-	int i;
 
-	count = 0;
-	i = 0;
-	while (data->fs->size[count])
-		count++;
-	if (count != 0)
+	if (ft_strlen(data->fs->size) != 0)
 	{
-
-		buf = data->fs->size;
-		data->fs->size = ft_strnew(ft_strlen(buf) + 1);
-		while (buf[i])
-		{
-			data->fs->size[i] = buf[i];
-			i++;
-		}
-		data->fs->size[i] = ch;
-		ft_strdel(&buf);
+		buf = ft_strnew(ft_strlen(data->fs->size) + 1);
+		buf = ft_strcpy(buf, data->fs->size);
+		buf[ft_strlen(data->fs->size)] = ch;
+		ft_strdel(&data->fs->size);
+		data->fs->size = buf;
 	}
 	else
 		data->fs->size[0] = ch;
