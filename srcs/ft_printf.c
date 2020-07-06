@@ -1,4 +1,5 @@
 /* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
@@ -26,15 +27,10 @@ static void newfs(t_pfstruct *data)
 
 	while(data->fs.str[i] && ft_strchr("0123456789.*# -+", data->fs.str[i]))
 	{
-		printf("|  %s  - 1|", data->fs.str);
 		if (i == 0)
 		{
 			while (ft_strchr(FLAGSPF, data->fs.str[i]))
-			{
-				//printf("|  %c  |", data->fs->str[2]);
-				setFlag(data, data->fs.str[i]);
-				i++;
-			}
+				setFlag(data, data->fs.str[i++]);
 		}
 		if (data->fs.str[i] == '.')
 			dotFlag++;
@@ -62,9 +58,8 @@ static void newfs(t_pfstruct *data)
 	printf("| %s - size|", data->fs.size);
 	printf("| %c - type|", data->fs.type);
 
-//	if (data->fs->str[i])
-//		ft_strdel(&data->fs->str);
-//	free(data->fs);
+	if (data->fs.str != NULL)
+		ft_strdel(&data->fs.str);
 }
 
 static char *pars_fs(char *flag, t_pfstruct *data)
@@ -119,6 +114,11 @@ int		ft_printf(const char *format, ...)
 {
 	int result;
 	t_pfstruct data;
+	data.str = NULL;
+	data.fs.flag = NULL;
+	data.fs.size = NULL;
+	data.fs.str = NULL;
+	data.fs.finalstr = NULL;
 
 	//data = pf_init();
 	va_start(data.args, format);

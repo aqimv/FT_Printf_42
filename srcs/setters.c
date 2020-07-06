@@ -25,7 +25,7 @@ void setFlag(t_pfstruct *data, char ch)
 	if (data->fs.flag != NULL)
 	{
 		buf = ft_strjoin(data->fs.flag, buf2);
-		free(data->fs.flag);
+//		free(data->fs.flag);
 		data->fs.flag = buf;
 	}
 	else
@@ -45,7 +45,7 @@ void setSize(t_pfstruct *data, char ch)
 	if (data->fs.size != NULL)
 	{
 		buf = ft_strjoin(data->fs.size, buf2);
-		ft_strdel(&data->fs.size);
+//		ft_strdel(&data->fs.size);
 		data->fs.size = buf;
 	}
 	else

@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.16)
-project(ft_printf C)
+project(printf C)
 
 set(CMAKE_C_STANDARD 11)
 
 include_directories(includes)
 
-add_executable(ft_printf
+add_executable(printf
         includes/ft_printf.h
         includes/get_next_line.h
         includes/libft.h

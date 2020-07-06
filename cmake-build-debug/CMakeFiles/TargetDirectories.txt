@@ -1,3 +1,3 @@
-/Users/pavel/Documents/c_projects/ft_printf/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/pavel/Documents/c_projects/ft_printf/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/pavel/Documents/c_projects/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir
+/Users/skennith/Desktop/printf/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/skennith/Desktop/printf/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/skennith/Desktop/printf/cmake-build-debug/CMakeFiles/printf.dir
