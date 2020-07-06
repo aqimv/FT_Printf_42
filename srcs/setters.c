@@ -13,15 +13,13 @@
 #include "ft_printf.h"
 #include <stdio.h> // убрать нахой
 
-void setFlag(t_pfstruct *data, char ch)
+int setFlag(t_pfstruct *data, char ch)
 {
 	char *buf;
 	char *buf2;
 
 	buf2 = ft_strnew(1);
 	buf2[0] = ch;
-//	printf("|  %s  |", data->fs.str);
-	ft_putstr(data->fs.str);
 	if (data->fs.flag != NULL)
 	{
 		buf = ft_strjoin(data->fs.flag, buf2);
@@ -33,9 +31,10 @@ void setFlag(t_pfstruct *data, char ch)
 		data->fs.flag = ft_strnew(1);
 		data->fs.flag[0] = ch;
 	}
+	return (0);
 }
 
-void setSize(t_pfstruct *data, char ch)
+int setSize(t_pfstruct *data, char ch)
 {
 	char *buf;
 	char *buf2;
@@ -53,9 +52,10 @@ void setSize(t_pfstruct *data, char ch)
 		data->fs.size = ft_strnew(1);
 		data->fs.size[0] = ch;
 	}
+	return (0);
 }
 
-void setWidth(t_pfstruct *data, char ch)
+int setWidth(t_pfstruct *data, char ch)
 {
 	if (ch == '*')
 		data->fs.width = va_arg(data->args, int);
@@ -63,8 +63,9 @@ void setWidth(t_pfstruct *data, char ch)
 		data->fs.width += ft_atoi(&ch);
 	else
 		data->fs.width = (data->fs.width * 10) + ft_atoi(&ch);
+	return (0);
 }
-void setAccuracy(t_pfstruct *data, char ch)
+int setAccuracy(t_pfstruct *data, char ch)
 {
 	if (ch == '*')
 		data->fs.accuracy = va_arg(data->args, int);
@@ -72,4 +73,5 @@ void setAccuracy(t_pfstruct *data, char ch)
 		data->fs.accuracy += ft_atoi(&ch);
 	else
 		data->fs.accuracy = (data->fs.accuracy * 10) + ft_atoi(&ch);
+	return (0);
 }

@@ -8,6 +8,8 @@
 # define SYMBOLSINFS "1234567890.+-#* lhjztL"
 # define TYPESPF "%cdifosuxXpn"
 # define FLAGSPF "+#0 -"
+# define WIDTHANDACCURACY "0123456789"
+# define SIZEPF "lhjztL"
 
 typedef struct		s_fstring
 {
@@ -29,11 +31,10 @@ typedef struct		s_pfstruct
 }					t_pfstruct;
 
 int		ft_printf(const char *format, ...);
-//t_fstring *fs_init();
-//t_pfstruct *pf_init();
-void setFlag(t_pfstruct *data, char ch);
-void setSize(t_pfstruct *data, char ch);
-void setWidth(t_pfstruct *data, char ch);
-void setAccuracy(t_pfstruct *data, char ch);
+void pf_init(t_pfstruct *data);
+int setFlag(t_pfstruct *data, char ch);
+int setSize(t_pfstruct *data, char ch);
+int setWidth(t_pfstruct *data, char ch);
+int setAccuracy(t_pfstruct *data, char ch);
 
 #endif
