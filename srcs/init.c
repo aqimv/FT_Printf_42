@@ -12,25 +12,27 @@
 
 #include "ft_printf.h"
 
-t_fstring *fs_init()
-{
-	t_fstring *fs;
-
-	fs = (t_fstring*)malloc(sizeof(t_fstring));
-	fs->str = ft_strnew(1);
-	fs->width = 0;
-	fs->accuracy = 0;
-	fs->size = ft_strnew(1);
-//	fs->flag = ft_strnew(1);
-	return (fs);
-}
-
-t_pfstruct *pf_init()
-{
-	t_pfstruct *pf;
-
-	pf = (t_pfstruct*)malloc(sizeof(t_pfstruct));
-	pf->pfreturn = 0;
-	pf->fs = fs_init();
-	return (pf);
-}
+//t_fstring *fs_init()
+//{
+//	t_fstring *fs;
+//
+//	fs = (t_fstring*)malloc(sizeof(t_fstring));
+//	fs->str = ft_strnew(1);
+//	fs->width = 0;
+//	fs->accuracy = 0;
+//	fs->size = ft_strnew(1);
+////	fs->flag = ft_strnew(1);
+//	fs->flag = NULL;
+//
+//	return (fs);
+//}
+//
+//t_pfstruct *pf_init()
+//{
+//	t_pfstruct *pf;
+//
+//	pf = (t_pfstruct*)malloc(sizeof(t_pfstruct));
+//	pf->pfreturn = 0;
+//	pf->fs = fs_init();
+//	return (pf);
+//}

@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../includes/ft_printf.h
+stdarg.h
+-
+libft.h
+../includes/libft.h
+
+../includes/get_next_line.h
+libft.h
+../includes/libft.h
+fcntl.h
+-
+
+../includes/libft.h
+string.h
+-
+stdlib.h
+-
+unistd.h
+-
+get_next_line.h
+../includes/get_next_line.h
+
+/Users/pavel/Documents/c_projects/ft_printf/srcs/ft_printf.c
+ft_printf.h
+/Users/pavel/Documents/c_projects/ft_printf/srcs/ft_printf.h
+stdio.h
+-
+
+/Users/pavel/Documents/c_projects/ft_printf/srcs/setters.c
+ft_printf.h
+/Users/pavel/Documents/c_projects/ft_printf/srcs/ft_printf.h
+stdio.h
+-
+

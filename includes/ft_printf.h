@@ -25,12 +25,12 @@ typedef struct		s_pfstruct
 	va_list args;
     char *str;
     int pfreturn;
-    t_fstring *fs;
+    t_fstring fs;
 }					t_pfstruct;
 
 int		ft_printf(const char *format, ...);
-t_fstring *fs_init();
-t_pfstruct *pf_init();
+//t_fstring *fs_init();
+//t_pfstruct *pf_init();
 void setFlag(t_pfstruct *data, char ch);
 void setSize(t_pfstruct *data, char ch);
 void setWidth(t_pfstruct *data, char ch);
