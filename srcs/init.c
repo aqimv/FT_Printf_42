@@ -21,7 +21,7 @@ t_fstring *fs_init()
 	fs->width = 0;
 	fs->accuracy = 0;
 	fs->size = ft_strnew(1);
-	fs->flag = ft_strnew(1);
+//	fs->flag = ft_strnew(1);
 	return (fs);
 }
 

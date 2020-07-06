@@ -33,7 +33,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libftprintf.a" beforeDir="false" afterPath="$PROJECT_DIR$/libftprintf.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/ft_printf.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/ft_printf.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/setters.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/setters.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ft_printf.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_printf.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/setters.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/setters.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +81,8 @@
       <workItem from="1593692453989" duration="6673000" />
       <workItem from="1593777631802" duration="9951000" />
       <workItem from="1593870792595" duration="2349000" />
-      <workItem from="1593953013759" duration="10879000" />
+      <workItem from="1593953013759" duration="11024000" />
+      <workItem from="1594034555505" duration="2576000" />
     </task>
     <servers />
   </component>
@@ -103,5 +106,9 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="675" y="387" key="#Other_File_Types/0.0.1680.1050@0.0.1680.1050" timestamp="1593678903146" />
+    <state x="904" y="472" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594035147392">
+      <screen x="0" y="0" width="2880" height="1620" />
+    </state>
+    <state x="904" y="472" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2880.1620@0.0.2880.1620" timestamp="1594035147392" />
   </component>
 </project>

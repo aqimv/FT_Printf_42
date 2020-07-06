@@ -17,19 +17,20 @@ void setFlag(t_pfstruct *data, char ch)
 {
 	char *buf;
 
-	printf("| - %s - |", data->fs->str);
+	//printf("| - %s - |", data->fs->str);
 	if (ft_strlen(data->fs->flag) != 0)
 	{
-		printf("| - %s - 2|", data->fs->str);
+//		data->fs->flag = ft_strjoin(data->fs->flag, &(ch));
+//		printf("| - %s - 2|", data->fs->str);
 		buf = ft_strnew(ft_strlen(data->fs->flag) + 1); // ТУТ ЕБУЧИЙ БАГ КОТОРЫЙ Я НИХУЯ НЕ ПОЙМУ!!!!!
-
+//		buf = (char *)ft_memalloc(ft_strlen(data->fs->flag) + 1);
 		buf = ft_strcpy(buf, data->fs->flag);
 		buf[ft_strlen(data->fs->flag)] = ch;
-		ft_strdel(&data->fs->flag);
+		//ft_strdel(&data->fs->flag);
 		data->fs->flag = buf;
 	}
 	else
-		data->fs->flag[0] = ch;
+		data->fs->flag = ft_strjoin(data->fs->flag, &ch);
 }
 
 void setSize(t_pfstruct *data, char ch)

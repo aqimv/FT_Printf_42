@@ -23,12 +23,15 @@ static void newfs(t_pfstruct *data)
 
 	i = 0;
 	dotFlag = 0;
+
 	while(data->fs->str[i] && ft_strchr("0123456789.*# -+", data->fs->str[i]))
 	{
+		printf("|  %s  |", data->fs->str);
 		if (i == 0)
 		{
 			while (ft_strchr(FLAGSPF, data->fs->str[i]))
 			{
+				printf("|  %c  |", data->fs->str[2]);
 				setFlag(data, data->fs->str[i]);
 				i++;
 			}
