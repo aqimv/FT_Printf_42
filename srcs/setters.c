@@ -43,7 +43,6 @@ int setSize(t_pfstruct *data, int *i)
 			data->fs.size.t = 1;
 		else if (data->fs.str[*i] == 'L')
 			data->fs.size.bigL = 1;
-		*i = *i + 1;
 	}
 	else
 	{
@@ -51,7 +50,7 @@ int setSize(t_pfstruct *data, int *i)
 			data->fs.size.ll = 1;
 		else if (data->fs.str[*i] == 'h' && data->fs.str[*i + 1] == 'h')
 			data->fs.size.hh = 1;
-		*i = *i + 2;
+		*i = *i + 1;
 	}
 	return (0);
 }

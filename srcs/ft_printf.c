@@ -93,7 +93,10 @@ static int newfs(t_pfstruct *data, int step, int i, int r)
 	else if (step == 3 && ft_strchr(WIDTHANDACCURACY, data->fs.str[i]))
 		newfs(data, step, i + 1, setAccuracy(data, data->fs.str[i]));
 	else if (step == 4 && ft_strchr(SIZEPF, data->fs.str[i]))
-		newfs(data, step, i + 1, setSize(data, &i));
+	{
+		setSize(data, &i);
+		newfs(data, step, i + 1, 0);
+	}
 	else if (step == 5 && ft_strchr(TYPESPF, data->fs.str[i]))
 		data->fs.type = data->fs.str[i];
 	else if (step <= 5)
