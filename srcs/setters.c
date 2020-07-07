@@ -15,45 +15,67 @@
 
 int setFlag(t_pfstruct *data, char ch)
 {
-	char *buf;
-	char *buf2;
-
-	buf2 = ft_strnew(1);
-	buf2[0] = ch;
-	if (data->fs.flag != NULL)
-	{
-		buf = ft_strjoin(data->fs.flag, buf2);
-//		free(data->fs.flag);
-		data->fs.flag = buf;
-	}
-	else
-	{
-		data->fs.flag = ft_strnew(1);
-		data->fs.flag[0] = ch;
-	}
-	return (0);
+	if (ch == '-')
+		data->fs.flag.minus = 1;
+	else if (ch == '+')
+		data->fs.flag.plus = 1;
+	else if (ch == '0')
+		data->fs.flag.zero = 1;
+	else if (ch == ' ')
+		data->fs.flag.space = 1;
+	else if (ch == '#')
+		data->fs.flag.sharp = 1;
 }
 
-int setSize(t_pfstruct *data, char ch)
+int setSize(t_pfstruct *data, int *i)
 {
-	char *buf;
-	char *buf2;
-
-	buf2 = ft_strnew(1);
-	buf2[0] = ch;
-	if (data->fs.size != NULL)
+	if (data->fs.str[*i] != data->fs.str[*i + 1])
 	{
-		buf = ft_strjoin(data->fs.size, buf2);
-//		ft_strdel(&data->fs.size);
-		data->fs.size = buf;
+		if (data->fs.str[*i] == 'l')
+			data->fs.size.l = 1;
+		else if (data->fs.str[*i] == 'h')
+			data->fs.size.h_size = 1;
+		else if (data->fs.str[*i] == 'j')
+			data->fs.size.j = 1;
+		else if (data->fs.str[*i] == 'z')
+			data->fs.size.z = 1;
+		else if (data->fs.str[*i] == 't')
+			data->fs.size.t = 1;
+		else if (data->fs.str[*i] == 'L')
+			data->fs.size.bigL = 1;
+		*i = *i + 1;
 	}
 	else
 	{
-		data->fs.size = ft_strnew(1);
-		data->fs.size[0] = ch;
+		if (data->fs.str[*i] == 'l' && data->fs.str[*i + 1] == 'l')
+			data->fs.size.ll = 1;
+		else if (data->fs.str[*i] == 'h' && data->fs.str[*i + 1] == 'h')
+			data->fs.size.hh = 1;
+		*i = *i + 2;
 	}
 	return (0);
 }
+
+//int setSize(t_pfstruct *data, char ch)
+//{
+//	char *buf;
+//	char *buf2;
+//
+//	buf2 = ft_strnew(1);
+//	buf2[0] = ch;
+//	if (data->fs.size != NULL)
+//	{
+//		buf = ft_strjoin(data->fs.size, buf2);
+////		ft_strdel(&data->fs.size);
+//		data->fs.size = buf;
+//	}
+//	else
+//	{
+//		data->fs.size = ft_strnew(1);
+//		data->fs.size[0] = ch;
+//	}
+//	return (0);
+//}
 
 int setWidth(t_pfstruct *data, char ch)
 {

@@ -11,14 +11,35 @@
 # define WIDTHANDACCURACY "0123456789"
 # define SIZEPF "lhjztL"
 
+typedef struct		s_size
+{
+	int l;
+	int ll;
+	int h_size;
+	int hh;
+	int j;
+	int z;
+	int t;
+	int bigL;
+}					t_size;
+
+typedef struct		s_flags
+{
+	int zero;
+	int minus;
+	int plus;
+	int space;
+	int sharp;
+}					t_flags;
+
 typedef struct		s_fstring
 {
 	char *finalstr;
 	char *str;
-	char *flag;
+	t_flags flag;
 	int width;
 	int accuracy;
-	char *size;
+	t_size size;
 	char type;
 }					t_fstring;
 
@@ -33,7 +54,7 @@ typedef struct		s_pfstruct
 int		ft_printf(const char *format, ...);
 void pf_init(t_pfstruct *data);
 int setFlag(t_pfstruct *data, char ch);
-int setSize(t_pfstruct *data, char ch);
+int setSize(t_pfstruct *data, int *i);
 int setWidth(t_pfstruct *data, char ch);
 int setAccuracy(t_pfstruct *data, char ch);
 

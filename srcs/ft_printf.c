@@ -36,57 +36,6 @@
 //	return (1);
 //}
 
-//static int newfs(t_pfstruct *data, int step, int i)
-//{
-//	if (data->fs.str[i] == '.')
-//		newfs(data, 3, i + 1);
-//	else if (step == 1 && ft_strchr(FLAGSPF, data->fs.str[i]))
-//	{
-//		setFlag(data, data->fs.str[i]);
-//		newfs(data, step, i + 1);
-//	}
-//	else if (step == 2 && ft_strchr(WIDTHANDACCURACY, data->fs.str[i]))
-//	{
-//		setWidth(data, data->fs.str[i]);
-//		newfs(data, step, i + 1);
-//	}
-//	else if (step == 3 && ft_strchr(WIDTHANDACCURACY, data->fs.str[i]))
-//	{
-//		setAccuracy(data, data->fs.str[i]);
-//		newfs(data, step, i + 1);
-//	}
-//	else if (step == 4 && ft_strchr(SIZEPF, data->fs.str[i]))
-//	{
-//		setSize(data, data->fs.str[i]);
-//		newfs(data, step, i + 1);
-//	}
-//	else if (step == 5 && ft_strchr(TYPESPF, data->fs.str[i]))
-//		data->fs.type = data->fs.str[i];
-//	else if (step <= 5)
-//		newfs(data, step + 1, i);
-//	return (data->fs.type);
-//}
-
-static int newfs(t_pfstruct *data, int step, int i, int r)
-{
-	if (data->fs.str[i] == '.')
-		newfs(data, 3, i + 1, 0);
-	else if (step == 1 && ft_strchr(FLAGSPF, data->fs.str[i]))
-		newfs(data, step, i + 1, setFlag(data, data->fs.str[i]));
-	else if (step == 2 && ft_strchr(WIDTHANDACCURACY, data->fs.str[i]))
-		newfs(data, step, i + 1, setWidth(data, data->fs.str[i]));
-	else if (step == 3 && ft_strchr(WIDTHANDACCURACY, data->fs.str[i]))
-		newfs(data, step, i + 1, setAccuracy(data, data->fs.str[i]));
-	else if (step == 4 && ft_strchr(SIZEPF, data->fs.str[i]))
-		newfs(data, step, i + 1, setSize(data, data->fs.str[i]));
-	else if (step == 5 && ft_strchr(TYPESPF, data->fs.str[i]))
-		data->fs.type = data->fs.str[i];
-	else if (step <= 5)
-		newfs(data, step + 1, i, 0);
-	r = 1;
-	return (data->fs.type);
-}
-
 //static void newfs(t_pfstruct *data)
 //{
 //	int i;
@@ -120,6 +69,39 @@ static int newfs(t_pfstruct *data, int step, int i, int r)
 //	printf("| %s - size|", data->fs.size);
 //	printf("| %c - type|", data->fs.type);
 //}
+
+static void switchPrintValue(t_pfstruct *data)
+{
+	if (data->fs.type == 'd' || data->fs.type == 'i')
+	{
+
+	}
+	else if (data->fs.type == 's')
+	{
+
+	}
+}
+
+static int newfs(t_pfstruct *data, int step, int i, int r)
+{
+	if (data->fs.str[i] == '.')
+		newfs(data, 3, i + 1, 0);
+	else if (step == 1 && ft_strchr(FLAGSPF, data->fs.str[i]))
+		newfs(data, step, i + 1, setFlag(data, data->fs.str[i]));
+	else if (step == 2 && ft_strchr(WIDTHANDACCURACY, data->fs.str[i]))
+		newfs(data, step, i + 1, setWidth(data, data->fs.str[i]));
+	else if (step == 3 && ft_strchr(WIDTHANDACCURACY, data->fs.str[i]))
+		newfs(data, step, i + 1, setAccuracy(data, data->fs.str[i]));
+	else if (step == 4 && ft_strchr(SIZEPF, data->fs.str[i]))
+		newfs(data, step, i + 1, setSize(data, &i));
+	else if (step == 5 && ft_strchr(TYPESPF, data->fs.str[i]))
+		data->fs.type = data->fs.str[i];
+	else if (step <= 5)
+		newfs(data, step + 1, i, 0);
+	return (data->fs.type + r);
+}
+
+
 
 static char *pars_fs(char *flag, t_pfstruct *data)
 {
@@ -161,8 +143,7 @@ static int parsformat(t_pfstruct *data)
 			p = pars_fs(p, data);
 			if (data->fs.str)
 				if (newfs(data, 1, 0, 0))
-					ft_putstr("good");
-//				newfs(data);
+					switchPrintValue(data);
 		}
 	}
 	printf("| %d - width|", data->fs.width);
@@ -172,6 +153,8 @@ static int parsformat(t_pfstruct *data)
 	printf("| %c - type|", data->fs.type);
 	return data->pfreturn;
 }
+
+/*  */
 
 int		ft_printf(const char *format, ...)
 {

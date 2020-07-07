@@ -31,8 +31,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3f5fdefe-d5b0-498c-8f83-99bef5973334" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/main.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/srcs/ft_printf.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/srcs/ft_printf.c.o" afterDir="false" />
@@ -40,9 +38,6 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/srcs/setters.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/printf.dir/srcs/setters.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/printf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/printf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/ft_printf.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/ft_printf.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libftprintf.a" beforeDir="false" afterPath="$PROJECT_DIR$/libftprintf.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/ft_printf.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/ft_printf.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/ft_printf.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_printf.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/init.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/init.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/setters.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/setters.c" afterDir="false" />
@@ -86,7 +81,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1594047198303</updated>
-      <workItem from="1594047199762" duration="10988000" />
+      <workItem from="1594047199762" duration="13527000" />
+      <workItem from="1594115555256" duration="6102000" />
     </task>
     <servers />
   </component>
@@ -103,48 +99,49 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="2838" height="592" key="GridCell.Tab.0.bottom" timestamp="1594059648329">
+    <state width="2838" height="592" key="GridCell.Tab.0.bottom" timestamp="1594063065022">
       <screen x="0" y="0" width="2880" height="1620" />
     </state>
-    <state width="2838" height="592" key="GridCell.Tab.0.bottom/0.0.2880.1620@0.0.2880.1620" timestamp="1594059648329" />
-    <state width="2838" height="592" key="GridCell.Tab.0.center" timestamp="1594059648328">
+    <state width="2838" height="592" key="GridCell.Tab.0.bottom/0.0.2880.1620@0.0.2880.1620" timestamp="1594063065022" />
+    <state width="2838" height="592" key="GridCell.Tab.0.center" timestamp="1594063065021">
       <screen x="0" y="0" width="2880" height="1620" />
     </state>
-    <state width="2838" height="592" key="GridCell.Tab.0.center/0.0.2880.1620@0.0.2880.1620" timestamp="1594059648328" />
-    <state width="2838" height="592" key="GridCell.Tab.0.left" timestamp="1594059648327">
+    <state width="2838" height="592" key="GridCell.Tab.0.center/0.0.2880.1620@0.0.2880.1620" timestamp="1594063065021" />
+    <state width="2838" height="592" key="GridCell.Tab.0.left" timestamp="1594063065020">
       <screen x="0" y="0" width="2880" height="1620" />
     </state>
-    <state width="2838" height="592" key="GridCell.Tab.0.left/0.0.2880.1620@0.0.2880.1620" timestamp="1594059648327" />
-    <state width="2838" height="592" key="GridCell.Tab.0.right" timestamp="1594059648329">
+    <state width="2838" height="592" key="GridCell.Tab.0.left/0.0.2880.1620@0.0.2880.1620" timestamp="1594063065020" />
+    <state width="2838" height="592" key="GridCell.Tab.0.right" timestamp="1594063065021">
       <screen x="0" y="0" width="2880" height="1620" />
     </state>
-    <state width="2838" height="592" key="GridCell.Tab.0.right/0.0.2880.1620@0.0.2880.1620" timestamp="1594059648329" />
-    <state width="2838" height="592" key="GridCell.Tab.1.bottom" timestamp="1594059648331">
+    <state width="2838" height="592" key="GridCell.Tab.0.right/0.0.2880.1620@0.0.2880.1620" timestamp="1594063065021" />
+    <state width="2838" height="592" key="GridCell.Tab.1.bottom" timestamp="1594063065023">
       <screen x="0" y="0" width="2880" height="1620" />
     </state>
-    <state width="2838" height="592" key="GridCell.Tab.1.bottom/0.0.2880.1620@0.0.2880.1620" timestamp="1594059648331" />
-    <state width="2838" height="592" key="GridCell.Tab.1.center" timestamp="1594059648330">
+    <state width="2838" height="592" key="GridCell.Tab.1.bottom/0.0.2880.1620@0.0.2880.1620" timestamp="1594063065023" />
+    <state width="2838" height="592" key="GridCell.Tab.1.center" timestamp="1594063065022">
       <screen x="0" y="0" width="2880" height="1620" />
     </state>
-    <state width="2838" height="592" key="GridCell.Tab.1.center/0.0.2880.1620@0.0.2880.1620" timestamp="1594059648330" />
-    <state width="2838" height="592" key="GridCell.Tab.1.left" timestamp="1594059648330">
+    <state width="2838" height="592" key="GridCell.Tab.1.center/0.0.2880.1620@0.0.2880.1620" timestamp="1594063065022" />
+    <state width="2838" height="592" key="GridCell.Tab.1.left" timestamp="1594063065022">
       <screen x="0" y="0" width="2880" height="1620" />
     </state>
-    <state width="2838" height="592" key="GridCell.Tab.1.left/0.0.2880.1620@0.0.2880.1620" timestamp="1594059648330" />
-    <state width="2838" height="592" key="GridCell.Tab.1.right" timestamp="1594059648330">
+    <state width="2838" height="592" key="GridCell.Tab.1.left/0.0.2880.1620@0.0.2880.1620" timestamp="1594063065022" />
+    <state width="2838" height="592" key="GridCell.Tab.1.right" timestamp="1594063065023">
       <screen x="0" y="0" width="2880" height="1620" />
     </state>
-    <state width="2838" height="592" key="GridCell.Tab.1.right/0.0.2880.1620@0.0.2880.1620" timestamp="1594059648330" />
+    <state width="2838" height="592" key="GridCell.Tab.1.right/0.0.2880.1620@0.0.2880.1620" timestamp="1594063065023" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/srcs/ft_printf.c</url>
-          <line>126</line>
-          <option name="timeStamp" value="12" />
+          <line>144</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
