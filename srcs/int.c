@@ -48,42 +48,23 @@ void printInt2(t_pfstruct *data)
 			}
 			data->pfreturn += writeChars(data->fs.width - \
 			(int)ft_strlen(data->fs.finalstr), '0');
+			ft_putstr(data->fs.finalstr);
 			data->pfreturn += ft_strlen(data->fs.finalstr);
-			data->fs.width -= ft_strlen(data->fs.finalstr);
+		}
+		else
+		{
+			data->pfreturn = writeChars(data->fs.width - \
+			ft_strlen(data->fs.finalstr) - (data->fs.sign ? 1 : 0), ' ');
+			if (data->fs.sign)
+			{
+				data->pfreturn += write(1, &data->fs.sign, 1);
+				data->fs.width -= 1;
+			}
+			ft_putstr(data->fs.finalstr);
+			data->pfreturn += ft_strlen(data->fs.finalstr);
 		}
 	}
 }
-
-//void printInt2(t_pfstruct *data, char *numStr)
-//{
-//	char *buf;
-//
-//	buf = numStr;
-//	if (data->fs.sign)
-//		data->fs.flag.space = 0;
-//	if (data->fs.flag.minus || data->fs.accuracy)
-//		data->fs.flag.zero = 0;
-//	if (data->fs.sign && numStr[0] != '-')
-//	{
-//		numStr = ft_strjoin("+", numStr);
-//		ft_strdel(&buf);
-//	}
-//	if (!data->fs.flag.minus && (int)ft_strlen(numStr) < data->fs.width)
-//	{
-//		if (data->fs.flag.zero)
-//			data->pfreturn += writeChars(data->fs.width - \
-//			(int)ft_strlen(numStr), '0');
-//		else
-//			data->pfreturn += writeChars(data->fs.width - \
-//		(int)ft_strlen(numStr), ' ');
-//	}
-//
-//	ft_putstr(numStr);
-//	data->pfreturn += (int)ft_strlen(numStr);
-//	if (data->fs.flag.minus && (int)ft_strlen(numStr) < data->fs.width)
-//		data->pfreturn += writeChars(data->fs.width - \
-//		(int)ft_strlen(numStr), ' ');
-//}
 
 void printInt(t_pfstruct *data)
 {
@@ -102,7 +83,8 @@ void printInt(t_pfstruct *data)
 	if ((num < 0 || data->fs.flag.plus) && num != 0)
 		data->fs.sign = num > 0 ? '+' : '-';
 	num < 0 ? num *= -1 : num;
-	data->fs.finalstr = ft_itoa(num);
+	data->fs.finalstr = num == 0 && data->fs.prZ && \
+	!data->fs.precision ? ft_strnew(1) : ft_itoa(num);
 	if (data->fs.sign)
 		data->fs.flag.space = 0;
 	if (data->fs.flag.minus || data->fs.precision)

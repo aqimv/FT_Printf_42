@@ -27,15 +27,13 @@ void initSize(t_pfstruct *data)
 void pf_init(t_pfstruct *data)
 {
 	data->str = NULL;
-//	data->fs.flag = NULL;
-//	data->fs.size = NULL;
 	data->fs.str = NULL;
 	data->fs.finalstr = NULL;
 	data->fs.type = 0;
 	data->fs.width = 0;
 	data->fs.precision = 0;
 	data->fs.sign = 0;
-
+	data->fs.prZ = 0;
 
 	data->fs.flag.zero = 0;
 	data->fs.flag.minus = 0;
@@ -69,7 +67,7 @@ void deinit(t_pfstruct *data)
 	data->fs.width = 0;
 	data->fs.precision = 0;
 	data->fs.sign = 0;
-
+	data->fs.prZ = 0;
 
 	data->fs.flag.zero = 0;
 	data->fs.flag.minus = 0;

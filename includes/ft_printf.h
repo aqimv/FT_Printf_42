@@ -44,6 +44,7 @@ typedef struct		s_fstring
 	t_size size;
 	char type;
 	char sign;
+	int prZ;
 }					t_fstring;
 
 typedef struct		s_pfstruct

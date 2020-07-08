@@ -27,7 +27,10 @@ static void switchPrintValue(t_pfstruct *data)
 static int newfs(t_pfstruct *data, int step, int i, int r)
 {
 	if (data->fs.str[i] == '.')
+	{
+		data->fs.prZ = 1;
 		newfs(data, 3, i + 1, 0);
+	}
 	else if (step == 1 && ft_strchr(FLAGSPF, data->fs.str[i]))
 		newfs(data, step, i + 1, setFlag(data, data->fs.str[i]));
 	else if (step == 2 && ft_strchr(WIDTHANDACCURACY, data->fs.str[i]))
