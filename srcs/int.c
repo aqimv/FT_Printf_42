@@ -43,6 +43,6 @@ void printInt(t_pfstruct *data)
 	numStr = ft_itoa(num);
 	if (num < 0 || data->fs.flag.plus)
 		data->fs.sign = 1;
-//	ft_putstr(numStr);
+	ft_putstr(numStr);
 	printInt2(data, numStr);
 }
