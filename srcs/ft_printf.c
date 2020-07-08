@@ -33,7 +33,7 @@ static int newfs(t_pfstruct *data, int step, int i, int r)
 	else if (step == 2 && ft_strchr(WIDTHANDACCURACY, data->fs.str[i]))
 		newfs(data, step, i + 1, setWidth(data, data->fs.str[i]));
 	else if (step == 3 && ft_strchr(WIDTHANDACCURACY, data->fs.str[i]))
-		newfs(data, step, i + 1, setAccuracy(data, data->fs.str[i]));
+		newfs(data, step, i + 1, setPrecision(data, data->fs.str[i]));
 	else if (step == 4 && ft_strchr(SIZEPF, data->fs.str[i]))
 	{
 		setSize(data, &i);

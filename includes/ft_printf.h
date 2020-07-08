@@ -36,14 +36,14 @@ typedef struct		s_flags
 
 typedef struct		s_fstring
 {
-//	char *finalstr;
+	char *finalstr;
 	char *str;
 	t_flags flag;
 	int width;
-	int accuracy;
+	int precision;
 	t_size size;
 	char type;
-	int sign;
+	char sign;
 }					t_fstring;
 
 typedef struct		s_pfstruct
@@ -59,7 +59,7 @@ void	pf_init(t_pfstruct *data);
 int		setFlag(t_pfstruct *data, char ch);
 int		setSize(t_pfstruct *data, int *i);
 int		setWidth(t_pfstruct *data, char ch);
-int		setAccuracy(t_pfstruct *data, char ch);
+int		setPrecision(t_pfstruct *data, char ch);
 void	printInt(t_pfstruct *data);
 void	printChar(t_pfstruct *data);
 int writeChars(int i, char ch);

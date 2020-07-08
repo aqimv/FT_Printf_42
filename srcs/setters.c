@@ -87,13 +87,13 @@ int setWidth(t_pfstruct *data, char ch)
 		data->fs.width = (data->fs.width * 10) + ft_atoi(&ch);
 	return (0);
 }
-int setAccuracy(t_pfstruct *data, char ch)
+int setPrecision(t_pfstruct *data, char ch)
 {
 	if (ch == '*')
-		data->fs.accuracy = va_arg(data->args, int);
-	else if (data->fs.accuracy == 0)
-		data->fs.accuracy += ft_atoi(&ch);
+		data->fs.precision = va_arg(data->args, int);
+	else if (data->fs.precision == 0)
+		data->fs.precision += ft_atoi(&ch);
 	else
-		data->fs.accuracy = (data->fs.accuracy * 10) + ft_atoi(&ch);
+		data->fs.precision = (data->fs.precision * 10) + ft_atoi(&ch);
 	return (0);
 }
