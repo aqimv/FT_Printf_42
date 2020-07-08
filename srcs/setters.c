@@ -25,6 +25,7 @@ int setFlag(t_pfstruct *data, char ch)
 		data->fs.flag.space = 1;
 	else if (ch == '#')
 		data->fs.flag.sharp = 1;
+	return (0);
 }
 
 int setSize(t_pfstruct *data, int *i)

@@ -73,13 +73,9 @@
 static void switchPrintValue(t_pfstruct *data)
 {
 	if (data->fs.type == 'd' || data->fs.type == 'i')
-	{
-
-	}
-	else if (data->fs.type == 's')
-	{
-
-	}
+		printInt(data);
+	else if (data->fs.type == 'c')
+		printChar(data);
 }
 
 static int newfs(t_pfstruct *data, int step, int i, int r)
@@ -151,8 +147,7 @@ static int parsformat(t_pfstruct *data)
 	}
 	printf("| %d - width|", data->fs.width);
 	printf("| %d - accuracy|", data->fs.accuracy);
-	printf("| %s - flag|", data->fs.flag);
-	printf("| %s - size|", data->fs.size);
+
 	printf("| %c - type|", data->fs.type);
 	return data->pfreturn;
 }

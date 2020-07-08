@@ -30,8 +30,11 @@ void pf_init(t_pfstruct *data)
 //	data->fs.flag = NULL;
 //	data->fs.size = NULL;
 	data->fs.str = NULL;
-	data->fs.finalstr = NULL;
+//	data->fs.finalstr = NULL;
 	data->fs.type = 0;
+	data->fs.width = 0;
+	data->fs.accuracy = 0;
+
 
 	data->fs.flag.zero = 0;
 	data->fs.flag.minus = 0;
