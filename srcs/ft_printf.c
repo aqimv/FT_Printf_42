@@ -21,6 +21,7 @@ static void switchPrintValue(t_pfstruct *data)
 		printInt(data);
 	else if (data->fs.type == 'c')
 		printChar(data);
+	deinit(data);
 }
 
 static int newfs(t_pfstruct *data, int step, int i, int r)

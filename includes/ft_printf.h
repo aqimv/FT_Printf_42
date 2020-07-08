@@ -63,5 +63,6 @@ int		setAccuracy(t_pfstruct *data, char ch);
 void	printInt(t_pfstruct *data);
 void	printChar(t_pfstruct *data);
 int writeChars(int i, char ch);
+void deinit(t_pfstruct *data);
 
 #endif
