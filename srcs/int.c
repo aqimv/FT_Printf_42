@@ -15,9 +15,16 @@ void printInt2(t_pfstruct *data, char *numStr)
 		numStr = ft_strjoin("+", numStr);
 		ft_strdel(&buf);
 	}
-	if (data->fs.flag.zero && (int)ft_strlen(numStr) < data->fs.width)
-		data->pfreturn += writeChars(data->fs.width - \
-		(int)ft_strlen(numStr), '0');
+	if (!data->fs.flag.minus && (int)ft_strlen(numStr) < data->fs.width)
+	{
+		if (data->fs.flag.zero)
+			data->pfreturn += writeChars(data->fs.width - \
+			(int)ft_strlen(numStr), '0');
+		else
+			data->pfreturn += writeChars(data->fs.width - \
+		(int)ft_strlen(numStr), ' ');
+	}
+
 	ft_putstr(numStr);
 	data->pfreturn += (int)ft_strlen(numStr);
 	if (data->fs.flag.minus && (int)ft_strlen(numStr) < data->fs.width)
@@ -43,6 +50,6 @@ void printInt(t_pfstruct *data)
 	numStr = ft_itoa(num);
 	if (num < 0 || data->fs.flag.plus)
 		data->fs.sign = 1;
-	ft_putstr(numStr);
+//	ft_putstr(numStr);
 	printInt2(data, numStr);
 }

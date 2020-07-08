@@ -65,9 +65,9 @@ static char *pars_fs(char *flag, t_pfstruct *data)
 		dup[i] = *flag++;
 		data->fs.str = dup;
 	}
-	ft_putchar('(');
-	ft_putstr(data->fs.str);
-	ft_putchar(')');
+//	ft_putchar('(');
+//	ft_putstr(data->fs.str);
+//	ft_putchar(')');
 	return flag;
 }
 
@@ -91,10 +91,10 @@ static int parsformat(t_pfstruct *data)
 					switchPrintValue(data);
 		}
 	}
-	printf("| %d - width|", data->fs.width);
-	printf("| %d - accuracy|", data->fs.accuracy);
-
-	printf("| %c - type|", data->fs.type);
+//	printf("| %d - width|", data->fs.width);
+//	printf("| %d - accuracy|", data->fs.accuracy);
+//
+//	printf("| %c - type|", data->fs.type);
 	return data->pfreturn;
 }
 

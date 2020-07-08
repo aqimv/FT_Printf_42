@@ -14,8 +14,9 @@ int main() {
 //	printf("%d", x);
 //	ft_printf("Hello, World! %-0-+10.0000003lllf, %s, %-f\n", a, b, 10, 3, c);
 //	ft_printf("Hello, World! %-0-+10.003llhf\n", a);
-	ft_printf("Hello, World! %#010.003llhc, %+010.10d\n", 'g', 163);
-	printf("Hello, World! %0-10.10d, %.3d\n", 2, 163);
-
+//	ft_printf("Hello, World! %#010.003llhc, %+010.10d\n", 'g', 163);
+//	printf("Hello, World! %#010.003llhc, %+010.10d\n", 'g', 163);
+//	printf("Hello, World! %0-10.10d, %.3d\n", 2, 163);
+	ft_printf("%7i", 33);
 	return 0;
 }
