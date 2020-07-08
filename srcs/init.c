@@ -34,6 +34,7 @@ void pf_init(t_pfstruct *data)
 	data->fs.type = 0;
 	data->fs.width = 0;
 	data->fs.accuracy = 0;
+	data->fs.sign = 0;
 
 
 	data->fs.flag.zero = 0;

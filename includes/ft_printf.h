@@ -4,6 +4,7 @@
 
 # include <stdarg.h>
 # include "libft.h"
+#include <stdio.h> //убрать
 
 # define SYMBOLSINFS "1234567890.+-#* lhjztL"
 # define TYPESPF "%cdifosuxXpn"
@@ -21,6 +22,7 @@ typedef struct		s_size
 	int z;
 	int t;
 	int bigL;
+
 }					t_size;
 
 typedef struct		s_flags
@@ -41,6 +43,7 @@ typedef struct		s_fstring
 	int accuracy;
 	t_size size;
 	char type;
+	int sign;
 }					t_fstring;
 
 typedef struct		s_pfstruct

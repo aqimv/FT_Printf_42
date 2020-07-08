@@ -15,61 +15,6 @@
 #include "ft_printf.h"
 #include <stdio.h> // убрать нахой
 
-//int newfs2(int i, t_pfstruct *data)
-//{
-//	while(data->fs.str[i])
-//	{
-//		if (!ft_strchr(TYPESPF, data->fs.str[i]))
-//			setSize(data, data->fs.str[i]);
-//		else if (ft_strchr(TYPESPF, data->fs.str[i]))
-//			data->fs.type = data->fs.str[i];
-//		else
-//		{
-//			if (data->fs.str != NULL)
-//				ft_strdel(&data->fs.str);
-//			return (0);
-//		}
-//		i++;
-//	}
-//	if (data->fs.str != NULL)
-//		ft_strdel(&data->fs.str);
-//	return (1);
-//}
-
-//static void newfs(t_pfstruct *data)
-//{
-//	int i;
-//	int dotFlag;
-//
-//	i = 0;
-//	dotFlag = 0;
-//
-//	while(data->fs.str[i] && ft_strchr("0123456789.*# -+", data->fs.str[i]))
-//	{
-//		if (i == 0)
-//			while (ft_strchr(FLAGSPF, data->fs.str[i]))
-//				setFlag(data, data->fs.str[i++]);
-//		if (data->fs.str[i] == '.')
-//			dotFlag++;
-//		else if ((data->fs.str[i] >= '0' && data->fs.str[i] <= '9') \
-//		|| data->fs.str[i] == '*')
-//		{
-//			if (!dotFlag)
-//				setWidth(data, data->fs.str[i]);
-//			else
-//				setAccuracy(data, data->fs.str[i]);
-//		}
-//		i++;
-//	}
-//	newfs2(i, data);
-//
-//	printf("| %d - width|", data->fs.width);
-//	printf("| %d - accuracy|", data->fs.accuracy);
-//	printf("| %s - flag|", data->fs.flag);
-//	printf("| %s - size|", data->fs.size);
-//	printf("| %c - type|", data->fs.type);
-//}
-
 static void switchPrintValue(t_pfstruct *data)
 {
 	if (data->fs.type == 'd' || data->fs.type == 'i')

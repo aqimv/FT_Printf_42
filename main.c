@@ -5,6 +5,7 @@ int main() {
 	char *b = "xxx";
 	double c = 31.92;
 	char a1 = 'g';
+	int a2 = 163;
 
 //	printf("Hello, World! %010.3f, %s, %f\n", a, b, c);
 //	printf("Hello, World! %f, %s, %f\n", a, b, c);
@@ -13,7 +14,8 @@ int main() {
 //	printf("%d", x);
 //	ft_printf("Hello, World! %-0-+10.0000003lllf, %s, %-f\n", a, b, 10, 3, c);
 //	ft_printf("Hello, World! %-0-+10.003llhf\n", a);
-	ft_printf("Hello, World! %+10.003llhc\n", 'g');
+	ft_printf("Hello, World! %010.003llhc, %hhi\n", 'g', 163);
+	printf("Hello, World! %010c, %hhi\n", 'g', 163);
 
 	return 0;
 }
