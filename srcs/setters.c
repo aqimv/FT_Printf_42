@@ -56,27 +56,6 @@ int setSize(t_pfstruct *data, int *i)
 	return (0);
 }
 
-//int setSize(t_pfstruct *data, char ch)
-//{
-//	char *buf;
-//	char *buf2;
-//
-//	buf2 = ft_strnew(1);
-//	buf2[0] = ch;
-//	if (data->fs.size != NULL)
-//	{
-//		buf = ft_strjoin(data->fs.size, buf2);
-////		ft_strdel(&data->fs.size);
-//		data->fs.size = buf;
-//	}
-//	else
-//	{
-//		data->fs.size = ft_strnew(1);
-//		data->fs.size[0] = ch;
-//	}
-//	return (0);
-//}
-
 int setWidth(t_pfstruct *data, char ch)
 {
 	if (ch == '*')

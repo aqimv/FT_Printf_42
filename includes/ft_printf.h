@@ -9,7 +9,7 @@
 # define SYMBOLSINFS "1234567890.+-#* lhjztL"
 # define TYPESPF "%cdifosuxXpn"
 # define FLAGSPF "+#0 -"
-# define WIDTHANDACCURACY "0123456789"
+# define WIDTHANDACCURACY "0123456789*"
 # define SIZEPF "lhjztL"
 
 typedef struct		s_size
