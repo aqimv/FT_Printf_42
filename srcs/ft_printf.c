@@ -23,6 +23,8 @@ static void switchPrintValue(t_pfstruct *data)
 		printChar(data);
 	else if (data->fs.type == 's')
 		printString(data);
+	else if (data->fs.type == '%')
+		printPercent(data);
 	deinit(data);
 }
 

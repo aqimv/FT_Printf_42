@@ -13,6 +13,31 @@
 
 #include "ft_printf.h"
 
+void printPercent(t_pfstruct *data)
+{
+	{
+		int width;
+
+		if (data->fs.width && !data->fs.flag.minus)
+		{
+			width = data->fs.width - 1;
+			if (data->fs.flag.zero)
+				data->pfreturn += writeChars(width, '0'); //нужно??
+			else
+				data->pfreturn += writeChars(width, ' ');
+			data->pfreturn += write(1, "%", 1);
+		}
+		else if (data->fs.width && data->fs.flag.minus)
+		{
+			data->pfreturn += write(1, "%", 1);
+			width = data->fs.width - 1;
+			data->pfreturn += writeChars(width, ' ');
+		}
+		else
+			data->pfreturn += write(1, "%", 1);
+	}
+}
+
 void printChar(t_pfstruct *data)
 {
 	int width;
@@ -23,7 +48,7 @@ void printChar(t_pfstruct *data)
 	{
 		width = data->fs.width - 1;
 		if (data->fs.flag.zero)
-			data->pfreturn += writeChars(width, '0'); //нужно??
+			data->pfreturn += writeChars(width, '0');
 		else
 			data->pfreturn += writeChars(width, ' ');
 		data->pfreturn += write(1, &ch, 1);
@@ -32,10 +57,7 @@ void printChar(t_pfstruct *data)
 	{
 		data->pfreturn += write(1, &ch, 1);
 		width = data->fs.width - 1;
-		if (data->fs.flag.zero)
-			data->pfreturn += writeChars(width, '0');
-		else
-			data->pfreturn += writeChars(width, ' ');
+		data->pfreturn += writeChars(width, ' ');
 	}
 	else
 		data->pfreturn += write(1, &ch, 1);

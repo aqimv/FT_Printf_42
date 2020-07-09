@@ -64,6 +64,7 @@ int					setPrecision(t_pfstruct *data, char ch);
 void				printInt(t_pfstruct *data);
 void				printChar(t_pfstruct *data);
 void				printString(t_pfstruct *data);
+void				printPercent(t_pfstruct *data);
 int					writeChars(int i, char ch);
 int					ft_putstrcount(char const *s);
 void				deinit(t_pfstruct *data);
