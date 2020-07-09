@@ -39,8 +39,7 @@ void printInt3(t_pfstruct *data)
 		}
 		data->pfreturn += writeChars(data->fs.width - \
 			(int)ft_strlen(data->fs.finalstr), '0');
-		ft_putstr(data->fs.finalstr);
-		data->pfreturn += ft_strlen(data->fs.finalstr);
+		data->pfreturn += ft_putstrcount(data->fs.finalstr);
 	}
 	else
 	{
@@ -51,8 +50,7 @@ void printInt3(t_pfstruct *data)
 			data->pfreturn += write(1, &data->fs.sign, 1);
 			data->fs.width -= 1;
 		}
-		ft_putstr(data->fs.finalstr);
-		data->pfreturn += ft_strlen(data->fs.finalstr);
+		data->pfreturn += ft_putstrcount(data->fs.finalstr);
 	}
 }
 
@@ -63,8 +61,7 @@ void printInt2(t_pfstruct *data)
 	{
 		if (data->fs.sign)
 			data->pfreturn += write(1, &data->fs.sign, 1);
-		ft_putstr(data->fs.finalstr);
-		data->pfreturn += ft_strlen(data->fs.finalstr);
+		data->pfreturn += ft_putstrcount(data->fs.finalstr);
 	} else
 	{
 		if (data->fs.flag.minus)
@@ -74,8 +71,7 @@ void printInt2(t_pfstruct *data)
 				data->pfreturn += write(1, &data->fs.sign, 1);
 				data->fs.width -= 1;
 			}
-			ft_putstr(data->fs.finalstr);
-			data->pfreturn += ft_strlen(data->fs.finalstr);
+			data->pfreturn += ft_putstrcount(data->fs.finalstr);
 			data->fs.width -= ft_strlen(data->fs.finalstr);
 			data->pfreturn += writeChars(data->fs.width, ' ');
 		}

@@ -13,6 +13,22 @@
 
 #include "ft_printf.h"
 
+int	ft_putstrcount(char const *s)
+{
+	int count;
+
+	count = 0;
+	if (!s)
+		return (count);
+	while (*s)
+	{
+		ft_putchar(*s);
+		s++;
+		count++;
+	}
+	return (count);
+}
+
 int writeChars(int i, char ch)
 {
 	char count;
