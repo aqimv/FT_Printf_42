@@ -17,6 +17,6 @@ int main() {
 //	ft_printf("Hello, World! %#010.003llhc, %+010.10d\n", 'g', 163);
 //	printf("Hello, World! %#010.003llhc, %+010.10d\n", 'g', 163);
 //	printf("Hello, World! %0-10.10d, %.3d\n", 2, 163);
-	ft_printf("%.*d", -1, 12345);
+	ft_printf("%3.s", NULL);
 	return 0;
 }

@@ -14,56 +14,57 @@
 
 typedef struct		s_size
 {
-	int l;
-	int ll;
-	int h_size;
-	int hh;
-	int j;
-	int z;
-	int t;
-	int bigL;
+	int				l;
+	int				ll;
+	int				h_size;
+	int				hh;
+	int				j;
+	int				z;
+	int				t;
+	int				bigL;
 
 }					t_size;
 
 typedef struct		s_flags
 {
-	int zero;
-	int minus;
-	int plus;
-	int space;
-	int sharp;
+	int				zero;
+	int				minus;
+	int				plus;
+	int				space;
+	int				sharp;
 }					t_flags;
 
 typedef struct		s_fstring
 {
-	char *finalstr;
-	char *str;
-	t_flags flag;
-	int width;
-	int precision;
-	t_size size;
-	char type;
-	char sign;
-	int prZ;
+	char			*finalstr;
+	char			*str;
+	t_flags			flag;
+	int				width;
+	int				precision;
+	t_size			size;
+	char			type;
+	char			sign;
+	int				prZ;
 }					t_fstring;
 
 typedef struct		s_pfstruct
 {
-	va_list args;
-    char *str;
-    int pfreturn;
-    t_fstring fs;
+					va_list args;
+					char *str;
+					int pfreturn;
+					t_fstring fs;
 }					t_pfstruct;
 
-int		ft_printf(const char *format, ...);
-void	pf_init(t_pfstruct *data);
-int		setFlag(t_pfstruct *data, char ch);
-int		setSize(t_pfstruct *data, int *i);
-int		setWidth(t_pfstruct *data, char ch);
-int		setPrecision(t_pfstruct *data, char ch);
-void	printInt(t_pfstruct *data);
-void	printChar(t_pfstruct *data);
-int writeChars(int i, char ch);
-void deinit(t_pfstruct *data);
+int					ft_printf(const char *format, ...);
+void				pf_init(t_pfstruct *data);
+int					setFlag(t_pfstruct *data, char ch);
+int					setSize(t_pfstruct *data, int *i);
+int					setWidth(t_pfstruct *data, char ch);
+int					setPrecision(t_pfstruct *data, char ch);
+void				printInt(t_pfstruct *data);
+void				printChar(t_pfstruct *data);
+void				printString(t_pfstruct *data);
+int					writeChars(int i, char ch);
+void				deinit(t_pfstruct *data);
 
 #endif

@@ -21,6 +21,8 @@ static void switchPrintValue(t_pfstruct *data)
 		printInt(data);
 	else if (data->fs.type == 'c')
 		printChar(data);
+	else if (data->fs.type == 's')
+		printString(data);
 	deinit(data);
 }
 
