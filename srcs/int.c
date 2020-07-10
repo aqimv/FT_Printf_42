@@ -42,6 +42,8 @@ void printInt3(t_pfstruct *data)
 void printInt2(t_pfstruct *data)
 {
 	precisionZero(data);
+	if (data->fs.flag.space)
+		data->pfreturn += write(1, " ", 1);
 	if (!data->fs.width)
 	{
 		if (data->fs.sign)

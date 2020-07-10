@@ -30,6 +30,8 @@ static void switchPrintValue(t_pfstruct *data)
 		printOctal(data);
 	else if (data->fs.type == 'x' || data->fs.type == 'X')
 		printHex(data);
+	else if (data->fs.type == 'p')
+		printPointer(data);
 	deinit(data);
 }
 

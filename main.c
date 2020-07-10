@@ -7,19 +7,19 @@ int main() {
 	char a1 = 'g';
 	int a2 = 163;
 
-//	printf("Hello, World! %010.3f, %s, %f\n", a, b, c);
-//	printf("Hello, World! %f, %s, %f\n", a, b, c);
-
-//	int x = printf("3 - %,d", 13);
-//	printf("%d", x);
-//	ft_printf("Hello, World! %-0-+10.0000003lllf, %s, %-f\n", a, b, 10, 3, c);
-//	ft_printf("Hello, World! %-0-+10.003llhf\n", a);
-//	ft_printf("Hello, World! %#010.003llhc, %+010.10d\n", 'g', 163);
-//	printf("Hello, World! %#010.003llhc, %+010.10d\n", 'g', 163);
-//	printf("Hello, World! %0-10.10d, %.3d\n", 2, 163);
-//	ft_printf("%.*s", -3, 0);
-//	printf("%+04.4i\n", 0);
-	ft_printf("%u", 4294967295u);
+	static char	a01;
+	static unsigned char a02;
+	static short a03;
+	static unsigned short a04;
+	static int a05;
+	static unsigned int a06;
+	static long a07;
+	static unsigned long a08;
+	static long long a09;
+	static unsigned long long a10;
+	static char *a11;
+	static void *a12;
+	ft_printf("%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
 
 	return 0;
 }

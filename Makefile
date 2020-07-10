@@ -11,7 +11,8 @@ SRC = ft_printf.c \
 		octal.c \
 		hex.c \
 		utils.c \
-		unsignedint.c
+		unsignedint.c \
+		pointer.c
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC))
 
