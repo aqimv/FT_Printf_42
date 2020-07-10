@@ -4,7 +4,7 @@
 
 # include <stdarg.h>
 # include "libft.h"
-#include <stdio.h> //убрать
+#include <stdio.h> // убрать нахой
 
 # define SYMBOLSINFS "1234567890.+-#* lhjztL"
 # define TYPESPF "%cdifosuxXpn"
@@ -16,7 +16,7 @@ typedef struct		s_size
 {
 	int				l;
 	int				ll;
-	int				h_size;
+	int				h;
 	int				hh;
 	int				j;
 	int				z;
@@ -65,7 +65,9 @@ void				printInt(t_pfstruct *data);
 void				printChar(t_pfstruct *data);
 void				printString(t_pfstruct *data);
 void				printPercent(t_pfstruct *data);
+void				printUnsignedInt(t_pfstruct *data);
 int					writeChars(int i, char ch);
+char				*ft_itoa_base(uintmax_t num, uintmax_t not);
 int					ft_putstrcount(char const *s);
 void				deinit(t_pfstruct *data);
 

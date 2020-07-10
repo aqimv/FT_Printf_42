@@ -42,3 +42,27 @@ int writeChars(int i, char ch)
 	}
 	return (count);
 }
+
+char						*ft_itoa_base(uintmax_t num, uintmax_t not)
+{
+	unsigned long long int	n;
+	char					*str;
+	int						i;
+
+	i = 1;
+	n = num;
+	while ((n /= not) >= 1)
+		i++;
+	str = (char*)malloc(sizeof(char) * (i + 1));
+	str[i] = '\0';
+	n = num;
+	while (i-- > 0)
+	{
+		if (n % not < 10)
+			str[i] = n % not + '0';
+		else
+			str[i] = n % not + 'a' - 10;
+		n /= not;
+	}
+	return (str);
+}

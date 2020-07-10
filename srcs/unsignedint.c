@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int.c                                              :+:      :+:    :+:   */
+/*   unsignedint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skennith <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/09 14:37:25 by skennith          #+#    #+#             */
-/*   Updated: 2020/07/09 14:37:26 by skennith         ###   ########.fr       */
+/*   Created: 2020/07/10 12:39:01 by skennith          #+#    #+#             */
+/*   Updated: 2020/07/10 12:39:03 by skennith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
 
-void precisionZero(t_pfstruct *data)
+void precisionZeroUInt(t_pfstruct *data)
 {
 	int precision;
 	char *buf;
@@ -28,7 +27,7 @@ void precisionZero(t_pfstruct *data)
 	}
 }
 
-void printInt3(t_pfstruct *data)
+void printUInt3(t_pfstruct *data)
 {
 	if (data->fs.flag.zero)
 	{
@@ -54,9 +53,9 @@ void printInt3(t_pfstruct *data)
 	}
 }
 
-void printInt2(t_pfstruct *data)
+void printUInt2(t_pfstruct *data)
 {
-	precisionZero(data);
+	precisionZeroUInt(data);
 	if (!data->fs.width)
 	{
 		if (data->fs.sign)
@@ -76,27 +75,25 @@ void printInt2(t_pfstruct *data)
 			data->pfreturn += writeChars(data->fs.width, ' ');
 		}
 		else
-			printInt3(data);
+			printUInt3(data);
 	}
 }
 
-void printInt(t_pfstruct *data)
+void	printUnsignedInt(t_pfstruct *data)
 {
 	intmax_t num;
 
 	if (data->fs.size.ll)
-		num = (long long int)va_arg(data->args, long long int);
+		num = (unsigned long long int)va_arg(data->args, unsigned long long int);
 	else if (data->fs.size.l)
-		num = (long int)va_arg(data->args, long int);
+		num = (unsigned long int)va_arg(data->args, unsigned long int);
 	else if (data->fs.size.h)
-		num = (short int)va_arg(data->args, int);
+		num = (unsigned short int)va_arg(data->args, unsigned int);
 	else if (data->fs.size.hh)
-		num = (signed char)va_arg(data->args, int);
+		num = (unsigned char)va_arg(data->args, unsigned int);
 	else
-		num = (int)va_arg(data->args, int);
-	if (num < 0 || data->fs.flag.plus)
-		data->fs.sign = num >= 0 ? '+' : '-';
-	num < 0 ? num *= -1 : num;
+		num = (unsigned int)va_arg(data->args, unsigned int);
+	data->fs.sign = data->fs.flag.plus ? '+' : 0;
 	data->fs.finalstr = num == 0 && data->fs.prZ && \
 	!data->fs.precision ? ft_strnew(1) : ft_itoa_base(num, 10);
 	if (data->fs.sign)
@@ -106,5 +103,5 @@ void printInt(t_pfstruct *data)
 	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= data->fs.width || \
 	(int)ft_strlen(data->fs.finalstr) + (data->fs.sign ? 1 : 0) >= data->fs.width)
 		data->fs.width = 0;
-	printInt2(data);
+	printUInt2(data);
 }

@@ -8,7 +8,8 @@ SRC = ft_printf.c \
 		int.c \
 		char.c \
 		string.c \
-		utils.c
+		utils.c \
+		unsignedint.c
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC))
 

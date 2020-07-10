@@ -13,7 +13,6 @@
 
 
 #include "ft_printf.h"
-#include <stdio.h> // убрать нахой
 
 static void switchPrintValue(t_pfstruct *data)
 {
@@ -25,6 +24,8 @@ static void switchPrintValue(t_pfstruct *data)
 		printString(data);
 	else if (data->fs.type == '%')
 		printPercent(data);
+	else if (data->fs.type == 'u')
+		printUnsignedInt(data);
 	deinit(data);
 }
 
