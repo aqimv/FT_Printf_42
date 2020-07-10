@@ -28,10 +28,25 @@ void precisionString(t_pfstruct *data)
 	}
 }
 
+void printString2(t_pfstruct *data, int check, int len, char ch)
+{
+	if (data->fs.flag.minus || check)
+	{
+		data->pfreturn += ft_putstrcount(data->fs.fnl);
+		data->pfreturn += writeChars(len, ch);
+	}
+	else
+	{
+		data->pfreturn += writeChars(len, ch);
+		data->pfreturn += ft_putstrcount(data->fs.fnl);
+	}
+}
+
 void printString(t_pfstruct *data)
 {
 	char ch;
 	int lenCh;
+	int checkW;
 
 	ch = data->fs.flag.zero ? '0' : ' ';
 	data->fs.fnl = (char *)va_arg(data->args, char *);
@@ -40,20 +55,11 @@ void printString(t_pfstruct *data)
 	else
 		data->fs.fnl = ft_strdup(data->fs.fnl);
 	precisionString(data);
+	checkW = data->fs.width < 0 ? 1 : 0;
+	data->fs.width = data->fs.width < 0 ? data->fs.width * -1 : data->fs.width;
 	lenCh = data->fs.width - (int)ft_strlen(data->fs.fnl);
 	if (lenCh > 0)
-	{
-		if (data->fs.flag.minus)
-		{
-			data->pfreturn += ft_putstrcount(data->fs.fnl);
-			data->pfreturn += writeChars(lenCh, ch);
-		}
-		else
-		{
-			data->pfreturn += writeChars(lenCh, ch);
-			data->pfreturn += ft_putstrcount(data->fs.fnl);
-		}
-	}
+		printString2(data, checkW, lenCh, ch);
 	else
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 }
