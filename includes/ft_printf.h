@@ -39,7 +39,7 @@ typedef struct		s_fstring
 	char			*fnl;
 	char			*str;
 	t_flags			flag;
-	int				width;
+	int				wid;
 	int				precision;
 	t_size			size;
 	char			type;
@@ -73,6 +73,7 @@ int					writeChars(int i, char ch);
 char				*ft_itoa_base(uintmax_t num, uintmax_t not);
 void				precisionZero(t_pfstruct *data);
 int					ft_putstrcount(char const *s);
+int					md(int i);
 
 void				deinit(t_pfstruct *data);
 void				pf_init(t_pfstruct *data);

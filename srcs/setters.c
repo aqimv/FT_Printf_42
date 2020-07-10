@@ -59,11 +59,11 @@ int setSize(t_pfstruct *data, int *i)
 int setWidth(t_pfstruct *data, char ch)
 {
 	if (ch == '*')
-		data->fs.width = va_arg(data->args, int);
-	else if (data->fs.width == 0)
-		data->fs.width += ft_atoi(&ch);
+		data->fs.wid = va_arg(data->args, int);
+	else if (data->fs.wid == 0)
+		data->fs.wid += ft_atoi(&ch);
 	else
-		data->fs.width = (data->fs.width * 10) + ft_atoi(&ch);
+		data->fs.wid = (data->fs.wid * 10) + ft_atoi(&ch);
 	return (0);
 }
 int setPrecision(t_pfstruct *data, char ch)

@@ -30,7 +30,7 @@ void pf_init(t_pfstruct *data)
 	data->fs.str = NULL;
 	data->fs.fnl = NULL;
 	data->fs.type = 0;
-	data->fs.width = 0;
+	data->fs.wid = 0;
 	data->fs.precision = 0;
 	data->fs.sign = 0;
 	data->fs.prZ = 0;
@@ -64,7 +64,7 @@ void deinit(t_pfstruct *data)
 	if (data->fs.fnl != NULL)
 		ft_strdel(&data->fs.fnl);
 	data->fs.type = 0;
-	data->fs.width = 0;
+	data->fs.wid = 0;
 	data->fs.precision = 0;
 	data->fs.sign = 0;
 	data->fs.prZ = 0;

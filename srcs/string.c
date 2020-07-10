@@ -55,9 +55,9 @@ void printString(t_pfstruct *data)
 	else
 		data->fs.fnl = ft_strdup(data->fs.fnl);
 	precisionString(data);
-	checkW = data->fs.width < 0 ? 1 : 0;
-	data->fs.width = data->fs.width < 0 ? data->fs.width * -1 : data->fs.width;
-	lenCh = data->fs.width - (int)ft_strlen(data->fs.fnl);
+	checkW = data->fs.wid < 0 ? 1 : 0;
+	data->fs.wid = data->fs.wid < 0 ? data->fs.wid * -1 : data->fs.wid;
+	lenCh = data->fs.wid - (int)ft_strlen(data->fs.fnl);
 	if (lenCh > 0)
 		printString2(data, checkW, lenCh, ch);
 	else

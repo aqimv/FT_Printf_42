@@ -19,7 +19,7 @@ int main() {
 	static unsigned long long a10;
 	static char *a11;
 	static void *a12;
-	ft_printf("%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+	ft_printf("%0*i", -7, -54);
 
 	return 0;
 }

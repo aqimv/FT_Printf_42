@@ -19,20 +19,20 @@ void printOctal3(t_pfstruct *data)
 		if (data->fs.sign)
 		{
 			data->pfreturn += write(1, &data->fs.sign, 1);
-			data->fs.width -= 1;
+			data->fs.wid -= 1;
 		}
-		data->pfreturn += writeChars(data->fs.width - \
+		data->pfreturn += writeChars(data->fs.wid - \
 			(int)ft_strlen(data->fs.fnl), '0');
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
 	else
 	{
-		data->pfreturn = writeChars(data->fs.width - \
+		data->pfreturn = writeChars(data->fs.wid - \
 			ft_strlen(data->fs.fnl) - (data->fs.sign ? 1 : 0), ' ');
 		if (data->fs.sign)
 		{
 			data->pfreturn += write(1, &data->fs.sign, 1);
-			data->fs.width -= 1;
+			data->fs.wid -= 1;
 		}
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
@@ -41,7 +41,7 @@ void printOctal3(t_pfstruct *data)
 void printOctal2(t_pfstruct *data)
 {
 	precisionZero(data);
-	if (!data->fs.width)
+	if (!data->fs.wid)
 	{
 		if (data->fs.sign)
 			data->pfreturn += write(1, &data->fs.sign, 1);
@@ -53,11 +53,11 @@ void printOctal2(t_pfstruct *data)
 			if (data->fs.sign)
 			{
 				data->pfreturn += write(1, &data->fs.sign, 1);
-				data->fs.width -= 1;
+				data->fs.wid -= 1;
 			}
 			data->pfreturn += ft_putstrcount(data->fs.fnl);
-			data->fs.width -= ft_strlen(data->fs.fnl);
-			data->pfreturn += writeChars(data->fs.width, ' ');
+			data->fs.wid -= ft_strlen(data->fs.fnl);
+			data->pfreturn += writeChars(data->fs.wid, ' ');
 		}
 		else
 			printOctal3(data);
@@ -85,8 +85,8 @@ void printOctal(t_pfstruct *data)
 		data->fs.flag.space = 0;
 	if (data->fs.flag.minus || data->fs.precision)
 		data->fs.flag.zero = 0;
-	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= data->fs.width || \
-	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= data->fs.width)
-		data->fs.width = 0;
+	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= data->fs.wid || \
+	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= data->fs.wid)
+		data->fs.wid = 0;
 	printOctal2(data);
 }

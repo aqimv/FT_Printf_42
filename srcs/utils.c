@@ -13,6 +13,11 @@
 
 #include "ft_printf.h"
 
+int md(int i)
+{
+	return i >= 0 ? i : i * -1;
+}
+
 int	ft_putstrcount(char const *s)
 {
 	int count;
