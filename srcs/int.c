@@ -13,21 +13,6 @@
 
 #include "ft_printf.h"
 
-void precisionZero(t_pfstruct *data)
-{
-	int precision;
-	char *buf;
-
-	precision = data->fs.precision - (int)ft_strlen(data->fs.finalstr);
-	while (precision > 0)
-	{
-		buf = data->fs.finalstr;
-		data->fs.finalstr = ft_strjoin("0", data->fs.finalstr);
-		ft_strdel(&buf);
-		precision--;
-	}
-}
-
 void printInt3(t_pfstruct *data)
 {
 	if (data->fs.flag.zero)
@@ -38,19 +23,19 @@ void printInt3(t_pfstruct *data)
 			data->fs.width -= 1;
 		}
 		data->pfreturn += writeChars(data->fs.width - \
-			(int)ft_strlen(data->fs.finalstr), '0');
-		data->pfreturn += ft_putstrcount(data->fs.finalstr);
+			(int)ft_strlen(data->fs.fnl), '0');
+		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
 	else
 	{
 		data->pfreturn = writeChars(data->fs.width - \
-			ft_strlen(data->fs.finalstr) - (data->fs.sign ? 1 : 0), ' ');
+			ft_strlen(data->fs.fnl) - (data->fs.sign ? 1 : 0), ' ');
 		if (data->fs.sign)
 		{
 			data->pfreturn += write(1, &data->fs.sign, 1);
 			data->fs.width -= 1;
 		}
-		data->pfreturn += ft_putstrcount(data->fs.finalstr);
+		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
 }
 
@@ -61,7 +46,7 @@ void printInt2(t_pfstruct *data)
 	{
 		if (data->fs.sign)
 			data->pfreturn += write(1, &data->fs.sign, 1);
-		data->pfreturn += ft_putstrcount(data->fs.finalstr);
+		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	} else
 	{
 		if (data->fs.flag.minus)
@@ -71,8 +56,8 @@ void printInt2(t_pfstruct *data)
 				data->pfreturn += write(1, &data->fs.sign, 1);
 				data->fs.width -= 1;
 			}
-			data->pfreturn += ft_putstrcount(data->fs.finalstr);
-			data->fs.width -= ft_strlen(data->fs.finalstr);
+			data->pfreturn += ft_putstrcount(data->fs.fnl);
+			data->fs.width -= ft_strlen(data->fs.fnl);
 			data->pfreturn += writeChars(data->fs.width, ' ');
 		}
 		else
@@ -97,14 +82,14 @@ void printInt(t_pfstruct *data)
 	if (num < 0 || data->fs.flag.plus)
 		data->fs.sign = num >= 0 ? '+' : '-';
 	num < 0 ? num *= -1 : num;
-	data->fs.finalstr = num == 0 && data->fs.prZ && \
+	data->fs.fnl = num == 0 && data->fs.prZ && \
 	!data->fs.precision ? ft_strnew(1) : ft_itoa_base(num, 10);
 	if (data->fs.sign)
 		data->fs.flag.space = 0;
 	if (data->fs.flag.minus || data->fs.precision)
 		data->fs.flag.zero = 0;
 	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= data->fs.width || \
-	(int)ft_strlen(data->fs.finalstr) + (data->fs.sign ? 1 : 0) >= data->fs.width)
+	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= data->fs.width)
 		data->fs.width = 0;
 	printInt2(data);
 }

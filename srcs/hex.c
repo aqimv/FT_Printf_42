@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   unsignedint.c                                      :+:      :+:    :+:   */
+/*   hex.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skennith <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/10 12:39:01 by skennith          #+#    #+#             */
-/*   Updated: 2020/07/10 12:39:03 by skennith         ###   ########.fr       */
+/*   Created: 2020/07/10 15:28:36 by skennith          #+#    #+#             */
+/*   Updated: 2020/07/10 15:28:38 by skennith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void printUInt3(t_pfstruct *data)
+
+
+void printHex3(t_pfstruct *data)
 {
 	if (data->fs.flag.zero)
 	{
@@ -38,7 +40,7 @@ void printUInt3(t_pfstruct *data)
 	}
 }
 
-void printUInt2(t_pfstruct *data)
+void printHex2(t_pfstruct *data)
 {
 	precisionZero(data);
 	if (!data->fs.width)
@@ -60,11 +62,11 @@ void printUInt2(t_pfstruct *data)
 			data->pfreturn += writeChars(data->fs.width, ' ');
 		}
 		else
-			printUInt3(data);
+			printHex3(data);
 	}
 }
 
-void	printUnsignedInt(t_pfstruct *data)
+void printHex(t_pfstruct *data)
 {
 	intmax_t num;
 
@@ -80,7 +82,7 @@ void	printUnsignedInt(t_pfstruct *data)
 		num = (unsigned int)va_arg(data->args, unsigned int);
 	data->fs.sign = data->fs.flag.plus ? '+' : 0;
 	data->fs.fnl = num == 0 && data->fs.prZ && \
-	!data->fs.precision ? ft_strnew(1) : ft_itoa_base(num, 10);
+	!data->fs.precision ? ft_strnew(1) : ft_itoa_base(num, 8);
 	if (data->fs.sign)
 		data->fs.flag.space = 0;
 	if (data->fs.flag.minus || data->fs.precision)
@@ -88,5 +90,6 @@ void	printUnsignedInt(t_pfstruct *data)
 	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= data->fs.width || \
 	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= data->fs.width)
 		data->fs.width = 0;
-	printUInt2(data);
+	printHex2(data);
 }
+

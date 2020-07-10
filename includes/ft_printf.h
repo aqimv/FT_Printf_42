@@ -36,7 +36,7 @@ typedef struct		s_flags
 
 typedef struct		s_fstring
 {
-	char			*finalstr;
+	char			*fnl;
 	char			*str;
 	t_flags			flag;
 	int				width;
@@ -56,7 +56,6 @@ typedef struct		s_pfstruct
 }					t_pfstruct;
 
 int					ft_printf(const char *format, ...);
-void				pf_init(t_pfstruct *data);
 int					setFlag(t_pfstruct *data, char ch);
 int					setSize(t_pfstruct *data, int *i);
 int					setWidth(t_pfstruct *data, char ch);
@@ -66,9 +65,14 @@ void				printChar(t_pfstruct *data);
 void				printString(t_pfstruct *data);
 void				printPercent(t_pfstruct *data);
 void				printUnsignedInt(t_pfstruct *data);
+void				printOctal(t_pfstruct *data);
+
 int					writeChars(int i, char ch);
 char				*ft_itoa_base(uintmax_t num, uintmax_t not);
+void				precisionZero(t_pfstruct *data);
 int					ft_putstrcount(char const *s);
+
 void				deinit(t_pfstruct *data);
+void				pf_init(t_pfstruct *data);
 
 #endif

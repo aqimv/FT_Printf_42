@@ -26,6 +26,8 @@ static void switchPrintValue(t_pfstruct *data)
 		printPercent(data);
 	else if (data->fs.type == 'u')
 		printUnsignedInt(data);
+	else if (data->fs.type == 'o')
+		printOctal(data);
 	deinit(data);
 }
 

@@ -28,7 +28,7 @@ void pf_init(t_pfstruct *data)
 {
 	data->str = NULL;
 	data->fs.str = NULL;
-	data->fs.finalstr = NULL;
+	data->fs.fnl = NULL;
 	data->fs.type = 0;
 	data->fs.width = 0;
 	data->fs.precision = 0;
@@ -61,8 +61,8 @@ void deinit(t_pfstruct *data)
 	if (data->fs.str != NULL)
 		ft_strdel(&data->fs.str);
 	data->fs.str = NULL;
-	if (data->fs.finalstr != NULL)
-		ft_strdel(&data->fs.finalstr);
+	if (data->fs.fnl != NULL)
+		ft_strdel(&data->fs.fnl);
 	data->fs.type = 0;
 	data->fs.width = 0;
 	data->fs.precision = 0;

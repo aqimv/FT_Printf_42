@@ -53,7 +53,7 @@ char						*ft_itoa_base(uintmax_t num, uintmax_t not)
 	n = num;
 	while ((n /= not) >= 1)
 		i++;
-	str = (char*)malloc(sizeof(char) * (i + 1));
+	str = (char *)malloc(sizeof(char) * (i + 1));
 	str[i] = '\0';
 	n = num;
 	while (i-- > 0)
@@ -65,4 +65,19 @@ char						*ft_itoa_base(uintmax_t num, uintmax_t not)
 		n /= not;
 	}
 	return (str);
+}
+
+void precisionZero(t_pfstruct *data)
+{
+	int precision;
+	char *buf;
+
+	precision = data->fs.precision - (int)ft_strlen(data->fs.fnl);
+	while (precision > 0)
+	{
+		buf = data->fs.fnl;
+		data->fs.fnl = ft_strjoin("0", data->fs.fnl);
+		ft_strdel(&buf);
+		precision--;
+	}
 }
