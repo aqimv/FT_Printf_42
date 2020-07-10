@@ -12,7 +12,18 @@
 
 #include "ft_printf.h"
 
+void big_x(t_pfstruct *data)
+{
+	int i;
 
+	i = 0;
+	while (data->fs.fnl[i])
+	{
+		if (data->fs.fnl[i] >= 'a' && data->fs.fnl[i] <= 'z')
+			data->fs.fnl[i] = data->fs.fnl[i] - 32;
+		i++;
+	}
+}
 
 void printHex3(t_pfstruct *data)
 {
@@ -82,7 +93,9 @@ void printHex(t_pfstruct *data)
 		num = (unsigned int)va_arg(data->args, unsigned int);
 	data->fs.sign = data->fs.flag.plus ? '+' : 0;
 	data->fs.fnl = num == 0 && data->fs.prZ && \
-	!data->fs.precision ? ft_strnew(1) : ft_itoa_base(num, 8);
+	!data->fs.precision ? ft_strnew(1) : ft_itoa_base(num, 16);
+	if (data->fs.type == 'X')
+		big_x(data);
 	if (data->fs.sign)
 		data->fs.flag.space = 0;
 	if (data->fs.flag.minus || data->fs.precision)

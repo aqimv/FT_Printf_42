@@ -9,6 +9,7 @@ SRC = ft_printf.c \
 		char.c \
 		string.c \
 		octal.c \
+		hex.c \
 		utils.c \
 		unsignedint.c
 

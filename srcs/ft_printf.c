@@ -28,6 +28,8 @@ static void switchPrintValue(t_pfstruct *data)
 		printUnsignedInt(data);
 	else if (data->fs.type == 'o')
 		printOctal(data);
+	else if (data->fs.type == 'x' || data->fs.type == 'X')
+		printHex(data);
 	deinit(data);
 }
 
