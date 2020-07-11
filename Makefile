@@ -10,6 +10,7 @@ SRC = ft_printf.c \
 		string.c \
 		octal.c \
 		hex.c \
+		float.c \
 		utils.c \
 		unsignedint.c \
 		pointer.c

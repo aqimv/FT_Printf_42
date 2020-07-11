@@ -68,6 +68,7 @@ void				printUnsignedInt(t_pfstruct *data);
 void				printOctal(t_pfstruct *data);
 void				printHex(t_pfstruct *data);
 void				printPointer(t_pfstruct *data);
+void				printFloat(t_pfstruct *data);
 
 int					writeChars(int i, char ch);
 char				*ft_itoa_base(uintmax_t num, uintmax_t not);

@@ -21,5 +21,7 @@ int main() {
 	static void *a12;
 	ft_printf("%0*i", -7, -54);
 
+
+
 	return 0;
 }

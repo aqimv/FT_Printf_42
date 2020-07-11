@@ -32,6 +32,8 @@ static void switchPrintValue(t_pfstruct *data)
 		printHex(data);
 	else if (data->fs.type == 'p')
 		printPointer(data);
+	else if (data->fs.type == 'f')
+		printFloat(data);
 	deinit(data);
 }
 
