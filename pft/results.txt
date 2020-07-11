@@ -1,0 +1,3570 @@
+Test 1535 (bonus_f_basic_1) : FAILED.
+    First line of code: {return test("this %f float", 1.5);}
+      expected output : "this 1.500000 float"
+      your output     : "this  float"
+      expected (nonprintable as hex) : "this 1.500000 float"
+      actual   (nonprintable as hex) : "this  float"
+
+Test 1536 (bonus_f_basic_fltonly) : FAILED.
+    First line of code: {return test("%f", 7.5);}
+      expected output : "7.500000"
+      your output     : ""
+      expected (nonprintable as hex) : "7.500000"
+      actual   (nonprintable as hex) : ""
+
+Test 1537 (bonus_f_basic_zero) : FAILED.
+    First line of code: {return test("%f", 0.0);}
+      expected output : "0.000000"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1538 (bonus_f_basic_nzero) : FAILED.
+    First line of code: {return test("%f", -0.0);}
+      expected output : "-0.000000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1539 (bonus_f_basic_whole) : FAILED.
+    First line of code: {return test("%f", 1.0);}
+      expected output : "1.000000"
+      your output     : ""
+      expected (nonprintable as hex) : "1.000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1540 (bonus_f_basic_negative) : FAILED.
+    First line of code: {return test("%f", -3.85);}
+      expected output : "-3.850000"
+      your output     : ""
+      expected (nonprintable as hex) : "-3.850000"
+      actual   (nonprintable as hex) : ""
+
+Test 1541 (bonus_f_basic_positive_3_3) : FAILED.
+    First line of code: {return test("%f", 573.924);}
+      expected output : "573.924000"
+      your output     : ""
+      expected (nonprintable as hex) : "573.924000"
+      actual   (nonprintable as hex) : ""
+
+Test 1542 (bonus_f_basic_negative_3_3) : FAILED.
+    First line of code: {return test("%f", -958.125);}
+      expected output : "-958.125000"
+      your output     : ""
+      expected (nonprintable as hex) : "-958.125000"
+      actual   (nonprintable as hex) : ""
+
+Test 1543 (bonus_f_basic_positive_smallfpart) : FAILED.
+    First line of code: {return test("%f", 23.00041);}
+      expected output : "23.000410"
+      your output     : ""
+      expected (nonprintable as hex) : "23.000410"
+      actual   (nonprintable as hex) : ""
+
+Test 1544 (bonus_f_basic_positive_allsmall) : FAILED.
+    First line of code: {return test("%f", 0.000039);}
+      expected output : "0.000039"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000039"
+      actual   (nonprintable as hex) : ""
+
+Test 1545 (bonus_f_basic_negative_smallfpart) : FAILED.
+    First line of code: {return test("%f", -7.00036);}
+      expected output : "-7.000360"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.000360"
+      actual   (nonprintable as hex) : ""
+
+Test 1546 (bonus_f_basic_negative_allsmall) : FAILED.
+    First line of code: {return test("%f", -0.00032);}
+      expected output : "-0.000320"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000320"
+      actual   (nonprintable as hex) : ""
+
+Test 1547 (bonus_f_basic_limits_allsmall_pos) : FAILED.
+    First line of code: {return test("%f", 0.000001);}
+      expected output : "0.000001"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1548 (bonus_f_basic_limits_allsmall_neg) : FAILED.
+    First line of code: {return test("%f", -0.000001);}
+      expected output : "-0.000001"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1549 (bonus_f_basic_limits_smallfpart_pos) : FAILED.
+    First line of code: {return test("%f", 9873.000001);}
+      expected output : "9873.000001"
+      your output     : ""
+      expected (nonprintable as hex) : "9873.000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1550 (bonus_f_basic_limits_smallfpart_neg) : FAILED.
+    First line of code: {return test("%f", -875.000001);}
+      expected output : "-875.000001"
+      your output     : ""
+      expected (nonprintable as hex) : "-875.000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1551 (bonus_f_basic_limits_allbig_pos) : FAILED.
+    First line of code: {return test("%f", 999.999999);}
+      expected output : "999.999999"
+      your output     : ""
+      expected (nonprintable as hex) : "999.999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1552 (bonus_f_basic_limits_allbig_neg) : FAILED.
+    First line of code: {return test("%f", -99.999999);}
+      expected output : "-99.999999"
+      your output     : ""
+      expected (nonprintable as hex) : "-99.999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1553 (bonus_f_basic_limits_bigfpart_pos) : FAILED.
+    First line of code: {return test("%f", 0.999999);}
+      expected output : "0.999999"
+      your output     : ""
+      expected (nonprintable as hex) : "0.999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1554 (bonus_f_basic_limits_bigfpart_neg) : FAILED.
+    First line of code: {return test("%f", -0.999999);}
+      expected output : "-0.999999"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1555 (bonus_f_rndd_pos) : FAILED.
+    First line of code: {return test("%f", 23.375094499);}
+      expected output : "23.375094"
+      your output     : ""
+      expected (nonprintable as hex) : "23.375094"
+      actual   (nonprintable as hex) : ""
+
+Test 1556 (bonus_f_rndd_neg) : FAILED.
+    First line of code: {return test("%f", -985.765426499);}
+      expected output : "-985.765426"
+      your output     : ""
+      expected (nonprintable as hex) : "-985.765426"
+      actual   (nonprintable as hex) : ""
+
+Test 1557 (bonus_f_rndu_pos) : FAILED.
+    First line of code: {return test("%f", 0.0894255);}
+      expected output : "0.089426"
+      your output     : ""
+      expected (nonprintable as hex) : "0.089426"
+      actual   (nonprintable as hex) : ""
+
+Test 1558 (bonus_f_rndu_neg) : FAILED.
+    First line of code: {return test("%f", -56.2012685);}
+      expected output : "-56.201268"
+      your output     : ""
+      expected (nonprintable as hex) : "-56.201268"
+      actual   (nonprintable as hex) : ""
+
+Test 1559 (bonus_f_rndu_multidigit_pos) : FAILED.
+    First line of code: {return test("%f", 43.4399999);}
+      expected output : "43.440000"
+      your output     : ""
+      expected (nonprintable as hex) : "43.440000"
+      actual   (nonprintable as hex) : ""
+
+Test 1560 (bonus_f_rndu_multidigit_neg) : FAILED.
+    First line of code: {return test("%f", -5.0299999);}
+      expected output : "-5.030000"
+      your output     : ""
+      expected (nonprintable as hex) : "-5.030000"
+      actual   (nonprintable as hex) : ""
+
+Test 1561 (bonus_f_rndd_multidigit_pos) : FAILED.
+    First line of code: {return test("%f", 43.43999949);}
+      expected output : "43.439999"
+      your output     : ""
+      expected (nonprintable as hex) : "43.439999"
+      actual   (nonprintable as hex) : ""
+
+Test 1562 (bonus_f_rndd_multidigit_neg) : FAILED.
+    First line of code: {return test("%f", -5.02999949);}
+      expected output : "-5.029999"
+      your output     : ""
+      expected (nonprintable as hex) : "-5.029999"
+      actual   (nonprintable as hex) : ""
+
+Test 1563 (bonus_f_rndd_wholnobump_pos) : FAILED.
+    First line of code: {return test("%f", 1.99999949);}
+      expected output : "1.999999"
+      your output     : ""
+      expected (nonprintable as hex) : "1.999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1564 (bonus_f_rndd_wholnobump_neg) : FAILED.
+    First line of code: {return test("%f", -0.99999949);}
+      expected output : "-0.999999"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1565 (bonus_f_rndu_bumpwhole_pos) : FAILED.
+    First line of code: {return test("%f", 3.9999999);}
+      expected output : "4.000000"
+      your output     : ""
+      expected (nonprintable as hex) : "4.000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1566 (bonus_f_rndu_bumpwhole_neg) : FAILED.
+    First line of code: {return test("%f", -5.9999999);}
+      expected output : "-6.000000"
+      your output     : ""
+      expected (nonprintable as hex) : "-6.000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1567 (bonus_f_prec0_zero) : FAILED.
+    First line of code: {return test("%.0f", 0.0);}
+      expected output : "0"
+      your output     : ""
+      expected (nonprintable as hex) : "0"
+      actual   (nonprintable as hex) : ""
+
+Test 1568 (bonus_f_prec0_nzero) : FAILED.
+    First line of code: {return test("%.0f", -0.0);}
+      expected output : "-0"
+      your output     : ""
+      expected (nonprintable as hex) : "-0"
+      actual   (nonprintable as hex) : ""
+
+Test 1569 (bonus_f_prec0_1) : FAILED.
+    First line of code: {return test("this %.0f float", 1.6);}
+      expected output : "this 2 float"
+      your output     : "this  float"
+      expected (nonprintable as hex) : "this 2 float"
+      actual   (nonprintable as hex) : "this  float"
+
+Test 1570 (bonus_f_prec0_fltonly) : FAILED.
+    First line of code: {return test("%.0f", 7.4);}
+      expected output : "7"
+      your output     : ""
+      expected (nonprintable as hex) : "7"
+      actual   (nonprintable as hex) : ""
+
+Test 1571 (bonus_f_prec0_whole) : FAILED.
+    First line of code: {return test("%.0f", 1.0);}
+      expected output : "1"
+      your output     : ""
+      expected (nonprintable as hex) : "1"
+      actual   (nonprintable as hex) : ""
+
+Test 1572 (bonus_f_prec0_negative) : FAILED.
+    First line of code: {return test("%.0f", -3.85);}
+      expected output : "-4"
+      your output     : ""
+      expected (nonprintable as hex) : "-4"
+      actual   (nonprintable as hex) : ""
+
+Test 1573 (bonus_f_prec0_positive_3_3) : FAILED.
+    First line of code: {return test("%.0f", 573.924);}
+      expected output : "574"
+      your output     : ""
+      expected (nonprintable as hex) : "574"
+      actual   (nonprintable as hex) : ""
+
+Test 1574 (bonus_f_prec0_negative_3_3) : FAILED.
+    First line of code: {return test("%.0f", -958.125);}
+      expected output : "-958"
+      your output     : ""
+      expected (nonprintable as hex) : "-958"
+      actual   (nonprintable as hex) : ""
+
+Test 1575 (bonus_f_prec0_positive_smallfpart) : FAILED.
+    First line of code: {return test("%.0f", 23.00041);}
+      expected output : "23"
+      your output     : ""
+      expected (nonprintable as hex) : "23"
+      actual   (nonprintable as hex) : ""
+
+Test 1576 (bonus_f_prec0_positive_allsmall) : FAILED.
+    First line of code: {return test("%.0f", 0.000039);}
+      expected output : "0"
+      your output     : ""
+      expected (nonprintable as hex) : "0"
+      actual   (nonprintable as hex) : ""
+
+Test 1577 (bonus_f_prec0_negative_smallfpart) : FAILED.
+    First line of code: {return test("%.0f", -7.00036);}
+      expected output : "-7"
+      your output     : ""
+      expected (nonprintable as hex) : "-7"
+      actual   (nonprintable as hex) : ""
+
+Test 1578 (bonus_f_prec0_negative_allsmall) : FAILED.
+    First line of code: {return test("%.0f", -0.00032);}
+      expected output : "-0"
+      your output     : ""
+      expected (nonprintable as hex) : "-0"
+      actual   (nonprintable as hex) : ""
+
+Test 1579 (bonus_f_prec1_zero) : FAILED.
+    First line of code: {return test("%.1f", 0.0);}
+      expected output : "0.0"
+      your output     : ""
+      expected (nonprintable as hex) : "0.0"
+      actual   (nonprintable as hex) : ""
+
+Test 1580 (bonus_f_prec1_nzero) : FAILED.
+    First line of code: {return test("%.1f", -0.0);}
+      expected output : "-0.0"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.0"
+      actual   (nonprintable as hex) : ""
+
+Test 1581 (bonus_f_prec1_1) : FAILED.
+    First line of code: {return test("this %.1f float", 1.5);}
+      expected output : "this 1.5 float"
+      your output     : "this  float"
+      expected (nonprintable as hex) : "this 1.5 float"
+      actual   (nonprintable as hex) : "this  float"
+
+Test 1582 (bonus_f_prec1_fltonly) : FAILED.
+    First line of code: {return test("%.1f", 7.5);}
+      expected output : "7.5"
+      your output     : ""
+      expected (nonprintable as hex) : "7.5"
+      actual   (nonprintable as hex) : ""
+
+Test 1583 (bonus_f_prec1_whole) : FAILED.
+    First line of code: {return test("%.1f", 1.0);}
+      expected output : "1.0"
+      your output     : ""
+      expected (nonprintable as hex) : "1.0"
+      actual   (nonprintable as hex) : ""
+
+Test 1584 (bonus_f_prec1_negative) : FAILED.
+    First line of code: {return test("%.1f", -3.85);}
+      expected output : "-3.9"
+      your output     : ""
+      expected (nonprintable as hex) : "-3.9"
+      actual   (nonprintable as hex) : ""
+
+Test 1585 (bonus_f_prec1_positive_3_3) : FAILED.
+    First line of code: {return test("%.1f", 573.924);}
+      expected output : "573.9"
+      your output     : ""
+      expected (nonprintable as hex) : "573.9"
+      actual   (nonprintable as hex) : ""
+
+Test 1586 (bonus_f_prec1_negative_3_3) : FAILED.
+    First line of code: {return test("%.1f", -958.125);}
+      expected output : "-958.1"
+      your output     : ""
+      expected (nonprintable as hex) : "-958.1"
+      actual   (nonprintable as hex) : ""
+
+Test 1587 (bonus_f_prec1_positive_smallfpart) : FAILED.
+    First line of code: {return test("%.1f", 23.00041);}
+      expected output : "23.0"
+      your output     : ""
+      expected (nonprintable as hex) : "23.0"
+      actual   (nonprintable as hex) : ""
+
+Test 1588 (bonus_f_prec1_positive_allsmall) : FAILED.
+    First line of code: {return test("%.1f", 0.000039);}
+      expected output : "0.0"
+      your output     : ""
+      expected (nonprintable as hex) : "0.0"
+      actual   (nonprintable as hex) : ""
+
+Test 1589 (bonus_f_prec1_negative_smallfpart) : FAILED.
+    First line of code: {return test("%.1f", -7.00036);}
+      expected output : "-7.0"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.0"
+      actual   (nonprintable as hex) : ""
+
+Test 1590 (bonus_f_prec1_negative_allsmall) : FAILED.
+    First line of code: {return test("%.1f", -0.00032);}
+      expected output : "-0.0"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.0"
+      actual   (nonprintable as hex) : ""
+
+Test 1591 (bonus_f_prec3_zero) : FAILED.
+    First line of code: {return test("%.3f", 0.0);}
+      expected output : "0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1592 (bonus_f_prec3_nzero) : FAILED.
+    First line of code: {return test("%.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1593 (bonus_f_prec3_1) : FAILED.
+    First line of code: {return test("this %.3f float", 1.5);}
+      expected output : "this 1.500 float"
+      your output     : "this  float"
+      expected (nonprintable as hex) : "this 1.500 float"
+      actual   (nonprintable as hex) : "this  float"
+
+Test 1594 (bonus_f_prec3_fltonly) : FAILED.
+    First line of code: {return test("%.3f", 7.5);}
+      expected output : "7.500"
+      your output     : ""
+      expected (nonprintable as hex) : "7.500"
+      actual   (nonprintable as hex) : ""
+
+Test 1595 (bonus_f_prec3_whole) : FAILED.
+    First line of code: {return test("%.3f", 1.0);}
+      expected output : "1.000"
+      your output     : ""
+      expected (nonprintable as hex) : "1.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1596 (bonus_f_prec3_negative) : FAILED.
+    First line of code: {return test("%.3f", -3.85);}
+      expected output : "-3.850"
+      your output     : ""
+      expected (nonprintable as hex) : "-3.850"
+      actual   (nonprintable as hex) : ""
+
+Test 1597 (bonus_f_prec3_positive_3_3) : FAILED.
+    First line of code: {return test("%.3f", 573.924);}
+      expected output : "573.924"
+      your output     : ""
+      expected (nonprintable as hex) : "573.924"
+      actual   (nonprintable as hex) : ""
+
+Test 1598 (bonus_f_prec3_negative_3_3) : FAILED.
+    First line of code: {return test("%.3f", -958.125);}
+      expected output : "-958.125"
+      your output     : ""
+      expected (nonprintable as hex) : "-958.125"
+      actual   (nonprintable as hex) : ""
+
+Test 1599 (bonus_f_prec3_positive_smallfpart) : FAILED.
+    First line of code: {return test("%.3f", 23.00041);}
+      expected output : "23.000"
+      your output     : ""
+      expected (nonprintable as hex) : "23.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1600 (bonus_f_prec3_positive_allsmall) : FAILED.
+    First line of code: {return test("%.3f", 0.000039);}
+      expected output : "0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1601 (bonus_f_prec3_negative_smallfpart) : FAILED.
+    First line of code: {return test("%.3f", -7.00036);}
+      expected output : "-7.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1602 (bonus_f_prec3_negative_allsmall) : FAILED.
+    First line of code: {return test("%.3f", -0.00032);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1603 (bonus_f_prec7_zero) : FAILED.
+    First line of code: {return test("%.7f", 0.0);}
+      expected output : "0.0000000"
+      your output     : ""
+      expected (nonprintable as hex) : "0.0000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1604 (bonus_f_prec7_nzero) : FAILED.
+    First line of code: {return test("%.7f", -0.0);}
+      expected output : "-0.0000000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.0000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1605 (bonus_f_prec7_1) : FAILED.
+    First line of code: {return test("this %.7f float", 1.5);}
+      expected output : "this 1.5000000 float"
+      your output     : "this  float"
+      expected (nonprintable as hex) : "this 1.5000000 float"
+      actual   (nonprintable as hex) : "this  float"
+
+Test 1606 (bonus_f_prec7_fltonly) : FAILED.
+    First line of code: {return test("%.7f", 7.5);}
+      expected output : "7.5000000"
+      your output     : ""
+      expected (nonprintable as hex) : "7.5000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1607 (bonus_f_prec7_whole) : FAILED.
+    First line of code: {return test("%.7f", 1.0);}
+      expected output : "1.0000000"
+      your output     : ""
+      expected (nonprintable as hex) : "1.0000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1608 (bonus_f_prec7_negative) : FAILED.
+    First line of code: {return test("%.7f", -3.85);}
+      expected output : "-3.8500000"
+      your output     : ""
+      expected (nonprintable as hex) : "-3.8500000"
+      actual   (nonprintable as hex) : ""
+
+Test 1609 (bonus_f_prec7_positive_3_3) : FAILED.
+    First line of code: {return test("%.7f", 573.924);}
+      expected output : "573.9240000"
+      your output     : ""
+      expected (nonprintable as hex) : "573.9240000"
+      actual   (nonprintable as hex) : ""
+
+Test 1610 (bonus_f_prec7_negative_3_3) : FAILED.
+    First line of code: {return test("%.7f", -958.125);}
+      expected output : "-958.1250000"
+      your output     : ""
+      expected (nonprintable as hex) : "-958.1250000"
+      actual   (nonprintable as hex) : ""
+
+Test 1611 (bonus_f_prec7_positive_smallfpart) : FAILED.
+    First line of code: {return test("%.7f", 23.00041);}
+      expected output : "23.0004100"
+      your output     : ""
+      expected (nonprintable as hex) : "23.0004100"
+      actual   (nonprintable as hex) : ""
+
+Test 1612 (bonus_f_prec7_positive_allsmall) : FAILED.
+    First line of code: {return test("%.7f", 0.0000039);}
+      expected output : "0.0000039"
+      your output     : ""
+      expected (nonprintable as hex) : "0.0000039"
+      actual   (nonprintable as hex) : ""
+
+Test 1613 (bonus_f_prec7_negative_smallfpart) : FAILED.
+    First line of code: {return test("%.7f", -7.00036);}
+      expected output : "-7.0003600"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.0003600"
+      actual   (nonprintable as hex) : ""
+
+Test 1614 (bonus_f_prec7_negative_allsmall) : FAILED.
+    First line of code: {return test("%.7f", -0.000032);}
+      expected output : "-0.0000320"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.0000320"
+      actual   (nonprintable as hex) : ""
+
+Test 1615 (bonus_f_prec7_limits_allsmall_pos) : FAILED.
+    First line of code: {return test("%.7f", 0.0000001);}
+      expected output : "0.0000001"
+      your output     : ""
+      expected (nonprintable as hex) : "0.0000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1616 (bonus_f_prec7_limits_allsmall_neg) : FAILED.
+    First line of code: {return test("%.7f", -0.0000001);}
+      expected output : "-0.0000001"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.0000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1617 (bonus_f_prec7_limits_smallfpart_pos) : FAILED.
+    First line of code: {return test("%.7f", 9873.000001);}
+      expected output : "9873.0000010"
+      your output     : ""
+      expected (nonprintable as hex) : "9873.0000010"
+      actual   (nonprintable as hex) : ""
+
+Test 1618 (bonus_f_prec7_limits_smallfpart_neg) : FAILED.
+    First line of code: {return test("%.7f", -875.000001);}
+      expected output : "-875.0000010"
+      your output     : ""
+      expected (nonprintable as hex) : "-875.0000010"
+      actual   (nonprintable as hex) : ""
+
+Test 1619 (bonus_f_prec7_limits_allbig_pos) : FAILED.
+    First line of code: {return test("%.7f", 999.9999999);}
+      expected output : "999.9999999"
+      your output     : ""
+      expected (nonprintable as hex) : "999.9999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1620 (bonus_f_prec7_limits_allbig_neg) : FAILED.
+    First line of code: {return test("%.7f", -99.9999999);}
+      expected output : "-99.9999999"
+      your output     : ""
+      expected (nonprintable as hex) : "-99.9999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1621 (bonus_f_prec7_limits_bigfpart_pos) : FAILED.
+    First line of code: {return test("%.7f", 0.999999);}
+      expected output : "0.9999990"
+      your output     : ""
+      expected (nonprintable as hex) : "0.9999990"
+      actual   (nonprintable as hex) : ""
+
+Test 1622 (bonus_f_prec7_limits_bigfpart_neg) : FAILED.
+    First line of code: {return test("%.7f", -0.999999);}
+      expected output : "-0.9999990"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.9999990"
+      actual   (nonprintable as hex) : ""
+
+Test 1623 (bonus_f_rnd_prec7_rndd_pos) : FAILED.
+    First line of code: {return test("%.7f", 23.375094499);}
+      expected output : "23.3750945"
+      your output     : ""
+      expected (nonprintable as hex) : "23.3750945"
+      actual   (nonprintable as hex) : ""
+
+Test 1624 (bonus_f_rnd_prec7_rndd_neg) : FAILED.
+    First line of code: {return test("%.7f", -985.765426499);}
+      expected output : "-985.7654265"
+      your output     : ""
+      expected (nonprintable as hex) : "-985.7654265"
+      actual   (nonprintable as hex) : ""
+
+Test 1625 (bonus_f_rnd_prec7_rndu_pos) : FAILED.
+    First line of code: {return test("%.7f", 0.0894255);}
+      expected output : "0.0894255"
+      your output     : ""
+      expected (nonprintable as hex) : "0.0894255"
+      actual   (nonprintable as hex) : ""
+
+Test 1626 (bonus_f_rnd_prec7_rndu_neg) : FAILED.
+    First line of code: {return test("%.7f", -56.2012685);}
+      expected output : "-56.2012685"
+      your output     : ""
+      expected (nonprintable as hex) : "-56.2012685"
+      actual   (nonprintable as hex) : ""
+
+Test 1627 (bonus_f_rnd_prec7_rndu_multidigit_pos) : FAILED.
+    First line of code: {return test("%.7f", 43.4399999);}
+      expected output : "43.4399999"
+      your output     : ""
+      expected (nonprintable as hex) : "43.4399999"
+      actual   (nonprintable as hex) : ""
+
+Test 1628 (bonus_f_rnd_prec7_rndu_multidigit_neg) : FAILED.
+    First line of code: {return test("%.7f", -5.0299999);}
+      expected output : "-5.0299999"
+      your output     : ""
+      expected (nonprintable as hex) : "-5.0299999"
+      actual   (nonprintable as hex) : ""
+
+Test 1629 (bonus_f_rnd_prec7_rndd_multidigit_pos) : FAILED.
+    First line of code: {return test("%.7f", 43.43999949);}
+      expected output : "43.4399995"
+      your output     : ""
+      expected (nonprintable as hex) : "43.4399995"
+      actual   (nonprintable as hex) : ""
+
+Test 1630 (bonus_f_rnd_prec7_rndd_multidigit_neg) : FAILED.
+    First line of code: {return test("%.7f", -5.02999949);}
+      expected output : "-5.0299995"
+      your output     : ""
+      expected (nonprintable as hex) : "-5.0299995"
+      actual   (nonprintable as hex) : ""
+
+Test 1631 (bonus_f_rnd_prec7_rndd_wholnobump_pos) : FAILED.
+    First line of code: {return test("%.7f", 1.99999949);}
+      expected output : "1.9999995"
+      your output     : ""
+      expected (nonprintable as hex) : "1.9999995"
+      actual   (nonprintable as hex) : ""
+
+Test 1632 (bonus_f_rnd_prec7_rndd_wholnobump_neg) : FAILED.
+    First line of code: {return test("%.7f", -0.99999949);}
+      expected output : "-0.9999995"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.9999995"
+      actual   (nonprintable as hex) : ""
+
+Test 1633 (bonus_f_rnd_prec7_rndu_bumpwhole_pos) : FAILED.
+    First line of code: {return test("%.7f", 3.9999999);}
+      expected output : "3.9999999"
+      your output     : ""
+      expected (nonprintable as hex) : "3.9999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1634 (bonus_f_prec8_zero) : FAILED.
+    First line of code: {return test("%.8f", 0.0);}
+      expected output : "0.00000000"
+      your output     : ""
+      expected (nonprintable as hex) : "0.00000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1635 (bonus_f_prec8_nzero) : FAILED.
+    First line of code: {return test("%.8f", -0.0);}
+      expected output : "-0.00000000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.00000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1636 (bonus_f_prec8_1) : FAILED.
+    First line of code: {return test("this %.8f float", 1.5);}
+      expected output : "this 1.50000000 float"
+      your output     : "this  float"
+      expected (nonprintable as hex) : "this 1.50000000 float"
+      actual   (nonprintable as hex) : "this  float"
+
+Test 1637 (bonus_f_prec8_fltonly) : FAILED.
+    First line of code: {return test("%.8f", 7.5);}
+      expected output : "7.50000000"
+      your output     : ""
+      expected (nonprintable as hex) : "7.50000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1638 (bonus_f_prec8_whole) : FAILED.
+    First line of code: {return test("%.8f", 1.0);}
+      expected output : "1.00000000"
+      your output     : ""
+      expected (nonprintable as hex) : "1.00000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1639 (bonus_f_prec8_negative) : FAILED.
+    First line of code: {return test("%.8f", -3.85);}
+      expected output : "-3.85000000"
+      your output     : ""
+      expected (nonprintable as hex) : "-3.85000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1640 (bonus_f_prec8_positive_3_3) : FAILED.
+    First line of code: {return test("%.8f", 573.924);}
+      expected output : "573.92400000"
+      your output     : ""
+      expected (nonprintable as hex) : "573.92400000"
+      actual   (nonprintable as hex) : ""
+
+Test 1641 (bonus_f_prec8_negative_3_3) : FAILED.
+    First line of code: {return test("%.8f", -958.125);}
+      expected output : "-958.12500000"
+      your output     : ""
+      expected (nonprintable as hex) : "-958.12500000"
+      actual   (nonprintable as hex) : ""
+
+Test 1642 (bonus_f_prec8_positive_smallfpart) : FAILED.
+    First line of code: {return test("%.8f", 23.00041);}
+      expected output : "23.00041000"
+      your output     : ""
+      expected (nonprintable as hex) : "23.00041000"
+      actual   (nonprintable as hex) : ""
+
+Test 1643 (bonus_f_prec8_positive_allsmall) : FAILED.
+    First line of code: {return test("%.8f", 0.00000039);}
+      expected output : "0.00000039"
+      your output     : ""
+      expected (nonprintable as hex) : "0.00000039"
+      actual   (nonprintable as hex) : ""
+
+Test 1644 (bonus_f_prec8_negative_smallfpart) : FAILED.
+    First line of code: {return test("%.8f", -7.00036);}
+      expected output : "-7.00036000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.00036000"
+      actual   (nonprintable as hex) : ""
+
+Test 1645 (bonus_f_prec8_negative_allsmall) : FAILED.
+    First line of code: {return test("%.8f", -0.0000032);}
+      expected output : "-0.00000320"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.00000320"
+      actual   (nonprintable as hex) : ""
+
+Test 1646 (bonus_f_prec8_limits_allsmall_pos) : FAILED.
+    First line of code: {return test("%.8f", 0.00000001);}
+      expected output : "0.00000001"
+      your output     : ""
+      expected (nonprintable as hex) : "0.00000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1647 (bonus_f_prec8_limits_allsmall_neg) : FAILED.
+    First line of code: {return test("%.8f", -0.00000001);}
+      expected output : "-0.00000001"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.00000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1648 (bonus_f_prec8_limits_smallfpart_pos) : FAILED.
+    First line of code: {return test("%.8f", 9873.000001);}
+      expected output : "9873.00000100"
+      your output     : ""
+      expected (nonprintable as hex) : "9873.00000100"
+      actual   (nonprintable as hex) : ""
+
+Test 1649 (bonus_f_prec8_limits_smallfpart_neg) : FAILED.
+    First line of code: {return test("%.8f", -875.000001);}
+      expected output : "-875.00000100"
+      your output     : ""
+      expected (nonprintable as hex) : "-875.00000100"
+      actual   (nonprintable as hex) : ""
+
+Test 1650 (bonus_f_prec8_limits_allbig_pos) : FAILED.
+    First line of code: {return test("%.8f", 999.9999999);}
+      expected output : "999.99999990"
+      your output     : ""
+      expected (nonprintable as hex) : "999.99999990"
+      actual   (nonprintable as hex) : ""
+
+Test 1651 (bonus_f_prec8_limits_allbig_neg) : FAILED.
+    First line of code: {return test("%.8f", -99.99999999);}
+      expected output : "-99.99999999"
+      your output     : ""
+      expected (nonprintable as hex) : "-99.99999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1652 (bonus_f_prec8_limits_bigfpart_pos) : FAILED.
+    First line of code: {return test("%.8f", 0.999999);}
+      expected output : "0.99999900"
+      your output     : ""
+      expected (nonprintable as hex) : "0.99999900"
+      actual   (nonprintable as hex) : ""
+
+Test 1653 (bonus_f_prec8_limits_bigfpart_neg) : FAILED.
+    First line of code: {return test("%.8f", -0.999999);}
+      expected output : "-0.99999900"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.99999900"
+      actual   (nonprintable as hex) : ""
+
+Test 1654 (bonus_f_rnd_prec8_rndd_pos) : FAILED.
+    First line of code: {return test("%.8f", 23.375094499);}
+      expected output : "23.37509450"
+      your output     : ""
+      expected (nonprintable as hex) : "23.37509450"
+      actual   (nonprintable as hex) : ""
+
+Test 1655 (bonus_f_rnd_prec8_rndd_neg) : FAILED.
+    First line of code: {return test("%.8f", -985.765426499);}
+      expected output : "-985.76542650"
+      your output     : ""
+      expected (nonprintable as hex) : "-985.76542650"
+      actual   (nonprintable as hex) : ""
+
+Test 1656 (bonus_f_rnd_prec8_rndu_pos) : FAILED.
+    First line of code: {return test("%.8f", 0.0894255);}
+      expected output : "0.08942550"
+      your output     : ""
+      expected (nonprintable as hex) : "0.08942550"
+      actual   (nonprintable as hex) : ""
+
+Test 1657 (bonus_f_rnd_prec8_rndu_neg) : FAILED.
+    First line of code: {return test("%.8f", -56.2012685);}
+      expected output : "-56.20126850"
+      your output     : ""
+      expected (nonprintable as hex) : "-56.20126850"
+      actual   (nonprintable as hex) : ""
+
+Test 1658 (bonus_f_rnd_prec8_rndu_multidigit_pos) : FAILED.
+    First line of code: {return test("%.8f", 43.4399999);}
+      expected output : "43.43999990"
+      your output     : ""
+      expected (nonprintable as hex) : "43.43999990"
+      actual   (nonprintable as hex) : ""
+
+Test 1659 (bonus_f_rnd_prec8_rndu_multidigit_neg) : FAILED.
+    First line of code: {return test("%.8f", -5.0299999);}
+      expected output : "-5.02999990"
+      your output     : ""
+      expected (nonprintable as hex) : "-5.02999990"
+      actual   (nonprintable as hex) : ""
+
+Test 1660 (bonus_f_rnd_prec8_rndd_multidigit_pos) : FAILED.
+    First line of code: {return test("%.8f", 43.43999949);}
+      expected output : "43.43999949"
+      your output     : ""
+      expected (nonprintable as hex) : "43.43999949"
+      actual   (nonprintable as hex) : ""
+
+Test 1661 (bonus_f_rnd_prec8_rndd_multidigit_neg) : FAILED.
+    First line of code: {return test("%.8f", -5.02999949);}
+      expected output : "-5.02999949"
+      your output     : ""
+      expected (nonprintable as hex) : "-5.02999949"
+      actual   (nonprintable as hex) : ""
+
+Test 1662 (bonus_f_rnd_prec8_rndd_wholnobump_pos) : FAILED.
+    First line of code: {return test("%.8f", 1.99999949);}
+      expected output : "1.99999949"
+      your output     : ""
+      expected (nonprintable as hex) : "1.99999949"
+      actual   (nonprintable as hex) : ""
+
+Test 1663 (bonus_f_rnd_prec8_rndd_wholnobump_neg) : FAILED.
+    First line of code: {return test("%.8f", -0.99999949);}
+      expected output : "-0.99999949"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.99999949"
+      actual   (nonprintable as hex) : ""
+
+Test 1664 (bonus_f_rnd_prec8_rndu_bumpwhole_pos) : FAILED.
+    First line of code: {return test("%.8f", 3.9999999);}
+      expected output : "3.99999990"
+      your output     : ""
+      expected (nonprintable as hex) : "3.99999990"
+      actual   (nonprintable as hex) : ""
+
+Test 1665 (bonus_f_prec9_zero) : FAILED.
+    First line of code: {return test("%.9f", 0.0);}
+      expected output : "0.000000000"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1666 (bonus_f_prec9_nzero) : FAILED.
+    First line of code: {return test("%.9f", -0.0);}
+      expected output : "-0.000000000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1667 (bonus_f_stress_prec9_1) : FAILED.
+    First line of code: {return test("this %.9f float", 1.5);}
+      expected output : "this 1.500000000 float"
+      your output     : "this  float"
+      expected (nonprintable as hex) : "this 1.500000000 float"
+      actual   (nonprintable as hex) : "this  float"
+
+Test 1668 (bonus_f_stress_prec9_fltonly) : FAILED.
+    First line of code: {return test("%.9f", 7.5);}
+      expected output : "7.500000000"
+      your output     : ""
+      expected (nonprintable as hex) : "7.500000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1669 (bonus_f_stress_prec9_whole) : FAILED.
+    First line of code: {return test("%.9f", 1.0);}
+      expected output : "1.000000000"
+      your output     : ""
+      expected (nonprintable as hex) : "1.000000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1670 (bonus_f_stress_prec9_negative) : FAILED.
+    First line of code: {return test("%.9f", -3.85);}
+      expected output : "-3.850000000"
+      your output     : ""
+      expected (nonprintable as hex) : "-3.850000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1671 (bonus_f_stress_prec9_positive_3_3) : FAILED.
+    First line of code: {return test("%.9f", 573.924);}
+      expected output : "573.924000000"
+      your output     : ""
+      expected (nonprintable as hex) : "573.924000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1672 (bonus_f_stress_prec9_negative_3_3) : FAILED.
+    First line of code: {return test("%.9f", -958.125);}
+      expected output : "-958.125000000"
+      your output     : ""
+      expected (nonprintable as hex) : "-958.125000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1673 (bonus_f_stress_prec9_positive_smallfpart) : FAILED.
+    First line of code: {return test("%.9f", 23.00041);}
+      expected output : "23.000410000"
+      your output     : ""
+      expected (nonprintable as hex) : "23.000410000"
+      actual   (nonprintable as hex) : ""
+
+Test 1674 (bonus_f_stress_prec9_positive_allsmall) : FAILED.
+    First line of code: {return test("%.9f", 0.00000039);}
+      expected output : "0.000000390"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000000390"
+      actual   (nonprintable as hex) : ""
+
+Test 1675 (bonus_f_stress_prec9_negative_smallfpart) : FAILED.
+    First line of code: {return test("%.9f", -7.00036);}
+      expected output : "-7.000360000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.000360000"
+      actual   (nonprintable as hex) : ""
+
+Test 1676 (bonus_f_stress_prec9_negative_allsmall) : FAILED.
+    First line of code: {return test("%.9f", -0.0000032);}
+      expected output : "-0.000003200"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000003200"
+      actual   (nonprintable as hex) : ""
+
+Test 1677 (bonus_f_stress_prec9_limits_allsmall_pos) : FAILED.
+    First line of code: {return test("%.9f", 0.00000001);}
+      expected output : "0.000000010"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000000010"
+      actual   (nonprintable as hex) : ""
+
+Test 1678 (bonus_f_stress_prec9_limits_allsmall_neg) : FAILED.
+    First line of code: {return test("%.9f", -0.00000001);}
+      expected output : "-0.000000010"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000000010"
+      actual   (nonprintable as hex) : ""
+
+Test 1679 (bonus_f_stress_prec9_limits_smallfpart_pos) : FAILED.
+    First line of code: {return test("%.9f", 9873.000001);}
+      expected output : "9873.000001000"
+      your output     : ""
+      expected (nonprintable as hex) : "9873.000001000"
+      actual   (nonprintable as hex) : ""
+
+Test 1680 (bonus_f_stress_prec9_limits_smallfpart_neg) : FAILED.
+    First line of code: {return test("%.9f", -875.000001);}
+      expected output : "-875.000001000"
+      your output     : ""
+      expected (nonprintable as hex) : "-875.000001000"
+      actual   (nonprintable as hex) : ""
+
+Test 1681 (bonus_f_stress_prec9_limits_allbig_pos) : FAILED.
+    First line of code: {return test("%.9f", 999.99999999);}
+      expected output : "999.999999990"
+      your output     : ""
+      expected (nonprintable as hex) : "999.999999990"
+      actual   (nonprintable as hex) : ""
+
+Test 1682 (bonus_f_stress_prec9_limits_allbig_neg) : FAILED.
+    First line of code: {return test("%.9f", -99.99999999);}
+      expected output : "-99.999999990"
+      your output     : ""
+      expected (nonprintable as hex) : "-99.999999990"
+      actual   (nonprintable as hex) : ""
+
+Test 1683 (bonus_f_stress_prec9_limits_bigfpart_pos) : FAILED.
+    First line of code: {return test("%.9f", 0.999999);}
+      expected output : "0.999999000"
+      your output     : ""
+      expected (nonprintable as hex) : "0.999999000"
+      actual   (nonprintable as hex) : ""
+
+Test 1684 (bonus_f_stress_prec9_limits_bigfpart_neg) : FAILED.
+    First line of code: {return test("%.9f", -0.999999);}
+      expected output : "-0.999999000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.999999000"
+      actual   (nonprintable as hex) : ""
+
+Test 1685 (bonus_f_stress_prec9_rndd_pos) : FAILED.
+    First line of code: {return test("%.9f", 23.375094499);}
+      expected output : "23.375094499"
+      your output     : ""
+      expected (nonprintable as hex) : "23.375094499"
+      actual   (nonprintable as hex) : ""
+
+Test 1686 (bonus_f_stress_prec9_rndd_neg) : FAILED.
+    First line of code: {return test("%.9f", -985.765426499);}
+      expected output : "-985.765426499"
+      your output     : ""
+      expected (nonprintable as hex) : "-985.765426499"
+      actual   (nonprintable as hex) : ""
+
+Test 1687 (bonus_f_stress_prec9_rndu_pos) : FAILED.
+    First line of code: {return test("%.9f", 0.0894255);}
+      expected output : "0.089425500"
+      your output     : ""
+      expected (nonprintable as hex) : "0.089425500"
+      actual   (nonprintable as hex) : ""
+
+Test 1688 (bonus_f_stress_prec9_rndu_neg) : FAILED.
+    First line of code: {return test("%.9f", -56.2012685);}
+      expected output : "-56.201268500"
+      your output     : ""
+      expected (nonprintable as hex) : "-56.201268500"
+      actual   (nonprintable as hex) : ""
+
+Test 1689 (bonus_f_stress_prec9_rndu_multidigit_pos) : FAILED.
+    First line of code: {return test("%.9f", 43.4399999);}
+      expected output : "43.439999900"
+      your output     : ""
+      expected (nonprintable as hex) : "43.439999900"
+      actual   (nonprintable as hex) : ""
+
+Test 1690 (bonus_f_stress_prec9_rndu_multidigit_neg) : FAILED.
+    First line of code: {return test("%.9f", -5.0299999);}
+      expected output : "-5.029999900"
+      your output     : ""
+      expected (nonprintable as hex) : "-5.029999900"
+      actual   (nonprintable as hex) : ""
+
+Test 1691 (bonus_f_stress_prec9_rndd_multidigit_pos) : FAILED.
+    First line of code: {return test("%.9f", 43.43999949);}
+      expected output : "43.439999490"
+      your output     : ""
+      expected (nonprintable as hex) : "43.439999490"
+      actual   (nonprintable as hex) : ""
+
+Test 1692 (bonus_f_stress_prec9_rndd_multidigit_neg) : FAILED.
+    First line of code: {return test("%.9f", -5.02999949);}
+      expected output : "-5.029999490"
+      your output     : ""
+      expected (nonprintable as hex) : "-5.029999490"
+      actual   (nonprintable as hex) : ""
+
+Test 1693 (bonus_f_stress_prec9_rndd_wholnobump_pos) : FAILED.
+    First line of code: {return test("%.9f", 1.99999949);}
+      expected output : "1.999999490"
+      your output     : ""
+      expected (nonprintable as hex) : "1.999999490"
+      actual   (nonprintable as hex) : ""
+
+Test 1694 (bonus_f_stress_prec9_rndd_wholnobump_neg) : FAILED.
+    First line of code: {return test("%.9f", -0.99999949);}
+      expected output : "-0.999999490"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.999999490"
+      actual   (nonprintable as hex) : ""
+
+Test 1695 (bonus_f_stress_prec9_rndu_bumpwhole_pos) : FAILED.
+    First line of code: {return test("%.9f", 3.9999999);}
+      expected output : "3.999999900"
+      your output     : ""
+      expected (nonprintable as hex) : "3.999999900"
+      actual   (nonprintable as hex) : ""
+
+Test 1696 (bonus_f_prec10_zero) : FAILED.
+    First line of code: {return test("%.10f", 0.0);}
+      expected output : "0.0000000000"
+      your output     : ""
+      expected (nonprintable as hex) : "0.0000000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1697 (bonus_f_prec10_nzero) : FAILED.
+    First line of code: {return test("%.10f", -0.0);}
+      expected output : "-0.0000000000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.0000000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1698 (bonus_f_stress_prec10_1) : FAILED.
+    First line of code: {return test("this %.10f float", 1.5);}
+      expected output : "this 1.5000000000 float"
+      your output     : "this  float"
+      expected (nonprintable as hex) : "this 1.5000000000 float"
+      actual   (nonprintable as hex) : "this  float"
+
+Test 1699 (bonus_f_stress_prec10_fltonly) : FAILED.
+    First line of code: {return test("%.10f", 7.5);}
+      expected output : "7.5000000000"
+      your output     : ""
+      expected (nonprintable as hex) : "7.5000000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1700 (bonus_f_stress_prec10_whole) : FAILED.
+    First line of code: {return test("%.10f", 1.0);}
+      expected output : "1.0000000000"
+      your output     : ""
+      expected (nonprintable as hex) : "1.0000000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1701 (bonus_f_stress_prec10_negative) : FAILED.
+    First line of code: {return test("%.10f", -3.85);}
+      expected output : "-3.8500000000"
+      your output     : ""
+      expected (nonprintable as hex) : "-3.8500000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1702 (bonus_f_stress_prec10_positive_3_10) : FAILED.
+    First line of code: {return test("%.10f", 573.924);}
+      expected output : "573.9240000000"
+      your output     : ""
+      expected (nonprintable as hex) : "573.9240000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1703 (bonus_f_stress_prec10_negative_3_10) : FAILED.
+    First line of code: {return test("%.10f", -958.125);}
+      expected output : "-958.1250000000"
+      your output     : ""
+      expected (nonprintable as hex) : "-958.1250000000"
+      actual   (nonprintable as hex) : ""
+
+Test 1704 (bonus_f_stress_prec10_pos) : FAILED.
+    First line of code: {return test("%.10f", 23.8341375094);}
+      expected output : "23.8341375094"
+      your output     : ""
+      expected (nonprintable as hex) : "23.8341375094"
+      actual   (nonprintable as hex) : ""
+
+Test 1705 (bonus_f_stress_prec10_neg) : FAILED.
+    First line of code: {return test("%.10f", -985.2459765426);}
+      expected output : "-985.2459765426"
+      your output     : ""
+      expected (nonprintable as hex) : "-985.2459765426"
+      actual   (nonprintable as hex) : ""
+
+Test 1706 (bonus_f_stress_prec10_rndd_pos) : FAILED.
+    First line of code: {return test("%.10f", 23.8341375094499);}
+      expected output : "23.8341375094"
+      your output     : ""
+      expected (nonprintable as hex) : "23.8341375094"
+      actual   (nonprintable as hex) : ""
+
+Test 1707 (bonus_f_stress_prec10_rndd_neg) : FAILED.
+    First line of code: {return test("%.10f", -985.2459765426499);}
+      expected output : "-985.2459765426"
+      your output     : ""
+      expected (nonprintable as hex) : "-985.2459765426"
+      actual   (nonprintable as hex) : ""
+
+Test 1708 (bonus_f_stress_prec10_rndu_pos) : FAILED.
+    First line of code: {return test("%.10f", 0.87650894255);}
+      expected output : "0.8765089426"
+      your output     : ""
+      expected (nonprintable as hex) : "0.8765089426"
+      actual   (nonprintable as hex) : ""
+
+Test 1709 (bonus_f_stress_prec10_rndu_neg) : FAILED.
+    First line of code: {return test("%.10f", -56.47852012685);}
+      expected output : "-56.4785201269"
+      your output     : ""
+      expected (nonprintable as hex) : "-56.4785201269"
+      actual   (nonprintable as hex) : ""
+
+Test 1710 (bonus_f_stress_prec10_positive_smallfpart) : FAILED.
+    First line of code: {return test("%.10f", 23.000000041);}
+      expected output : "23.0000000410"
+      your output     : ""
+      expected (nonprintable as hex) : "23.0000000410"
+      actual   (nonprintable as hex) : ""
+
+Test 1711 (bonus_f_stress_prec10_positive_allsmall) : FAILED.
+    First line of code: {return test("%.10f", 0.0000000039);}
+      expected output : "0.0000000039"
+      your output     : ""
+      expected (nonprintable as hex) : "0.0000000039"
+      actual   (nonprintable as hex) : ""
+
+Test 1712 (bonus_f_stress_prec10_negative_smallfpart) : FAILED.
+    First line of code: {return test("%.10f", -7.000000036);}
+      expected output : "-7.0000000360"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.0000000360"
+      actual   (nonprintable as hex) : ""
+
+Test 1713 (bonus_f_stress_prec10_negative_allsmall) : FAILED.
+    First line of code: {return test("%.10f", -0.000000032);}
+      expected output : "-0.0000000320"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.0000000320"
+      actual   (nonprintable as hex) : ""
+
+Test 1714 (bonus_f_stress_prec10_limits_allsmall_pos) : FAILED.
+    First line of code: {return test("%.10f", 0.0000000001);}
+      expected output : "0.0000000001"
+      your output     : ""
+      expected (nonprintable as hex) : "0.0000000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1715 (bonus_f_stress_prec10_limits_allsmall_neg) : FAILED.
+    First line of code: {return test("%.10f", -0.0000000001);}
+      expected output : "-0.0000000001"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.0000000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1716 (bonus_f_stress_prec10_limits_smallfpart_pos) : FAILED.
+    First line of code: {return test("%.10f", 9873.0000000001);}
+      expected output : "9873.0000000001"
+      your output     : ""
+      expected (nonprintable as hex) : "9873.0000000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1717 (bonus_f_stress_prec10_limits_smallfpart_neg) : FAILED.
+    First line of code: {return test("%.10f", -875.0000000001);}
+      expected output : "-875.0000000001"
+      your output     : ""
+      expected (nonprintable as hex) : "-875.0000000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1718 (bonus_f_stress_prec10_limits_allbig_pos) : FAILED.
+    First line of code: {return test("%.10f", 999.9999999999);}
+      expected output : "999.9999999999"
+      your output     : ""
+      expected (nonprintable as hex) : "999.9999999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1719 (bonus_f_stress_prec10_limits_allbig_neg) : FAILED.
+    First line of code: {return test("%.10f", -99.9999999999);}
+      expected output : "-99.9999999999"
+      your output     : ""
+      expected (nonprintable as hex) : "-99.9999999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1720 (bonus_f_stress_prec10_limits_bigfpart_pos) : FAILED.
+    First line of code: {return test("%.10f", 0.9999999999);}
+      expected output : "0.9999999999"
+      your output     : ""
+      expected (nonprintable as hex) : "0.9999999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1721 (bonus_f_stress_prec10_limits_bigfpart_neg) : FAILED.
+    First line of code: {return test("%.10f", -0.9999999999);}
+      expected output : "-0.9999999999"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.9999999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1722 (bonus_f_stress_prec11_rndu) : FAILED.
+    First line of code: {return test("%.11f",        1.025978541236587568);}
+      expected output : "1.02597854124"
+      your output     : ""
+      expected (nonprintable as hex) : "1.02597854124"
+      actual   (nonprintable as hex) : ""
+
+Test 1723 (bonus_f_stress_prec11_rndd) : FAILED.
+    First line of code: {return test("%.11f",        1.025978548534310421);}
+      expected output : "1.02597854853"
+      your output     : ""
+      expected (nonprintable as hex) : "1.02597854853"
+      actual   (nonprintable as hex) : ""
+
+Test 1724 (bonus_f_stress_prec11_limits_tiny) : FAILED.
+    First line of code: {return test("%.11f", 0.000000000010000000);}
+      expected output : "0.00000000001"
+      your output     : ""
+      expected (nonprintable as hex) : "0.00000000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1725 (bonus_f_stress_prec11_limits_big) : FAILED.
+    First line of code: {return test("%.11f", 99.999999999990000000);}
+      expected output : "99.99999999999"
+      your output     : ""
+      expected (nonprintable as hex) : "99.99999999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1726 (bonus_f_stress_prec12_rndu) : FAILED.
+    First line of code: {return test("%.12f",        1.025978541236587568);}
+      expected output : "1.025978541237"
+      your output     : ""
+      expected (nonprintable as hex) : "1.025978541237"
+      actual   (nonprintable as hex) : ""
+
+Test 1727 (bonus_f_stress_prec12_rndd) : FAILED.
+    First line of code: {return test("%.12f",        1.025978548534310421);}
+      expected output : "1.025978548534"
+      your output     : ""
+      expected (nonprintable as hex) : "1.025978548534"
+      actual   (nonprintable as hex) : ""
+
+Test 1728 (bonus_f_stress_prec12_limits_tiny) : FAILED.
+    First line of code: {return test("%.12f", 0.000000000001000000);}
+      expected output : "0.000000000001"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000000000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1729 (bonus_f_stress_prec12_limits_big) : FAILED.
+    First line of code: {return test("%.12f", 99.999999999999000000);}
+      expected output : "99.999999999999"
+      your output     : ""
+      expected (nonprintable as hex) : "99.999999999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1730 (bonus_f_stress_prec13_rndu) : FAILED.
+    First line of code: {return test("%.13f",        1.025978541136587568);}
+      expected output : "1.0259785411366"
+      your output     : ""
+      expected (nonprintable as hex) : "1.0259785411366"
+      actual   (nonprintable as hex) : ""
+
+Test 1731 (bonus_f_stress_prec13_rndd) : FAILED.
+    First line of code: {return test("%.13f",        1.025978548534310421);}
+      expected output : "1.0259785485343"
+      your output     : ""
+      expected (nonprintable as hex) : "1.0259785485343"
+      actual   (nonprintable as hex) : ""
+
+Test 1732 (bonus_f_stress_prec13_limits_tiny) : FAILED.
+    First line of code: {return test("%.13f", 0.000000000000100000);}
+      expected output : "0.0000000000001"
+      your output     : ""
+      expected (nonprintable as hex) : "0.0000000000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1733 (bonus_f_stress_prec13_limits_big) : FAILED.
+    First line of code: {return test("%.13f", 99.999999999999900000);}
+      expected output : "99.9999999999999"
+      your output     : ""
+      expected (nonprintable as hex) : "99.9999999999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1734 (bonus_f_stress_prec14_rndu) : FAILED.
+    First line of code: {return test("%.14f",        1.025978541436587568);}
+      expected output : "1.02597854143659"
+      your output     : ""
+      expected (nonprintable as hex) : "1.02597854143659"
+      actual   (nonprintable as hex) : ""
+
+Test 1735 (bonus_f_stress_prec14_rndd) : FAILED.
+    First line of code: {return test("%.14f",        1.025978548534310421);}
+      expected output : "1.02597854853431"
+      your output     : ""
+      expected (nonprintable as hex) : "1.02597854853431"
+      actual   (nonprintable as hex) : ""
+
+Test 1736 (bonus_f_stress_prec14_limits_tiny) : FAILED.
+    First line of code: {return test("%.14f", 0.000000000000010000);}
+      expected output : "0.00000000000001"
+      your output     : ""
+      expected (nonprintable as hex) : "0.00000000000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1737 (bonus_f_stress_prec14_limits_big) : FAILED.
+    First line of code: {return test("%.14f",  9.999999999999990000);}
+      expected output : "9.99999999999999"
+      your output     : ""
+      expected (nonprintable as hex) : "9.99999999999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1738 (bonus_f_stress_prec15_rndu) : FAILED.
+    First line of code: {return test("%.15f",        1.025978542436587568);}
+      expected output : "1.025978542436587"
+      your output     : ""
+      expected (nonprintable as hex) : "1.025978542436587"
+      actual   (nonprintable as hex) : ""
+
+Test 1739 (bonus_f_stress_prec15_rndd) : FAILED.
+    First line of code: {return test("%.15f",        1.025978548534310421);}
+      expected output : "1.025978548534310"
+      your output     : ""
+      expected (nonprintable as hex) : "1.025978548534310"
+      actual   (nonprintable as hex) : ""
+
+Test 1740 (bonus_f_stress_prec15_limits_tiny) : FAILED.
+    First line of code: {return test("%.15f", 0.000000000000001000);}
+      expected output : "0.000000000000001"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000000000000001"
+      actual   (nonprintable as hex) : ""
+
+Test 1741 (bonus_f_stress_prec15_limits_big) : FAILED.
+    First line of code: {return test("%.15f",  0.999999999999999000);}
+      expected output : "0.999999999999999"
+      your output     : ""
+      expected (nonprintable as hex) : "0.999999999999999"
+      actual   (nonprintable as hex) : ""
+
+Test 1752 (bonus_f_af_prec0_zero) : FAILED.
+    First line of code: {return test("%#.0f", 0.0);}
+      expected output : "0."
+      your output     : ""
+      expected (nonprintable as hex) : "0."
+      actual   (nonprintable as hex) : ""
+
+Test 1753 (bonus_f_af_prec0_nzero) : FAILED.
+    First line of code: {return test("%#.0f", -0.0);}
+      expected output : "-0."
+      your output     : ""
+      expected (nonprintable as hex) : "-0."
+      actual   (nonprintable as hex) : ""
+
+Test 1754 (bonus_f_af_prec1_zero) : FAILED.
+    First line of code: {return test("%#.1f", 0.0);}
+      expected output : "0.0"
+      your output     : ""
+      expected (nonprintable as hex) : "0.0"
+      actual   (nonprintable as hex) : ""
+
+Test 1755 (bonus_f_af_prec1_nzero) : FAILED.
+    First line of code: {return test("%#.1f", -0.0);}
+      expected output : "-0.0"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.0"
+      actual   (nonprintable as hex) : ""
+
+Test 1756 (bonus_f_af_prec0p) : FAILED.
+    First line of code: {return test("%#.0f", 7.4);}
+      expected output : "7."
+      your output     : ""
+      expected (nonprintable as hex) : "7."
+      actual   (nonprintable as hex) : ""
+
+Test 1757 (bonus_f_af_prec1p) : FAILED.
+    First line of code: {return test("%#.1f", 7.3);}
+      expected output : "7.3"
+      your output     : ""
+      expected (nonprintable as hex) : "7.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1758 (bonus_f_af_prec0n) : FAILED.
+    First line of code: {return test("%#.0f", -7.4);}
+      expected output : "-7."
+      your output     : ""
+      expected (nonprintable as hex) : "-7."
+      actual   (nonprintable as hex) : ""
+
+Test 1759 (bonus_f_af_prec1n) : FAILED.
+    First line of code: {return test("%#.1f", -7.3);}
+      expected output : "-7.3"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1760 (bonus_f_as_prec0_zero) : FAILED.
+    First line of code: {return test("%+.0f", 0.0);}
+      expected output : "+0"
+      your output     : ""
+      expected (nonprintable as hex) : "+0"
+      actual   (nonprintable as hex) : ""
+
+Test 1761 (bonus_f_as_prec0_nzero) : FAILED.
+    First line of code: {return test("%+.0f", -0.0);}
+      expected output : "-0"
+      your output     : ""
+      expected (nonprintable as hex) : "-0"
+      actual   (nonprintable as hex) : ""
+
+Test 1762 (bonus_f_as_prec3_zero) : FAILED.
+    First line of code: {return test("%+.3f", 0.0);}
+      expected output : "+0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "+0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1763 (bonus_f_as_prec3_nzero) : FAILED.
+    First line of code: {return test("%+.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1764 (bonus_f_as_prec0p_as) : FAILED.
+    First line of code: {return test("%+.0f", 7.4);}
+      expected output : "+7"
+      your output     : ""
+      expected (nonprintable as hex) : "+7"
+      actual   (nonprintable as hex) : ""
+
+Test 1765 (bonus_f_as_prec3p_as) : FAILED.
+    First line of code: {return test("%+.3f", 7.3);}
+      expected output : "+7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1766 (bonus_f_as_prec0n_as) : FAILED.
+    First line of code: {return test("%+.0f", -7.4);}
+      expected output : "-7"
+      your output     : ""
+      expected (nonprintable as hex) : "-7"
+      actual   (nonprintable as hex) : ""
+
+Test 1767 (bonus_f_as_prec3n_as) : FAILED.
+    First line of code: {return test("%+.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1768 (bonus_f_wprec0p_zero) : FAILED.
+    First line of code: {return test("%5.0f", 0.0);}
+      expected output : "    0"
+      your output     : ""
+      expected (nonprintable as hex) : "    0"
+      actual   (nonprintable as hex) : ""
+
+Test 1769 (bonus_f_wprec0p_nzero) : FAILED.
+    First line of code: {return test("%5.0f", -0.0);}
+      expected output : "   -0"
+      your output     : ""
+      expected (nonprintable as hex) : "   -0"
+      actual   (nonprintable as hex) : ""
+
+Test 1770 (bonus_f_wprec3p_zero) : FAILED.
+    First line of code: {return test("%5.3f", 0.0);}
+      expected output : "0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1771 (bonus_f_wprec3p_nzero) : FAILED.
+    First line of code: {return test("%5.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1772 (bonus_f_wprec0p) : FAILED.
+    First line of code: {return test("%5.0f", 7.3);}
+      expected output : "    7"
+      your output     : ""
+      expected (nonprintable as hex) : "    7"
+      actual   (nonprintable as hex) : ""
+
+Test 1773 (bonus_f_wprec1p) : FAILED.
+    First line of code: {return test("%5.1f", 7.3);}
+      expected output : "  7.3"
+      your output     : ""
+      expected (nonprintable as hex) : "  7.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1774 (bonus_f_wprec3p) : FAILED.
+    First line of code: {return test("%5.3f", 7.3);}
+      expected output : "7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1775 (bonus_f_wprec6p) : FAILED.
+    First line of code: {return test("%5.6f", 7.3);}
+      expected output : "7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1776 (bonus_f_wprec0n) : FAILED.
+    First line of code: {return test("%5.0f", -7.3);}
+      expected output : "   -7"
+      your output     : ""
+      expected (nonprintable as hex) : "   -7"
+      actual   (nonprintable as hex) : ""
+
+Test 1777 (bonus_f_wprec1n) : FAILED.
+    First line of code: {return test("%5.1f", -7.3);}
+      expected output : " -7.3"
+      your output     : ""
+      expected (nonprintable as hex) : " -7.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1778 (bonus_f_wprec3n) : FAILED.
+    First line of code: {return test("%5.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1779 (bonus_f_wprec6n) : FAILED.
+    First line of code: {return test("%5.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1780 (bonus_f_wzp_prec0p_zero) : FAILED.
+    First line of code: {return test("%05.0f", 0.0);}
+      expected output : "00000"
+      your output     : ""
+      expected (nonprintable as hex) : "00000"
+      actual   (nonprintable as hex) : ""
+
+Test 1781 (bonus_f_wzp_prec0p_nzero) : FAILED.
+    First line of code: {return test("%05.0f", -0.0);}
+      expected output : "-0000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0000"
+      actual   (nonprintable as hex) : ""
+
+Test 1782 (bonus_f_wzp_prec3p_zero) : FAILED.
+    First line of code: {return test("%05.3f", 0.0);}
+      expected output : "0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1783 (bonus_f_wzp_prec3p_nzero) : FAILED.
+    First line of code: {return test("%05.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1784 (bonus_f_wzp_prec0p) : FAILED.
+    First line of code: {return test("%05.0f", 7.3);}
+      expected output : "00007"
+      your output     : ""
+      expected (nonprintable as hex) : "00007"
+      actual   (nonprintable as hex) : ""
+
+Test 1785 (bonus_f_wzp_prec1p) : FAILED.
+    First line of code: {return test("%05.1f", 7.3);}
+      expected output : "007.3"
+      your output     : ""
+      expected (nonprintable as hex) : "007.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1786 (bonus_f_wzp_prec3p) : FAILED.
+    First line of code: {return test("%05.3f", 7.3);}
+      expected output : "7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1787 (bonus_f_wzp_prec6p) : FAILED.
+    First line of code: {return test("%05.6f", 7.3);}
+      expected output : "7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1788 (bonus_f_wzp_prec0n) : FAILED.
+    First line of code: {return test("%05.0f", -7.3);}
+      expected output : "-0007"
+      your output     : ""
+      expected (nonprintable as hex) : "-0007"
+      actual   (nonprintable as hex) : ""
+
+Test 1789 (bonus_f_wzp_prec1n) : FAILED.
+    First line of code: {return test("%05.1f", -7.3);}
+      expected output : "-07.3"
+      your output     : ""
+      expected (nonprintable as hex) : "-07.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1790 (bonus_f_wzp_prec3n) : FAILED.
+    First line of code: {return test("%05.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1791 (bonus_f_wzp_prec6n) : FAILED.
+    First line of code: {return test("%05.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1792 (bonus_f_wlj_prec0p_zero) : FAILED.
+    First line of code: {return test("%-5.0f", 0.0);}
+      expected output : "0    "
+      your output     : ""
+      expected (nonprintable as hex) : "0    "
+      actual   (nonprintable as hex) : ""
+
+Test 1793 (bonus_f_wlj_prec0p_nzero) : FAILED.
+    First line of code: {return test("%-5.0f", -0.0);}
+      expected output : "-0   "
+      your output     : ""
+      expected (nonprintable as hex) : "-0   "
+      actual   (nonprintable as hex) : ""
+
+Test 1794 (bonus_f_wlj_prec3p_zero) : FAILED.
+    First line of code: {return test("%-5.3f", 0.0);}
+      expected output : "0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1795 (bonus_f_wlj_prec3p_nzero) : FAILED.
+    First line of code: {return test("%-5.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1796 (bonus_f_wlj_prec0p) : FAILED.
+    First line of code: {return test("%-5.0f", 7.3);}
+      expected output : "7    "
+      your output     : ""
+      expected (nonprintable as hex) : "7    "
+      actual   (nonprintable as hex) : ""
+
+Test 1797 (bonus_f_wlj_prec1p) : FAILED.
+    First line of code: {return test("%-5.1f", 7.3);}
+      expected output : "7.3  "
+      your output     : ""
+      expected (nonprintable as hex) : "7.3  "
+      actual   (nonprintable as hex) : ""
+
+Test 1798 (bonus_f_wlj_prec3p) : FAILED.
+    First line of code: {return test("%-5.3f", 7.3);}
+      expected output : "7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1799 (bonus_f_wlj_prec6p) : FAILED.
+    First line of code: {return test("%-5.6f", 7.3);}
+      expected output : "7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1800 (bonus_f_wlj_prec0n) : FAILED.
+    First line of code: {return test("%-5.0f", -7.3);}
+      expected output : "-7   "
+      your output     : ""
+      expected (nonprintable as hex) : "-7   "
+      actual   (nonprintable as hex) : ""
+
+Test 1801 (bonus_f_wlj_prec1n) : FAILED.
+    First line of code: {return test("%-5.1f", -7.3);}
+      expected output : "-7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : "-7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1802 (bonus_f_wlj_prec3n) : FAILED.
+    First line of code: {return test("%-5.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1803 (bonus_f_wlj_prec6n) : FAILED.
+    First line of code: {return test("%-5.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1804 (bonus_f_wzplj_prec0p_ignoreflag_zero) : FAILED.
+    First line of code: {return test("%-05.0f", 0.0);}
+      expected output : "0    "
+      your output     : ""
+      expected (nonprintable as hex) : "0    "
+      actual   (nonprintable as hex) : ""
+
+Test 1805 (bonus_f_wzplj_prec0p_ignoreflag_nzero) : FAILED.
+    First line of code: {return test("%-05.0f", -0.0);}
+      expected output : "-0   "
+      your output     : ""
+      expected (nonprintable as hex) : "-0   "
+      actual   (nonprintable as hex) : ""
+
+Test 1806 (bonus_f_wzplj_prec3p_ignoreflag_zero) : FAILED.
+    First line of code: {return test("%-05.3f", 0.0);}
+      expected output : "0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1807 (bonus_f_wzplj_prec3p_ignoreflag_nzero) : FAILED.
+    First line of code: {return test("%-05.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1808 (bonus_f_wzplj_prec0p_ignoreflag) : FAILED.
+    First line of code: {return test("%-05.0f", 7.3);}
+      expected output : "7    "
+      your output     : ""
+      expected (nonprintable as hex) : "7    "
+      actual   (nonprintable as hex) : ""
+
+Test 1809 (bonus_f_wzplj_prec1p_ignoreflag) : FAILED.
+    First line of code: {return test("%-05.1f", 7.3);}
+      expected output : "7.3  "
+      your output     : ""
+      expected (nonprintable as hex) : "7.3  "
+      actual   (nonprintable as hex) : ""
+
+Test 1810 (bonus_f_wzplj_prec3p_ignoreflag) : FAILED.
+    First line of code: {return test("%-05.3f", 7.3);}
+      expected output : "7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1811 (bonus_f_wzplj_prec6p_ignoreflag) : FAILED.
+    First line of code: {return test("%-05.6f", 7.3);}
+      expected output : "7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1812 (bonus_f_wzplj_prec0n_ignoreflag) : FAILED.
+    First line of code: {return test("%-05.0f", -7.3);}
+      expected output : "-7   "
+      your output     : ""
+      expected (nonprintable as hex) : "-7   "
+      actual   (nonprintable as hex) : ""
+
+Test 1813 (bonus_f_wzplj_prec1n_ignoreflag) : FAILED.
+    First line of code: {return test("%-05.1f", -7.3);}
+      expected output : "-7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : "-7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1814 (bonus_f_wzplj_prec3n_ignoreflag) : FAILED.
+    First line of code: {return test("%-05.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1815 (bonus_f_wzplj_prec6n_ignoreflag) : FAILED.
+    First line of code: {return test("%-05.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1816 (bonus_f_wzpljr_prec0p_ignoreflag_zero) : FAILED.
+    First line of code: {return test("%0-5.0f", 0.0);}
+      expected output : "0    "
+      your output     : ""
+      expected (nonprintable as hex) : "0    "
+      actual   (nonprintable as hex) : ""
+
+Test 1817 (bonus_f_wzpljr_prec0p_ignoreflag_nzero) : FAILED.
+    First line of code: {return test("%0-5.0f", -0.0);}
+      expected output : "-0   "
+      your output     : ""
+      expected (nonprintable as hex) : "-0   "
+      actual   (nonprintable as hex) : ""
+
+Test 1818 (bonus_f_wzpljr_prec3p_ignoreflag_zero) : FAILED.
+    First line of code: {return test("%0-5.3f", 0.0);}
+      expected output : "0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1819 (bonus_f_wzpljr_prec3p_ignoreflag_nzero) : FAILED.
+    First line of code: {return test("%0-5.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1820 (bonus_f_wzpljr_prec0p_ignoreflag) : FAILED.
+    First line of code: {return test("%0-5.0f", 7.3);}
+      expected output : "7    "
+      your output     : ""
+      expected (nonprintable as hex) : "7    "
+      actual   (nonprintable as hex) : ""
+
+Test 1821 (bonus_f_wzpljr_prec1p_ignoreflag) : FAILED.
+    First line of code: {return test("%0-5.1f", 7.3);}
+      expected output : "7.3  "
+      your output     : ""
+      expected (nonprintable as hex) : "7.3  "
+      actual   (nonprintable as hex) : ""
+
+Test 1822 (bonus_f_wzpljr_prec3p_ignoreflag) : FAILED.
+    First line of code: {return test("%0-5.3f", 7.3);}
+      expected output : "7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1823 (bonus_f_wzpljr_prec6p_ignoreflag) : FAILED.
+    First line of code: {return test("%0-5.6f", 7.3);}
+      expected output : "7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1824 (bonus_f_wzpljr_prec0n_ignoreflag) : FAILED.
+    First line of code: {return test("%0-5.0f", -7.3);}
+      expected output : "-7   "
+      your output     : ""
+      expected (nonprintable as hex) : "-7   "
+      actual   (nonprintable as hex) : ""
+
+Test 1825 (bonus_f_wzpljr_prec1n_ignoreflag) : FAILED.
+    First line of code: {return test("%0-5.1f", -7.3);}
+      expected output : "-7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : "-7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1826 (bonus_f_wzpljr_prec3n_ignoreflag) : FAILED.
+    First line of code: {return test("%0-5.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1827 (bonus_f_wzpljr_prec6n_ignoreflag) : FAILED.
+    First line of code: {return test("%0-5.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1828 (bonus_f_wzpljaf_prec0p_zero) : FAILED.
+    First line of code: {return test("%#-5.0f", 0.0);}
+      expected output : "0.   "
+      your output     : ""
+      expected (nonprintable as hex) : "0.   "
+      actual   (nonprintable as hex) : ""
+
+Test 1829 (bonus_f_wzpljaf_prec0p_nzero) : FAILED.
+    First line of code: {return test("%#-5.0f", -0.0);}
+      expected output : "-0.  "
+      your output     : ""
+      expected (nonprintable as hex) : "-0.  "
+      actual   (nonprintable as hex) : ""
+
+Test 1830 (bonus_f_wzpljaf_prec3p_zero) : FAILED.
+    First line of code: {return test("%#-5.3f", 0.0);}
+      expected output : "0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1831 (bonus_f_wzpljaf_prec3p_nzero) : FAILED.
+    First line of code: {return test("%#-5.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1832 (bonus_f_wzpljaf_prec0p) : FAILED.
+    First line of code: {return test("%#-5.0f", 7.3);}
+      expected output : "7.   "
+      your output     : ""
+      expected (nonprintable as hex) : "7.   "
+      actual   (nonprintable as hex) : ""
+
+Test 1833 (bonus_f_wzpljaf_prec1p) : FAILED.
+    First line of code: {return test("%#-5.1f", 7.3);}
+      expected output : "7.3  "
+      your output     : ""
+      expected (nonprintable as hex) : "7.3  "
+      actual   (nonprintable as hex) : ""
+
+Test 1834 (bonus_f_wzpljaf_prec3p) : FAILED.
+    First line of code: {return test("%#-5.3f", 7.3);}
+      expected output : "7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1835 (bonus_f_wzpljaf_prec6p) : FAILED.
+    First line of code: {return test("%#-5.6f", 7.3);}
+      expected output : "7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1836 (bonus_f_wzpljaf_prec0n) : FAILED.
+    First line of code: {return test("%#-5.0f", -7.3);}
+      expected output : "-7.  "
+      your output     : ""
+      expected (nonprintable as hex) : "-7.  "
+      actual   (nonprintable as hex) : ""
+
+Test 1837 (bonus_f_wzpljaf_prec1n) : FAILED.
+    First line of code: {return test("%#-5.1f", -7.3);}
+      expected output : "-7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : "-7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1838 (bonus_f_wzpljaf_prec3n) : FAILED.
+    First line of code: {return test("%#-5.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1839 (bonus_f_wzpljaf_prec6n) : FAILED.
+    First line of code: {return test("%#-5.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1840 (bonus_f_was_prec0p_zero) : FAILED.
+    First line of code: {return test("%+5.0f", 0.0);}
+      expected output : "   +0"
+      your output     : ""
+      expected (nonprintable as hex) : "   +0"
+      actual   (nonprintable as hex) : ""
+
+Test 1841 (bonus_f_was_prec0p_nzero) : FAILED.
+    First line of code: {return test("%+5.0f", -0.0);}
+      expected output : "   -0"
+      your output     : ""
+      expected (nonprintable as hex) : "   -0"
+      actual   (nonprintable as hex) : ""
+
+Test 1842 (bonus_f_was_prec3p_zero) : FAILED.
+    First line of code: {return test("%+5.3f", 0.0);}
+      expected output : "+0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "+0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1843 (bonus_f_was_prec3p_nzero) : FAILED.
+    First line of code: {return test("%+5.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1844 (bonus_f_was_prec0p) : FAILED.
+    First line of code: {return test("%+5.0f", 7.3);}
+      expected output : "   +7"
+      your output     : ""
+      expected (nonprintable as hex) : "   +7"
+      actual   (nonprintable as hex) : ""
+
+Test 1845 (bonus_f_was_prec1p) : FAILED.
+    First line of code: {return test("%+5.1f", 7.3);}
+      expected output : " +7.3"
+      your output     : ""
+      expected (nonprintable as hex) : " +7.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1846 (bonus_f_was_prec3p) : FAILED.
+    First line of code: {return test("%+5.3f", 7.3);}
+      expected output : "+7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1847 (bonus_f_was_prec6p) : FAILED.
+    First line of code: {return test("%+5.6f", 7.3);}
+      expected output : "+7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1848 (bonus_f_was_prec0n) : FAILED.
+    First line of code: {return test("%+5.0f", -7.3);}
+      expected output : "   -7"
+      your output     : ""
+      expected (nonprintable as hex) : "   -7"
+      actual   (nonprintable as hex) : ""
+
+Test 1849 (bonus_f_was_prec1n) : FAILED.
+    First line of code: {return test("%+5.1f", -7.3);}
+      expected output : " -7.3"
+      your output     : ""
+      expected (nonprintable as hex) : " -7.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1850 (bonus_f_was_prec3n) : FAILED.
+    First line of code: {return test("%+5.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1851 (bonus_f_was_prec6n) : FAILED.
+    First line of code: {return test("%+5.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1852 (bonus_f_wzpas_prec0p_zero) : FAILED.
+    First line of code: {return test("%+05.0f", 0.0);}
+      expected output : "+0000"
+      your output     : ""
+      expected (nonprintable as hex) : "+0000"
+      actual   (nonprintable as hex) : ""
+
+Test 1853 (bonus_f_wzpas_prec0p_nzero) : FAILED.
+    First line of code: {return test("%+05.0f", -0.0);}
+      expected output : "-0000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0000"
+      actual   (nonprintable as hex) : ""
+
+Test 1854 (bonus_f_wzpas_prec3p_zero) : FAILED.
+    First line of code: {return test("%+05.3f", 0.0);}
+      expected output : "+0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "+0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1855 (bonus_f_wzpas_prec3p_nzero) : FAILED.
+    First line of code: {return test("%+05.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1856 (bonus_f_wzpas_prec0p) : FAILED.
+    First line of code: {return test("%+05.0f", 7.3);}
+      expected output : "+0007"
+      your output     : ""
+      expected (nonprintable as hex) : "+0007"
+      actual   (nonprintable as hex) : ""
+
+Test 1857 (bonus_f_wzpas_prec1p) : FAILED.
+    First line of code: {return test("%+05.1f", 7.3);}
+      expected output : "+07.3"
+      your output     : ""
+      expected (nonprintable as hex) : "+07.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1858 (bonus_f_wzpas_prec3p) : FAILED.
+    First line of code: {return test("%+05.3f", 7.3);}
+      expected output : "+7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1859 (bonus_f_wzpas_prec6p) : FAILED.
+    First line of code: {return test("%+05.6f", 7.3);}
+      expected output : "+7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1860 (bonus_f_wzpas_prec0n) : FAILED.
+    First line of code: {return test("%+05.0f", -7.3);}
+      expected output : "-0007"
+      your output     : ""
+      expected (nonprintable as hex) : "-0007"
+      actual   (nonprintable as hex) : ""
+
+Test 1861 (bonus_f_wzpas_prec1n) : FAILED.
+    First line of code: {return test("%+05.1f", -7.3);}
+      expected output : "-07.3"
+      your output     : ""
+      expected (nonprintable as hex) : "-07.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1862 (bonus_f_wzpas_prec3n) : FAILED.
+    First line of code: {return test("%+05.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1863 (bonus_f_wzpas_prec6n) : FAILED.
+    First line of code: {return test("%+05.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1864 (bonus_f_wljas_prec0p_zero) : FAILED.
+    First line of code: {return test("%+-5.0f", 0.0);}
+      expected output : "+0   "
+      your output     : ""
+      expected (nonprintable as hex) : "+0   "
+      actual   (nonprintable as hex) : ""
+
+Test 1865 (bonus_f_wljas_prec0p_nzero) : FAILED.
+    First line of code: {return test("%+-5.0f", -0.0);}
+      expected output : "-0   "
+      your output     : ""
+      expected (nonprintable as hex) : "-0   "
+      actual   (nonprintable as hex) : ""
+
+Test 1866 (bonus_f_wljas_prec3p_zero) : FAILED.
+    First line of code: {return test("%+-5.3f", 0.0);}
+      expected output : "+0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "+0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1867 (bonus_f_wljas_prec3p_nzero) : FAILED.
+    First line of code: {return test("%+-5.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1868 (bonus_f_wljas_prec0p) : FAILED.
+    First line of code: {return test("%+-5.0f", 7.3);}
+      expected output : "+7   "
+      your output     : ""
+      expected (nonprintable as hex) : "+7   "
+      actual   (nonprintable as hex) : ""
+
+Test 1869 (bonus_f_wljas_prec1p) : FAILED.
+    First line of code: {return test("%+-5.1f", 7.3);}
+      expected output : "+7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : "+7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1870 (bonus_f_wljas_prec3p) : FAILED.
+    First line of code: {return test("%+-5.3f", 7.3);}
+      expected output : "+7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1871 (bonus_f_wljas_prec6p) : FAILED.
+    First line of code: {return test("%+-5.6f", 7.3);}
+      expected output : "+7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1872 (bonus_f_wljas_prec0n) : FAILED.
+    First line of code: {return test("%+-5.0f", -7.3);}
+      expected output : "-7   "
+      your output     : ""
+      expected (nonprintable as hex) : "-7   "
+      actual   (nonprintable as hex) : ""
+
+Test 1873 (bonus_f_wljas_prec1n) : FAILED.
+    First line of code: {return test("%+-5.1f", -7.3);}
+      expected output : "-7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : "-7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1874 (bonus_f_wljas_prec3n) : FAILED.
+    First line of code: {return test("%+-5.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1875 (bonus_f_wljas_prec6n) : FAILED.
+    First line of code: {return test("%+-5.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1876 (bonus_f_wzpljas_prec0p_ignoreflag_zero) : FAILED.
+    First line of code: {return test("%+-05.0f", 0.0);}
+      expected output : "+0   "
+      your output     : ""
+      expected (nonprintable as hex) : "+0   "
+      actual   (nonprintable as hex) : ""
+
+Test 1877 (bonus_f_wzpljas_prec0p_ignoreflag_nzero) : FAILED.
+    First line of code: {return test("%+-05.0f", -0.0);}
+      expected output : "-0   "
+      your output     : ""
+      expected (nonprintable as hex) : "-0   "
+      actual   (nonprintable as hex) : ""
+
+Test 1878 (bonus_f_wzpljas_prec3p_ignoreflag_zero) : FAILED.
+    First line of code: {return test("%+-05.3f", 0.0);}
+      expected output : "+0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "+0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1879 (bonus_f_wzpljas_prec3p_ignoreflag_nzero) : FAILED.
+    First line of code: {return test("%+-05.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1880 (bonus_f_wzpljas_prec0p_ignoreflag) : FAILED.
+    First line of code: {return test("%+-05.0f", 7.3);}
+      expected output : "+7   "
+      your output     : ""
+      expected (nonprintable as hex) : "+7   "
+      actual   (nonprintable as hex) : ""
+
+Test 1881 (bonus_f_wzpljas_prec1p_ignoreflag) : FAILED.
+    First line of code: {return test("%+-05.1f", 7.3);}
+      expected output : "+7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : "+7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1882 (bonus_f_wzpljas_prec3p_ignoreflag) : FAILED.
+    First line of code: {return test("%+-05.3f", 7.3);}
+      expected output : "+7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1883 (bonus_f_wzpljas_prec6p_ignoreflag) : FAILED.
+    First line of code: {return test("%+-05.6f", 7.3);}
+      expected output : "+7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1884 (bonus_f_wzpljas_prec0n_ignoreflag) : FAILED.
+    First line of code: {return test("%+-05.0f", -7.3);}
+      expected output : "-7   "
+      your output     : ""
+      expected (nonprintable as hex) : "-7   "
+      actual   (nonprintable as hex) : ""
+
+Test 1885 (bonus_f_wzpljas_prec1n_ignoreflag) : FAILED.
+    First line of code: {return test("%+-05.1f", -7.3);}
+      expected output : "-7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : "-7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1886 (bonus_f_wzpljas_prec3n_ignoreflag) : FAILED.
+    First line of code: {return test("%+-05.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1887 (bonus_f_wzpljas_prec6n_ignoreflag) : FAILED.
+    First line of code: {return test("%+-05.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1888 (bonus_f_wzpljras_prec0p_zero) : FAILED.
+    First line of code: {return test("%+-05.0f", 0.0);}
+      expected output : "+0   "
+      your output     : ""
+      expected (nonprintable as hex) : "+0   "
+      actual   (nonprintable as hex) : ""
+
+Test 1889 (bonus_f_wzpljras_prec0p_nzero) : FAILED.
+    First line of code: {return test("%+-05.0f", -0.0);}
+      expected output : "-0   "
+      your output     : ""
+      expected (nonprintable as hex) : "-0   "
+      actual   (nonprintable as hex) : ""
+
+Test 1890 (bonus_f_wzpljras_prec3p_zero) : FAILED.
+    First line of code: {return test("%+-05.3f", 0.0);}
+      expected output : "+0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "+0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1891 (bonus_f_wzpljras_prec3p_nzero) : FAILED.
+    First line of code: {return test("%+-05.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1892 (bonus_f_wzpljras_prec0p) : FAILED.
+    First line of code: {return test("%-+5.0f", 7.3);}
+      expected output : "+7   "
+      your output     : ""
+      expected (nonprintable as hex) : "+7   "
+      actual   (nonprintable as hex) : ""
+
+Test 1893 (bonus_f_wzpljras_prec1p) : FAILED.
+    First line of code: {return test("%-+5.1f", 7.3);}
+      expected output : "+7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : "+7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1894 (bonus_f_wzpljras_prec3p) : FAILED.
+    First line of code: {return test("%-+5.3f", 7.3);}
+      expected output : "+7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1895 (bonus_f_wzpljras_prec6p) : FAILED.
+    First line of code: {return test("%-+5.6f", 7.3);}
+      expected output : "+7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1896 (bonus_f_wzpljras_prec0n) : FAILED.
+    First line of code: {return test("%-+5.0f", -7.3);}
+      expected output : "-7   "
+      your output     : ""
+      expected (nonprintable as hex) : "-7   "
+      actual   (nonprintable as hex) : ""
+
+Test 1897 (bonus_f_wzpljras_prec1n) : FAILED.
+    First line of code: {return test("%-+5.1f", -7.3);}
+      expected output : "-7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : "-7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1898 (bonus_f_wzpljras_prec3n) : FAILED.
+    First line of code: {return test("%-+5.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1899 (bonus_f_wzpljras_prec6n) : FAILED.
+    First line of code: {return test("%-+5.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1900 (bonus_f_wzpljafas_prec0p_zero) : FAILED.
+    First line of code: {return test("%+#-05.0f", 0.0);}
+      expected output : "+0.  "
+      your output     : ""
+      expected (nonprintable as hex) : "+0.  "
+      actual   (nonprintable as hex) : ""
+
+Test 1901 (bonus_f_wzpljafas_prec0p_nzero) : FAILED.
+    First line of code: {return test("%+#-05.0f", -0.0);}
+      expected output : "-0.  "
+      your output     : ""
+      expected (nonprintable as hex) : "-0.  "
+      actual   (nonprintable as hex) : ""
+
+Test 1902 (bonus_f_wzpljafas_prec3p_zero) : FAILED.
+    First line of code: {return test("%+#-05.3f", 0.0);}
+      expected output : "+0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "+0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1903 (bonus_f_wzpljafas_prec3p_nzero) : FAILED.
+    First line of code: {return test("%+#-05.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1904 (bonus_f_wzpljafas_prec0p) : FAILED.
+    First line of code: {return test("%+#-5.0f", 7.3);}
+      expected output : "+7.  "
+      your output     : ""
+      expected (nonprintable as hex) : "+7.  "
+      actual   (nonprintable as hex) : ""
+
+Test 1905 (bonus_f_wzpljafas_prec1p) : FAILED.
+    First line of code: {return test("%+#-5.1f", 7.3);}
+      expected output : "+7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : "+7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1906 (bonus_f_wzpljafas_prec3p) : FAILED.
+    First line of code: {return test("%+#-5.3f", 7.3);}
+      expected output : "+7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1907 (bonus_f_wzpljafas_prec6p) : FAILED.
+    First line of code: {return test("%+#-5.6f", 7.3);}
+      expected output : "+7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1908 (bonus_f_wzpljafas_prec0n) : FAILED.
+    First line of code: {return test("%+#-5.0f", -7.3);}
+      expected output : "-7.  "
+      your output     : ""
+      expected (nonprintable as hex) : "-7.  "
+      actual   (nonprintable as hex) : ""
+
+Test 1909 (bonus_f_wzpljafas_prec1n) : FAILED.
+    First line of code: {return test("%+#-5.1f", -7.3);}
+      expected output : "-7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : "-7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1910 (bonus_f_wzpljafas_prec3n) : FAILED.
+    First line of code: {return test("%+#-5.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1911 (bonus_f_wzpljafas_prec6n) : FAILED.
+    First line of code: {return test("%+#-5.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1912 (bonus_f_wsp_prec0p_zero) : FAILED.
+    First line of code: {return test("% 5.0f", 0.0);}
+      expected output : "    0"
+      your output     : ""
+      expected (nonprintable as hex) : "    0"
+      actual   (nonprintable as hex) : ""
+
+Test 1913 (bonus_f_wsp_prec0p_nzero) : FAILED.
+    First line of code: {return test("% 5.0f", -0.0);}
+      expected output : "   -0"
+      your output     : ""
+      expected (nonprintable as hex) : "   -0"
+      actual   (nonprintable as hex) : ""
+
+Test 1914 (bonus_f_wsp_prec3p_zero) : FAILED.
+    First line of code: {return test("% 5.3f", 0.0);}
+      expected output : " 0.000"
+      your output     : ""
+      expected (nonprintable as hex) : " 0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1915 (bonus_f_wsp_prec3p_nzero) : FAILED.
+    First line of code: {return test("% 5.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1916 (bonus_f_wsp_prec0p) : FAILED.
+    First line of code: {return test("% 5.0f", 7.3);}
+      expected output : "    7"
+      your output     : ""
+      expected (nonprintable as hex) : "    7"
+      actual   (nonprintable as hex) : ""
+
+Test 1917 (bonus_f_wsp_prec1p) : FAILED.
+    First line of code: {return test("% 5.1f", 7.3);}
+      expected output : "  7.3"
+      your output     : ""
+      expected (nonprintable as hex) : "  7.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1918 (bonus_f_wsp_prec3p) : FAILED.
+    First line of code: {return test("% 5.3f", 7.3);}
+      expected output : " 7.300"
+      your output     : ""
+      expected (nonprintable as hex) : " 7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1919 (bonus_f_wsp_prec6p) : FAILED.
+    First line of code: {return test("% 5.6f", 7.3);}
+      expected output : " 7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : " 7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1920 (bonus_f_wsp_prec0n) : FAILED.
+    First line of code: {return test("% 5.0f", -7.3);}
+      expected output : "   -7"
+      your output     : ""
+      expected (nonprintable as hex) : "   -7"
+      actual   (nonprintable as hex) : ""
+
+Test 1921 (bonus_f_wsp_prec1n) : FAILED.
+    First line of code: {return test("% 5.1f", -7.3);}
+      expected output : " -7.3"
+      your output     : ""
+      expected (nonprintable as hex) : " -7.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1922 (bonus_f_wsp_prec3n) : FAILED.
+    First line of code: {return test("% 5.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1923 (bonus_f_wsp_prec6n) : FAILED.
+    First line of code: {return test("% 5.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1924 (bonus_f_wzpsp_prec0p_zero) : FAILED.
+    First line of code: {return test("% 05.0f", 0.0);}
+      expected output : " 0000"
+      your output     : ""
+      expected (nonprintable as hex) : " 0000"
+      actual   (nonprintable as hex) : ""
+
+Test 1925 (bonus_f_wzpsp_prec0p_nzero) : FAILED.
+    First line of code: {return test("% 05.0f", -0.0);}
+      expected output : "-0000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0000"
+      actual   (nonprintable as hex) : ""
+
+Test 1926 (bonus_f_wzpsp_prec3p_zero) : FAILED.
+    First line of code: {return test("% 05.3f", 0.0);}
+      expected output : " 0.000"
+      your output     : ""
+      expected (nonprintable as hex) : " 0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1927 (bonus_f_wzpsp_prec3p_nzero) : FAILED.
+    First line of code: {return test("% 05.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1928 (bonus_f_wzpsp_prec0p) : FAILED.
+    First line of code: {return test("% 05.0f", 7.3);}
+      expected output : " 0007"
+      your output     : ""
+      expected (nonprintable as hex) : " 0007"
+      actual   (nonprintable as hex) : ""
+
+Test 1929 (bonus_f_wzpsp_prec1p) : FAILED.
+    First line of code: {return test("% 05.1f", 7.3);}
+      expected output : " 07.3"
+      your output     : ""
+      expected (nonprintable as hex) : " 07.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1930 (bonus_f_wzpsp_prec3p) : FAILED.
+    First line of code: {return test("% 05.3f", 7.3);}
+      expected output : " 7.300"
+      your output     : ""
+      expected (nonprintable as hex) : " 7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1931 (bonus_f_wzpsp_prec6p) : FAILED.
+    First line of code: {return test("% 05.6f", 7.3);}
+      expected output : " 7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : " 7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1932 (bonus_f_wzpsp_prec0n) : FAILED.
+    First line of code: {return test("% 05.0f", -7.3);}
+      expected output : "-0007"
+      your output     : ""
+      expected (nonprintable as hex) : "-0007"
+      actual   (nonprintable as hex) : ""
+
+Test 1933 (bonus_f_wzpsp_prec1n) : FAILED.
+    First line of code: {return test("% 05.1f", -7.3);}
+      expected output : "-07.3"
+      your output     : ""
+      expected (nonprintable as hex) : "-07.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1934 (bonus_f_wzpsp_prec3n) : FAILED.
+    First line of code: {return test("% 05.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1935 (bonus_f_wzpsp_prec6n) : FAILED.
+    First line of code: {return test("% 05.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1936 (bonus_f_wljsp_prec0p_zero) : FAILED.
+    First line of code: {return test("% -5.0f", 0.0);}
+      expected output : " 0   "
+      your output     : ""
+      expected (nonprintable as hex) : " 0   "
+      actual   (nonprintable as hex) : ""
+
+Test 1937 (bonus_f_wljsp_prec0p_nzero) : FAILED.
+    First line of code: {return test("% -5.0f", -0.0);}
+      expected output : "-0   "
+      your output     : ""
+      expected (nonprintable as hex) : "-0   "
+      actual   (nonprintable as hex) : ""
+
+Test 1938 (bonus_f_wljsp_prec3p_zero) : FAILED.
+    First line of code: {return test("% -5.3f", 0.0);}
+      expected output : " 0.000"
+      your output     : ""
+      expected (nonprintable as hex) : " 0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1939 (bonus_f_wljsp_prec3p_nzero) : FAILED.
+    First line of code: {return test("% -5.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1940 (bonus_f_wljsp_prec0p) : FAILED.
+    First line of code: {return test("% -5.0f", 7.3);}
+      expected output : " 7   "
+      your output     : ""
+      expected (nonprintable as hex) : " 7   "
+      actual   (nonprintable as hex) : ""
+
+Test 1941 (bonus_f_wljsp_prec1p) : FAILED.
+    First line of code: {return test("% -5.1f", 7.3);}
+      expected output : " 7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : " 7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1942 (bonus_f_wljsp_prec3p) : FAILED.
+    First line of code: {return test("% -5.3f", 7.3);}
+      expected output : " 7.300"
+      your output     : ""
+      expected (nonprintable as hex) : " 7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1943 (bonus_f_wljsp_prec6p) : FAILED.
+    First line of code: {return test("% -5.6f", 7.3);}
+      expected output : " 7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : " 7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1944 (bonus_f_wljsp_prec0n) : FAILED.
+    First line of code: {return test("% -5.0f", -7.3);}
+      expected output : "-7   "
+      your output     : ""
+      expected (nonprintable as hex) : "-7   "
+      actual   (nonprintable as hex) : ""
+
+Test 1945 (bonus_f_wljsp_prec1n) : FAILED.
+    First line of code: {return test("% -5.1f", -7.3);}
+      expected output : "-7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : "-7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1946 (bonus_f_wljsp_prec3n) : FAILED.
+    First line of code: {return test("% -5.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1947 (bonus_f_wljsp_prec6n) : FAILED.
+    First line of code: {return test("% -5.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1948 (bonus_f_wzpljsp_prec0p_zero) : FAILED.
+    First line of code: {return test("% -05.0f", 0.0);}
+      expected output : " 0   "
+      your output     : ""
+      expected (nonprintable as hex) : " 0   "
+      actual   (nonprintable as hex) : ""
+
+Test 1949 (bonus_f_wzpljsp_prec0p_nzero) : FAILED.
+    First line of code: {return test("% -05.0f", -0.0);}
+      expected output : "-0   "
+      your output     : ""
+      expected (nonprintable as hex) : "-0   "
+      actual   (nonprintable as hex) : ""
+
+Test 1950 (bonus_f_wzpljsp_prec3p_zero) : FAILED.
+    First line of code: {return test("% -05.3f", 0.0);}
+      expected output : " 0.000"
+      your output     : ""
+      expected (nonprintable as hex) : " 0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1951 (bonus_f_wzpljsp_prec3p_nzero) : FAILED.
+    First line of code: {return test("% -05.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1952 (bonus_f_wzpljsp_prec0p_ignoreflag) : FAILED.
+    First line of code: {return test("% -05.0f", 7.3);}
+      expected output : " 7   "
+      your output     : ""
+      expected (nonprintable as hex) : " 7   "
+      actual   (nonprintable as hex) : ""
+
+Test 1953 (bonus_f_wzpljsp_prec1p_ignoreflag) : FAILED.
+    First line of code: {return test("% -05.1f", 7.3);}
+      expected output : " 7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : " 7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1954 (bonus_f_wzpljsp_prec3p_ignoreflag) : FAILED.
+    First line of code: {return test("% -05.3f", 7.3);}
+      expected output : " 7.300"
+      your output     : ""
+      expected (nonprintable as hex) : " 7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1955 (bonus_f_wzpljsp_prec6p_ignoreflag) : FAILED.
+    First line of code: {return test("% -05.6f", 7.3);}
+      expected output : " 7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : " 7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1956 (bonus_f_wzpljsp_prec0n_ignoreflag) : FAILED.
+    First line of code: {return test("% -05.0f", -7.3);}
+      expected output : "-7   "
+      your output     : ""
+      expected (nonprintable as hex) : "-7   "
+      actual   (nonprintable as hex) : ""
+
+Test 1957 (bonus_f_wzpljsp_prec1n_ignoreflag) : FAILED.
+    First line of code: {return test("% -05.1f", -7.3);}
+      expected output : "-7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : "-7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1958 (bonus_f_wzpljsp_prec3n_ignoreflag) : FAILED.
+    First line of code: {return test("% -05.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1959 (bonus_f_wzpljsp_prec6n_ignoreflag) : FAILED.
+    First line of code: {return test("% -05.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1960 (bonus_f_wzpljrsp_prec0p_zero) : FAILED.
+    First line of code: {return test("%- 5.0f", 0.0);}
+      expected output : " 0   "
+      your output     : ""
+      expected (nonprintable as hex) : " 0   "
+      actual   (nonprintable as hex) : ""
+
+Test 1961 (bonus_f_wzpljrsp_prec0p_nzero) : FAILED.
+    First line of code: {return test("%- 5.0f", -0.0);}
+      expected output : "-0   "
+      your output     : ""
+      expected (nonprintable as hex) : "-0   "
+      actual   (nonprintable as hex) : ""
+
+Test 1962 (bonus_f_wzpljrsp_prec3p_zero) : FAILED.
+    First line of code: {return test("%- 5.3f", 0.0);}
+      expected output : " 0.000"
+      your output     : ""
+      expected (nonprintable as hex) : " 0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1963 (bonus_f_wzpljrsp_prec3p_nzero) : FAILED.
+    First line of code: {return test("%- 5.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1964 (bonus_f_wzpljrsp_prec0p) : FAILED.
+    First line of code: {return test("%- 5.0f", 7.3);}
+      expected output : " 7   "
+      your output     : ""
+      expected (nonprintable as hex) : " 7   "
+      actual   (nonprintable as hex) : ""
+
+Test 1965 (bonus_f_wzpljrsp_prec1p) : FAILED.
+    First line of code: {return test("%- 5.1f", 7.3);}
+      expected output : " 7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : " 7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1966 (bonus_f_wzpljrsp_prec3p) : FAILED.
+    First line of code: {return test("%- 5.3f", 7.3);}
+      expected output : " 7.300"
+      your output     : ""
+      expected (nonprintable as hex) : " 7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1967 (bonus_f_wzpljrsp_prec6p) : FAILED.
+    First line of code: {return test("%- 5.6f", 7.3);}
+      expected output : " 7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : " 7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1968 (bonus_f_wzpljrsp_prec0n) : FAILED.
+    First line of code: {return test("%- 5.0f", -7.3);}
+      expected output : "-7   "
+      your output     : ""
+      expected (nonprintable as hex) : "-7   "
+      actual   (nonprintable as hex) : ""
+
+Test 1969 (bonus_f_wzpljrsp_prec1n) : FAILED.
+    First line of code: {return test("%- 5.1f", -7.3);}
+      expected output : "-7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : "-7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1970 (bonus_f_wzpljrsp_prec3n) : FAILED.
+    First line of code: {return test("%- 5.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1971 (bonus_f_wzpljrsp_prec6n) : FAILED.
+    First line of code: {return test("%- 5.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1972 (bonus_f_wzpljafsp_prec0p_zero) : FAILED.
+    First line of code: {return test("% #-05.0f", 0.0);}
+      expected output : " 0.  "
+      your output     : ""
+      expected (nonprintable as hex) : " 0.  "
+      actual   (nonprintable as hex) : ""
+
+Test 1973 (bonus_f_wzpljafsp_prec0p_nzero) : FAILED.
+    First line of code: {return test("% #-05.0f", -0.0);}
+      expected output : "-0.  "
+      your output     : ""
+      expected (nonprintable as hex) : "-0.  "
+      actual   (nonprintable as hex) : ""
+
+Test 1974 (bonus_f_wzpljafsp_prec3p_zero) : FAILED.
+    First line of code: {return test("% #-05.3f", 0.0);}
+      expected output : " 0.000"
+      your output     : ""
+      expected (nonprintable as hex) : " 0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1975 (bonus_f_wzpljafsp_prec3p_nzero) : FAILED.
+    First line of code: {return test("% #-05.3f", -0.0);}
+      expected output : "-0.000"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.000"
+      actual   (nonprintable as hex) : ""
+
+Test 1976 (bonus_f_wzpljafsp_prec0p) : FAILED.
+    First line of code: {return test("% #-5.0f", 7.3);}
+      expected output : " 7.  "
+      your output     : ""
+      expected (nonprintable as hex) : " 7.  "
+      actual   (nonprintable as hex) : ""
+
+Test 1977 (bonus_f_wzpljafsp_prec1p) : FAILED.
+    First line of code: {return test("% #-5.1f", 7.3);}
+      expected output : " 7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : " 7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1978 (bonus_f_wzpljafsp_prec3p) : FAILED.
+    First line of code: {return test("% #-5.3f", 7.3);}
+      expected output : " 7.300"
+      your output     : ""
+      expected (nonprintable as hex) : " 7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1979 (bonus_f_wzpljafsp_prec6p) : FAILED.
+    First line of code: {return test("% #-5.6f", 7.3);}
+      expected output : " 7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : " 7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1980 (bonus_f_wzpljafsp_prec0n) : FAILED.
+    First line of code: {return test("% #-5.0f", -7.3);}
+      expected output : "-7.  "
+      your output     : ""
+      expected (nonprintable as hex) : "-7.  "
+      actual   (nonprintable as hex) : ""
+
+Test 1981 (bonus_f_wzpljafsp_prec1n) : FAILED.
+    First line of code: {return test("% #-5.1f", -7.3);}
+      expected output : "-7.3 "
+      your output     : ""
+      expected (nonprintable as hex) : "-7.3 "
+      actual   (nonprintable as hex) : ""
+
+Test 1982 (bonus_f_wzpljafsp_prec3n) : FAILED.
+    First line of code: {return test("% #-5.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1983 (bonus_f_wzpljafsp_prec6n) : FAILED.
+    First line of code: {return test("% #-5.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1984 (bonus_f_assp_prec0p_ignoreflag) : FAILED.
+    First line of code: {return test("%+ .0f", 7.3);}
+      expected output : "+7"
+      your output     : ""
+      expected (nonprintable as hex) : "+7"
+      actual   (nonprintable as hex) : ""
+
+Test 1985 (bonus_f_assp_prec1p_ignoreflag) : FAILED.
+    First line of code: {return test("%+ .1f", 7.3);}
+      expected output : "+7.3"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1986 (bonus_f_assp_prec3p_ignoreflag) : FAILED.
+    First line of code: {return test("%+ .3f", 7.3);}
+      expected output : "+7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1987 (bonus_f_assp_prec6p_ignoreflag) : FAILED.
+    First line of code: {return test("%+ .6f", 7.3);}
+      expected output : "+7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1988 (bonus_f_assp_prec0n_ignoreflag) : FAILED.
+    First line of code: {return test("%+ .0f", -7.3);}
+      expected output : "-7"
+      your output     : ""
+      expected (nonprintable as hex) : "-7"
+      actual   (nonprintable as hex) : ""
+
+Test 1989 (bonus_f_assp_prec1n_ignoreflag) : FAILED.
+    First line of code: {return test("%+ .1f", -7.3);}
+      expected output : "-7.3"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1990 (bonus_f_assp_prec3n_ignoreflag) : FAILED.
+    First line of code: {return test("%+ .3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1991 (bonus_f_assp_prec6n_ignoreflag) : FAILED.
+    First line of code: {return test("%+ .6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1992 (bonus_f_asspr_prec0p_ignoreflag) : FAILED.
+    First line of code: {return test("% +.0f", 7.3);}
+      expected output : "+7"
+      your output     : ""
+      expected (nonprintable as hex) : "+7"
+      actual   (nonprintable as hex) : ""
+
+Test 1993 (bonus_f_asspr_prec1p_ignoreflag) : FAILED.
+    First line of code: {return test("% +.1f", 7.3);}
+      expected output : "+7.3"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1994 (bonus_f_asspr_prec3p_ignoreflag) : FAILED.
+    First line of code: {return test("% +.3f", 7.3);}
+      expected output : "+7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1995 (bonus_f_asspr_prec6p_ignoreflag) : FAILED.
+    First line of code: {return test("% +.6f", 7.3);}
+      expected output : "+7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "+7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 1996 (bonus_f_asspr_prec0n_ignoreflag) : FAILED.
+    First line of code: {return test("% +.0f", -7.3);}
+      expected output : "-7"
+      your output     : ""
+      expected (nonprintable as hex) : "-7"
+      actual   (nonprintable as hex) : ""
+
+Test 1997 (bonus_f_asspr_prec1n_ignoreflag) : FAILED.
+    First line of code: {return test("% +.1f", -7.3);}
+      expected output : "-7.3"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.3"
+      actual   (nonprintable as hex) : ""
+
+Test 1998 (bonus_f_asspr_prec3n_ignoreflag) : FAILED.
+    First line of code: {return test("% +.3f", -7.3);}
+      expected output : "-7.300"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300"
+      actual   (nonprintable as hex) : ""
+
+Test 1999 (bonus_f_asspr_prec6n_ignoreflag) : FAILED.
+    First line of code: {return test("% +.6f", -7.3);}
+      expected output : "-7.300000"
+      your output     : ""
+      expected (nonprintable as hex) : "-7.300000"
+      actual   (nonprintable as hex) : ""
+
+Test 4001 (bonus_f_rnd_half_to_even_01) : FAILED.
+    First line of code: {return test("%.0f", -5.5);}
+      expected output : "-6"
+      your output     : ""
+      expected (nonprintable as hex) : "-6"
+      actual   (nonprintable as hex) : ""
+
+Test 4002 (bonus_f_rnd_half_to_even_02) : FAILED.
+    First line of code: {return test("%.0f", -4.5);}
+      expected output : "-4"
+      your output     : ""
+      expected (nonprintable as hex) : "-4"
+      actual   (nonprintable as hex) : ""
+
+Test 4003 (bonus_f_rnd_half_to_even_03) : FAILED.
+    First line of code: {return test("%.0f", -3.5);}
+      expected output : "-4"
+      your output     : ""
+      expected (nonprintable as hex) : "-4"
+      actual   (nonprintable as hex) : ""
+
+Test 4004 (bonus_f_rnd_half_to_even_04) : FAILED.
+    First line of code: {return test("%.0f", -2.5);}
+      expected output : "-2"
+      your output     : ""
+      expected (nonprintable as hex) : "-2"
+      actual   (nonprintable as hex) : ""
+
+Test 4005 (bonus_f_rnd_half_to_even_05) : FAILED.
+    First line of code: {return test("%.0f", -1.5);}
+      expected output : "-2"
+      your output     : ""
+      expected (nonprintable as hex) : "-2"
+      actual   (nonprintable as hex) : ""
+
+Test 4006 (bonus_f_rnd_half_to_even_06) : FAILED.
+    First line of code: {return test("%.0f", -0.5);}
+      expected output : "-0"
+      your output     : ""
+      expected (nonprintable as hex) : "-0"
+      actual   (nonprintable as hex) : ""
+
+Test 4007 (bonus_f_rnd_half_to_even_07) : FAILED.
+    First line of code: {return test("%.0f", 0.5);}
+      expected output : "0"
+      your output     : ""
+      expected (nonprintable as hex) : "0"
+      actual   (nonprintable as hex) : ""
+
+Test 4008 (bonus_f_rnd_half_to_even_08) : FAILED.
+    First line of code: {return test("%.0f", 1.5);}
+      expected output : "2"
+      your output     : ""
+      expected (nonprintable as hex) : "2"
+      actual   (nonprintable as hex) : ""
+
+Test 4009 (bonus_f_rnd_half_to_even_09) : FAILED.
+    First line of code: {return test("%.0f", 2.5);}
+      expected output : "2"
+      your output     : ""
+      expected (nonprintable as hex) : "2"
+      actual   (nonprintable as hex) : ""
+
+Test 4010 (bonus_f_rnd_half_to_even_10) : FAILED.
+    First line of code: {return test("%.0f", 3.5);}
+      expected output : "4"
+      your output     : ""
+      expected (nonprintable as hex) : "4"
+      actual   (nonprintable as hex) : ""
+
+Test 4011 (bonus_f_rnd_half_to_even_11) : FAILED.
+    First line of code: {return test("%.0f", 4.5);}
+      expected output : "4"
+      your output     : ""
+      expected (nonprintable as hex) : "4"
+      actual   (nonprintable as hex) : ""
+
+Test 4012 (bonus_f_rnd_half_to_even_12) : FAILED.
+    First line of code: {return test("%.0f", 5.5);}
+      expected output : "6"
+      your output     : ""
+      expected (nonprintable as hex) : "6"
+      actual   (nonprintable as hex) : ""
+
+Test 4013 (bonus_f_rnd_half_to_even_13) : FAILED.
+    First line of code: {return test("%.3f", -1.2305);}
+      expected output : "-1.230"
+      your output     : ""
+      expected (nonprintable as hex) : "-1.230"
+      actual   (nonprintable as hex) : ""
+
+Test 4014 (bonus_f_rnd_half_to_even_14) : FAILED.
+    First line of code: {return test("%.3f", -1.2315);}
+      expected output : "-1.232"
+      your output     : ""
+      expected (nonprintable as hex) : "-1.232"
+      actual   (nonprintable as hex) : ""
+
+Test 4015 (bonus_f_rnd_half_to_even_15) : FAILED.
+    First line of code: {return test("%.3f", -1.2325);}
+      expected output : "-1.232"
+      your output     : ""
+      expected (nonprintable as hex) : "-1.232"
+      actual   (nonprintable as hex) : ""
+
+Test 4016 (bonus_f_rnd_half_to_even_16) : FAILED.
+    First line of code: {return test("%.3f", -1.2335);}
+      expected output : "-1.234"
+      your output     : ""
+      expected (nonprintable as hex) : "-1.234"
+      actual   (nonprintable as hex) : ""
+
+Test 4017 (bonus_f_rnd_half_to_even_17) : FAILED.
+    First line of code: {return test("%.3f", -1.2345);}
+      expected output : "-1.234"
+      your output     : ""
+      expected (nonprintable as hex) : "-1.234"
+      actual   (nonprintable as hex) : ""
+
+Test 4018 (bonus_f_rnd_half_to_even_18) : FAILED.
+    First line of code: {return test("%.3f", -1.2355);}
+      expected output : "-1.236"
+      your output     : ""
+      expected (nonprintable as hex) : "-1.236"
+      actual   (nonprintable as hex) : ""
+
+Test 4019 (bonus_f_rnd_half_to_even_19) : FAILED.
+    First line of code: {return test("%.3f", -1.2365);}
+      expected output : "-1.236"
+      your output     : ""
+      expected (nonprintable as hex) : "-1.236"
+      actual   (nonprintable as hex) : ""
+
+Test 4020 (bonus_f_rnd_half_to_even_20) : FAILED.
+    First line of code: {return test("%.3f", -1.2375);}
+      expected output : "-1.238"
+      your output     : ""
+      expected (nonprintable as hex) : "-1.238"
+      actual   (nonprintable as hex) : ""
+
+Test 4021 (bonus_f_rnd_half_to_even_21) : FAILED.
+    First line of code: {return test("%.3f", -1.2385);}
+      expected output : "-1.238"
+      your output     : ""
+      expected (nonprintable as hex) : "-1.238"
+      actual   (nonprintable as hex) : ""
+
+Test 4022 (bonus_f_rnd_half_to_even_22) : FAILED.
+    First line of code: {return test("%.3f", -1.2395);}
+      expected output : "-1.240"
+      your output     : ""
+      expected (nonprintable as hex) : "-1.240"
+      actual   (nonprintable as hex) : ""
+
+Test 4023 (bonus_f_rnd_half_to_even_24) : FAILED.
+    First line of code: {return test("%.3f", 1.2305);}
+      expected output : "1.230"
+      your output     : ""
+      expected (nonprintable as hex) : "1.230"
+      actual   (nonprintable as hex) : ""
+
+Test 4024 (bonus_f_rnd_half_to_even_25) : FAILED.
+    First line of code: {return test("%.3f", 1.2315);}
+      expected output : "1.232"
+      your output     : ""
+      expected (nonprintable as hex) : "1.232"
+      actual   (nonprintable as hex) : ""
+
+Test 4025 (bonus_f_rnd_half_to_even_26) : FAILED.
+    First line of code: {return test("%.3f", 1.2325);}
+      expected output : "1.232"
+      your output     : ""
+      expected (nonprintable as hex) : "1.232"
+      actual   (nonprintable as hex) : ""
+
+Test 4026 (bonus_f_rnd_half_to_even_27) : FAILED.
+    First line of code: {return test("%.3f", 1.2335);}
+      expected output : "1.234"
+      your output     : ""
+      expected (nonprintable as hex) : "1.234"
+      actual   (nonprintable as hex) : ""
+
+Test 4027 (bonus_f_rnd_half_to_even_28) : FAILED.
+    First line of code: {return test("%.3f", 1.2345);}
+      expected output : "1.234"
+      your output     : ""
+      expected (nonprintable as hex) : "1.234"
+      actual   (nonprintable as hex) : ""
+
+Test 4028 (bonus_f_rnd_half_to_even_29) : FAILED.
+    First line of code: {return test("%.3f", 1.2355);}
+      expected output : "1.236"
+      your output     : ""
+      expected (nonprintable as hex) : "1.236"
+      actual   (nonprintable as hex) : ""
+
+Test 4029 (bonus_f_rnd_half_to_even_30) : FAILED.
+    First line of code: {return test("%.3f", 1.2365);}
+      expected output : "1.236"
+      your output     : ""
+      expected (nonprintable as hex) : "1.236"
+      actual   (nonprintable as hex) : ""
+
+Test 4030 (bonus_f_rnd_half_to_even_31) : FAILED.
+    First line of code: {return test("%.3f", 1.2375);}
+      expected output : "1.238"
+      your output     : ""
+      expected (nonprintable as hex) : "1.238"
+      actual   (nonprintable as hex) : ""
+
+Test 4031 (bonus_f_rnd_half_to_even_32) : FAILED.
+    First line of code: {return test("%.3f", 1.2385);}
+      expected output : "1.238"
+      your output     : ""
+      expected (nonprintable as hex) : "1.238"
+      actual   (nonprintable as hex) : ""
+
+Test 4032 (bonus_f_rnd_half_to_even_33) : FAILED.
+    First line of code: {return test("%.3f", 1.2395);}
+      expected output : "1.240"
+      your output     : ""
+      expected (nonprintable as hex) : "1.240"
+      actual   (nonprintable as hex) : ""
+
+Test 4117 (bonus_f_rnd_9999_01) : FAILED.
+    First line of code: {return test("%.0f", -9.0);}
+      expected output : "-9"
+      your output     : ""
+      expected (nonprintable as hex) : "-9"
+      actual   (nonprintable as hex) : ""
+
+Test 4118 (bonus_f_rnd_9999_02) : FAILED.
+    First line of code: {return test("%.1f", -9.0);}
+      expected output : "-9.0"
+      your output     : ""
+      expected (nonprintable as hex) : "-9.0"
+      actual   (nonprintable as hex) : ""
+
+Test 4119 (bonus_f_rnd_9999_03) : FAILED.
+    First line of code: {return test("%.0f", -9.9);}
+      expected output : "-10"
+      your output     : ""
+      expected (nonprintable as hex) : "-10"
+      actual   (nonprintable as hex) : ""
+
+Test 4120 (bonus_f_rnd_9999_04) : FAILED.
+    First line of code: {return test("%.1f", -9.9);}
+      expected output : "-9.9"
+      your output     : ""
+      expected (nonprintable as hex) : "-9.9"
+      actual   (nonprintable as hex) : ""
+
+Test 4121 (bonus_f_rnd_9999_05) : FAILED.
+    First line of code: {return test("%.0f", -9.999);}
+      expected output : "-10"
+      your output     : ""
+      expected (nonprintable as hex) : "-10"
+      actual   (nonprintable as hex) : ""
+
+Test 4122 (bonus_f_rnd_9999_06) : FAILED.
+    First line of code: {return test("%.1f", -9.999);}
+      expected output : "-10.0"
+      your output     : ""
+      expected (nonprintable as hex) : "-10.0"
+      actual   (nonprintable as hex) : ""
+
+Test 4123 (bonus_f_rnd_9999_07) : FAILED.
+    First line of code: {return test("%.0f", -0.999);}
+      expected output : "-1"
+      your output     : ""
+      expected (nonprintable as hex) : "-1"
+      actual   (nonprintable as hex) : ""
+
+Test 4124 (bonus_f_rnd_9999_08) : FAILED.
+    First line of code: {return test("%.1f", -0.999);}
+      expected output : "-1.0"
+      your output     : ""
+      expected (nonprintable as hex) : "-1.0"
+      actual   (nonprintable as hex) : ""
+
+Test 4125 (bonus_f_rnd_9999_09) : FAILED.
+    First line of code: {return test("%.0f", -0.099);}
+      expected output : "-0"
+      your output     : ""
+      expected (nonprintable as hex) : "-0"
+      actual   (nonprintable as hex) : ""
+
+Test 4126 (bonus_f_rnd_9999_10) : FAILED.
+    First line of code: {return test("%.1f", -0.099);}
+      expected output : "-0.1"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.1"
+      actual   (nonprintable as hex) : ""
+
+Test 4127 (bonus_f_rnd_9999_11) : FAILED.
+    First line of code: {return test("%.0f", -9.0);}
+      expected output : "-9"
+      your output     : ""
+      expected (nonprintable as hex) : "-9"
+      actual   (nonprintable as hex) : ""
+
+Test 4128 (bonus_f_rnd_9999_12) : FAILED.
+    First line of code: {return test("%.1f", -9.0);}
+      expected output : "-9.0"
+      your output     : ""
+      expected (nonprintable as hex) : "-9.0"
+      actual   (nonprintable as hex) : ""
+
+Test 4129 (bonus_f_rnd_9999_13) : FAILED.
+    First line of code: {return test("%.0f", -9.9);}
+      expected output : "-10"
+      your output     : ""
+      expected (nonprintable as hex) : "-10"
+      actual   (nonprintable as hex) : ""
+
+Test 4130 (bonus_f_rnd_9999_14) : FAILED.
+    First line of code: {return test("%.1f", -9.9);}
+      expected output : "-9.9"
+      your output     : ""
+      expected (nonprintable as hex) : "-9.9"
+      actual   (nonprintable as hex) : ""
+
+Test 4131 (bonus_f_rnd_9999_15) : FAILED.
+    First line of code: {return test("%.0f", -9.999);}
+      expected output : "-10"
+      your output     : ""
+      expected (nonprintable as hex) : "-10"
+      actual   (nonprintable as hex) : ""
+
+Test 4132 (bonus_f_rnd_9999_16) : FAILED.
+    First line of code: {return test("%.1f", -9.999);}
+      expected output : "-10.0"
+      your output     : ""
+      expected (nonprintable as hex) : "-10.0"
+      actual   (nonprintable as hex) : ""
+
+Test 4133 (bonus_f_rnd_9999_17) : FAILED.
+    First line of code: {return test("%.0f", -0.999);}
+      expected output : "-1"
+      your output     : ""
+      expected (nonprintable as hex) : "-1"
+      actual   (nonprintable as hex) : ""
+
+Test 4134 (bonus_f_rnd_9999_18) : FAILED.
+    First line of code: {return test("%.1f", -0.999);}
+      expected output : "-1.0"
+      your output     : ""
+      expected (nonprintable as hex) : "-1.0"
+      actual   (nonprintable as hex) : ""
+
+Test 4135 (bonus_f_rnd_9999_19) : FAILED.
+    First line of code: {return test("%.0f", -0.099);}
+      expected output : "-0"
+      your output     : ""
+      expected (nonprintable as hex) : "-0"
+      actual   (nonprintable as hex) : ""
+
+Test 4136 (bonus_f_rnd_9999_20) : FAILED.
+    First line of code: {return test("%.1f", -0.099);}
+      expected output : "-0.1"
+      your output     : ""
+      expected (nonprintable as hex) : "-0.1"
+      actual   (nonprintable as hex) : ""
+
+Test 4177 (bonus_f_neg_prec_star_01) : FAILED.
+    First line of code: {return test("%.*f", -3, 3.1415926535);}
+      expected output : "3.141593"
+      your output     : ""
+      expected (nonprintable as hex) : "3.141593"
+      actual   (nonprintable as hex) : ""
+
+Test 4178 (bonus_f_neg_prec_star_02) : FAILED.
+    First line of code: {return test("%.*f", -1, 3.1415926535);}
+      expected output : "3.141593"
+      your output     : ""
+      expected (nonprintable as hex) : "3.141593"
+      actual   (nonprintable as hex) : ""
+
+Test 4179 (bonus_f_neg_prec_star_03) : FAILED.
+    First line of code: {return test("%.*f", -1, 0.0);}
+      expected output : "0.000000"
+      your output     : ""
+      expected (nonprintable as hex) : "0.000000"
+      actual   (nonprintable as hex) : ""
+

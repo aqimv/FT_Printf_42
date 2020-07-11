@@ -19,9 +19,7 @@ int main() {
 	static unsigned long long a10;
 	static char *a11;
 	static void *a12;
-	ft_printf("%0*i", -7, -54);
-
-
+	ft_printf("%.o", 0);
 
 	return 0;
 }
