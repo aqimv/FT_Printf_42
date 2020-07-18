@@ -82,7 +82,7 @@ void printHex(t_pfstruct *data)
 	intmax_t num;
 
 	if (data->fs.size.ll)
-		num = (unsigned long long int)va_arg(data->args, unsigned long long int);
+		num = (unsigned long long)va_arg(data->args, unsigned long long);
 	else if (data->fs.size.l)
 		num = (unsigned long int)va_arg(data->args, unsigned long int);
 	else if (data->fs.size.h)

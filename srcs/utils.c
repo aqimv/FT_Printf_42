@@ -81,7 +81,7 @@ void precisionZero(t_pfstruct *data)
 	while (precision > 0)
 	{
 		buf = data->fs.fnl;
-		data->fs.fnl = ft_strjoin("0", data->fs.fnl);
+		data->fs.fnl = ft_strjoin("a", data->fs.fnl);
 		ft_strdel(&buf);
 		precision--;
 	}
