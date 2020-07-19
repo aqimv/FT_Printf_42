@@ -13,19 +13,19 @@
 
 #include "ft_printf.h"
 
-void signOrSpace(t_pfstruct *data)
-{
-	if (data->fs.sign)
-	{
-		data->pfreturn += write(1, &data->fs.sign, 1);
-		data->fs.wid -= 1;
-	}
-	else if (data->fs.flag.space)
-	{
-		data->pfreturn += write(1, " ", 1);
-		data->fs.wid -= 1;
-	}
-}
+//void signOrSpace(t_pfstruct *data)
+//{
+//	if (data->fs.sign)
+//	{
+//		data->pfreturn += write(1, &data->fs.sign, 1);
+//		data->fs.wid -= 1;
+//	}
+//	else if (data->fs.flag.space)
+//	{
+//		data->pfreturn += write(1, " ", 1);
+//		data->fs.wid -= 1;
+//	}
+//}
 
 void printInt4(t_pfstruct *data)
 {

@@ -11,13 +11,15 @@ int main() {
 
 //	printf("%.5f\n", 0.987654321);
 //	printf("%f\n", 5.99999999999);
-	ft_printf("%.15f\n", 33.1231231230002);
-	printf("%.15f\n", 33.1231231230002);
-	ft_printf("this %f float\n", 1.5);
-	printf("this %f float\n", 1.5);
-
-
-	printf("%.*f", -1, 3.1415926535);
+//	printf("%.3f\n", -33.9999);
+//	ft_printf("%.3f\n", -33.9999);
+//	ft_printf("%.15f\n", -33.1231231230002);
+//	ft_printf("this %f float\n", 1.5);
+//	printf("this %f float\n", 1.5);
+	ft_printf("this %.0f float\n", 1.6);
+	ft_printf("%.0f", 0.0);
+//
+//	printf("%.*f", -1, 3.1415926535);
 
 
 

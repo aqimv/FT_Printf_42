@@ -12,6 +12,7 @@ SRC = ft_printf.c \
 		hex.c \
 		float.c \
 		float2.c \
+		float3.c \
 		utils.c \
 		utils2.c \
 		unsignedint.c \

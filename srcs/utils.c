@@ -17,6 +17,10 @@ int md(int i)
 {
 	return i >= 0 ? i : i * -1;
 }
+long double mdDouble(long double i)
+{
+	return i >= 0 ? i : i * -1;
+}
 
 int	ft_putstrcount(char const *s)
 {
@@ -84,5 +88,19 @@ void precisionZero(t_pfstruct *data)
 		data->fs.fnl = ft_strjoin("0", data->fs.fnl);
 		ft_strdel(&buf);
 		precision--;
+	}
+}
+
+void signOrSpace(t_pfstruct *data)
+{
+	if (data->fs.sign)
+	{
+		data->pfreturn += write(1, &data->fs.sign, 1);
+		data->fs.wid -= 1;
+	}
+	else if (data->fs.flag.space)
+	{
+		data->pfreturn += write(1, " ", 1);
+		data->fs.wid -= 1;
 	}
 }

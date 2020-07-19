@@ -14,7 +14,7 @@
 
 
 
-char      *ft_ftoa_base2(double num)
+char      *ft_ftoa_base2(long double num)
 {
 	int       i;
 	char   *ans;
@@ -50,22 +50,25 @@ char      *rounding(char *num, int n)
 		k += 1;
 		if (k != 10)
 			num[n - 1] = k + '0';
-		i = n;
-		while (num[i - 1] == '9')
+		else
 		{
-			num[i - 1] = '0';
-			k = num[i - 2] - '0';
-			k += 1;
-			if (k != 10)
-				num[i - 2] = k + '0';
-			i--;
+			i = n;
+			while (num[i - 1] == '9')
+			{
+				num[i - 1] = '0';
+				k = num[i - 2] - '0';
+				k += 1;
+				if (k != 10)
+					num[i - 2] = k + '0';
+				i--;
+			}
 		}
 	}
 	num[n] = '\0';
 	return num;
 }
 
-char      *floatToString(double num, int round)
+char      *floatToString(long double num, int round)
 {
 	char   *integer;
 	char   *fraction;
@@ -73,8 +76,6 @@ char      *floatToString(double num, int round)
 	char   *str;
 
 	whole = num;
-	if (whole < 0)
-		whole = whole * (-1);
 	fraction = rounding(fromBin(ft_ftoa_base2(num - whole)), round);
 	str = (char *)malloc(sizeof(char) * (round + 1));
 	str[round + 1] = '\0';
@@ -96,7 +97,6 @@ char      *floatToString(double num, int round)
 void printFloat(t_pfstruct *data)
 {
 	long double num;
-//	long double f;
 
 	if (data->fs.size.bigL)
 		num = (long double)va_arg(data->args, long double);
@@ -104,6 +104,17 @@ void printFloat(t_pfstruct *data)
 		num = (long double)va_arg(data->args, double);
 	if ((data->fs.precision == 0 && !data->fs.prZ) || data->fs.precision < 0)
 		data->fs.precision = 6;
-	ft_putstr(floatToString(num, data->fs.precision));
+	if (num < 0 || data->fs.flag.plus)
+		data->fs.sign = num >= 0 ? '+' : '-';
+	data->fs.fnl =  floatToString(mdDouble(num), data->fs.precision);
+	if (data->fs.sign)
+		data->fs.flag.space = 0;
+	if (data->fs.flag.minus || data->fs.precision)
+		data->fs.flag.zero = 0;
+	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= md(data->fs.wid) || \
+	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= md(data->fs.wid))
+		data->fs.wid = 0;
+	printFloat2(data);
+//	ft_putstr(data->fs.fnl);
 }
 

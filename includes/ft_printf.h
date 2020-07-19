@@ -77,12 +77,16 @@ void				printOctal(t_pfstruct *data);
 void				printHex(t_pfstruct *data);
 void				printPointer(t_pfstruct *data);
 void				printFloat(t_pfstruct *data);
+void				printFloat2(t_pfstruct *data);
 
 int					writeChars(int i, char ch);
 char				*ft_itoa_base(uintmax_t num, uintmax_t not);
 void				precisionZero(t_pfstruct *data);
 int					ft_putstrcount(char const *s);
 int					md(int i);
+long double			mdDouble(long double i);
+void				signOrSpace(t_pfstruct *data);
+
 char				*power2(int pow);
 int					ft_abs(int a, int b);
 
