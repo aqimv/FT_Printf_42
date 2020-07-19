@@ -95,5 +95,7 @@ void				pf_init(t_pfstruct *data);
 
 char				*fromBin(char *str);
 
+char      *ft_ftoa_base2(long double num);		//delete
+
 
 #endif
