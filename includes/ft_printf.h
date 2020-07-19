@@ -83,8 +83,13 @@ char				*ft_itoa_base(uintmax_t num, uintmax_t not);
 void				precisionZero(t_pfstruct *data);
 int					ft_putstrcount(char const *s);
 int					md(int i);
+char				*power2(int pow);
+int					ft_abs(int a, int b);
 
 void				deinit(t_pfstruct *data);
 void				pf_init(t_pfstruct *data);
+
+char				*fromBin(char *str);
+
 
 #endif

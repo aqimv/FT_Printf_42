@@ -13,36 +13,33 @@
 
 #include "ft_printf.h"
 
+void signOrSpace(t_pfstruct *data)
+{
+	if (data->fs.sign)
+	{
+		data->pfreturn += write(1, &data->fs.sign, 1);
+		data->fs.wid -= 1;
+	}
+	else if (data->fs.flag.space)
+	{
+		data->pfreturn += write(1, " ", 1);
+		data->fs.wid -= 1;
+	}
+}
+
 void printInt4(t_pfstruct *data)
 {
 	if (data->fs.wid > 0)
 	{
-		if (data->fs.sign)
-		{
-			data->pfreturn += write(1, &data->fs.sign, 1);
-			data->fs.wid -= 1;
-		}
-		else if (data->fs.flag.space)
-		{
-			data->pfreturn += write(1, " ", 1);
-			data->fs.wid -= 1;
-		}
+		signOrSpace(data);
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 		data->fs.wid -= ft_strlen(data->fs.fnl);
 		data->pfreturn += writeChars(data->fs.wid, ' ');
 	}
 	else
 	{
-		if (data->fs.sign)
-		{
-			data->pfreturn += write(1, &data->fs.sign, 1);
-			data->fs.wid += 1;
-		}
-		else if (data->fs.flag.space)
-		{
-			data->pfreturn += write(1, " ", 1);
-			data->fs.wid -= 1;
-		}
+		data->fs.wid = md(data->fs.wid);
+		signOrSpace(data);
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 		data->fs.wid += ft_strlen(data->fs.fnl);
 		data->pfreturn += writeChars(md(data->fs.wid), ' ');
@@ -53,16 +50,7 @@ void printInt3(t_pfstruct *data)
 {
 	if (data->fs.flag.zero)
 	{
-		if (data->fs.sign)
-		{
-			data->pfreturn += write(1, &data->fs.sign, 1);
-			data->fs.wid -= 1;
-		}
-		else if (data->fs.flag.space)
-		{
-			data->pfreturn += write(1, " ", 1);
-			data->fs.wid -= 1;
-		}
+		signOrSpace(data);
 		data->pfreturn += writeChars(data->fs.wid - \
 			(int)ft_strlen(data->fs.fnl), '0');
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
