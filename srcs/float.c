@@ -46,6 +46,8 @@ char      *rounding(char *num, int n)
 	k = num[n] - '0';
 	if (k >= 5)
 	{
+		if (n == 0)
+			return ".";
 		k = num[n - 1] - '0';
 		k += 1;
 		if (k != 10)
@@ -53,7 +55,7 @@ char      *rounding(char *num, int n)
 		else
 		{
 			i = n;
-			while (num[i - 1] == '9')
+			while ((num[i - 1] == '9') && (i > 0))
 			{
 				num[i - 1] = '0';
 				k = num[i - 2] - '0';
@@ -62,6 +64,8 @@ char      *rounding(char *num, int n)
 					num[i - 2] = k + '0';
 				i--;
 			}
+			if (i == 0)
+				num = ft_strjoin(".", num);
 		}
 	}
 	num[n] = '\0';
@@ -80,8 +84,11 @@ char      *floatToString(long double num, int round)
 	str = (char *)malloc(sizeof(char) * (round + 1));
 	str[round + 1] = '\0';
 	ft_memset(str, '0', round);
-	if (ft_strcmp(str, fraction) == 0)
+	if (fraction[0] == '.')
+	{
 		whole += 1;
+		fraction = &fraction[1];
+	}
 	integer = ft_itoa(whole);
 	if ((int)ft_strlen(fraction) < round)
 	{
