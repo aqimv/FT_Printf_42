@@ -12,28 +12,6 @@
 
 #include "ft_printf.h"
 
-//void sharpHex(t_pfstruct *data, intmax_t num)
-//{
-//	char *buf;
-//
-//	if (data->fs.flag.sharp && num != 0)
-//	{
-//		if (data->fs.type == 'X')
-//		{
-//			buf = data->fs.fnl;
-//			data->fs.fnl = ft_strjoin("0X", data->fs.fnl);
-//			ft_strdel(&buf);
-//		}
-//		else
-//		{
-//			buf = data->fs.fnl;
-//			data->fs.fnl = ft_strjoin("0x", data->fs.fnl);
-//			ft_strdel(&buf);
-//		}
-//	}
-//}
-
-
 int sharpHex(t_pfstruct *data, intmax_t num)
 {
 	if (data->fs.flag.sharp && num != 0)

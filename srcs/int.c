@@ -22,6 +22,11 @@ void printInt4(t_pfstruct *data)
 			data->pfreturn += write(1, &data->fs.sign, 1);
 			data->fs.wid -= 1;
 		}
+		else if (data->fs.flag.space)
+		{
+			data->pfreturn += write(1, " ", 1);
+			data->fs.wid -= 1;
+		}
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 		data->fs.wid -= ft_strlen(data->fs.fnl);
 		data->pfreturn += writeChars(data->fs.wid, ' ');
@@ -32,6 +37,11 @@ void printInt4(t_pfstruct *data)
 		{
 			data->pfreturn += write(1, &data->fs.sign, 1);
 			data->fs.wid += 1;
+		}
+		else if (data->fs.flag.space)
+		{
+			data->pfreturn += write(1, " ", 1);
+			data->fs.wid -= 1;
 		}
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 		data->fs.wid += ft_strlen(data->fs.fnl);
@@ -48,12 +58,22 @@ void printInt3(t_pfstruct *data)
 			data->pfreturn += write(1, &data->fs.sign, 1);
 			data->fs.wid -= 1;
 		}
+		else if (data->fs.flag.space)
+		{
+			data->pfreturn += write(1, " ", 1);
+			data->fs.wid -= 1;
+		}
 		data->pfreturn += writeChars(data->fs.wid - \
 			(int)ft_strlen(data->fs.fnl), '0');
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
 	else
 	{
+		if (data->fs.flag.space && !data->fs.sign)
+		{
+			data->pfreturn += write(1, " ", 1);
+			data->fs.wid -= 1;
+		}
 		data->pfreturn = writeChars(data->fs.wid - \
 			ft_strlen(data->fs.fnl) - (data->fs.sign ? 1 : 0), ' ');
 		if (data->fs.sign)
@@ -68,12 +88,12 @@ void printInt3(t_pfstruct *data)
 void printInt2(t_pfstruct *data)
 {
 	precisionZero(data);
-	if (data->fs.flag.space)
-		data->pfreturn += write(1, " ", 1);
 	if (data->fs.wid == 0)
 	{
 		if (data->fs.sign)
 			data->pfreturn += write(1, &data->fs.sign, 1);
+		else if (data->fs.flag.space)
+			data->pfreturn += write(1, " ", 1);
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	} else
 	{
