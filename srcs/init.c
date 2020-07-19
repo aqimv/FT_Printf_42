@@ -18,9 +18,6 @@ void initSize(t_pfstruct *data)
 	data->fs.size.ll = 0;
 	data->fs.size.h = 0;
 	data->fs.size.hh = 0;
-	data->fs.size.j = 0;
-	data->fs.size.z = 0;
-	data->fs.size.t = 0;
 	data->fs.size.bigL = 0;
 }
 
@@ -50,9 +47,6 @@ void deinitSize(t_pfstruct *data)
 	data->fs.size.ll = 0;
 	data->fs.size.h = 0;
 	data->fs.size.hh = 0;
-	data->fs.size.j = 0;
-	data->fs.size.z = 0;
-	data->fs.size.t = 0;
 	data->fs.size.bigL = 0;
 }
 

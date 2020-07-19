@@ -2,8 +2,10 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdarg.h>
+
 # include "libft.h"
+# include <stdarg.h>
+
 #include <stdio.h> // убрать нахой
 
 # define SYMBOLSINFS "1234567890.+-#* lhjztL"
@@ -26,9 +28,6 @@ typedef struct		s_size
 	int				ll;
 	int				h;
 	int				hh;
-	int				j;
-	int				z;
-	int				t;
 	int				bigL;
 
 }					t_size;
