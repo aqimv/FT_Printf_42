@@ -109,6 +109,7 @@ void printFloat(t_pfstruct *data)
 		num = (long double)va_arg(data->args, long double);
 	else
 		num = (long double)va_arg(data->args, double);
+//	printf("%Lf\n", num);
 	if ((data->fs.precision == 0 && !data->fs.prZ) || data->fs.precision < 0)
 		data->fs.precision = 6;
 	if (num < 0 || data->fs.flag.plus)
@@ -116,7 +117,7 @@ void printFloat(t_pfstruct *data)
 	data->fs.fnl =  floatToString(mdDouble(num), data->fs.precision);
 	if (data->fs.sign)
 		data->fs.flag.space = 0;
-	if (data->fs.flag.minus || data->fs.precision)
+	if (data->fs.flag.minus)
 		data->fs.flag.zero = 0;
 	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= md(data->fs.wid) || \
 	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= md(data->fs.wid))

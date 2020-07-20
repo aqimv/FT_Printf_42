@@ -63,7 +63,14 @@ void printFloat3(t_pfstruct *data)
 
 void printFloat2(t_pfstruct *data)
 {
+	char *buf;
 	precisionZero(data);
+	if (data->fs.precision == 0 && data->fs.flag.sharp)
+	{
+		buf = data->fs.fnl;
+		data->fs.fnl = ft_strjoin(data->fs.fnl, ".");
+		ft_strdel(&buf);
+	}
 	if (data->fs.wid == 0)
 	{
 		if (data->fs.sign)
@@ -79,10 +86,3 @@ void printFloat2(t_pfstruct *data)
 			printFloat3(data);
 	}
 }
-
-//void printFloat2(t_pfstruct *data)
-//{
-//
-//
-//
-//}
