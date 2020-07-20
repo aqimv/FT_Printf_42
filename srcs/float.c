@@ -50,23 +50,22 @@ char      *rounding(char *num, int n)
 			return ".";
 		k = num[n - 1] - '0';
 		k += 1;
-		if (k != 10)
-			num[n - 1] = k + '0';
-		else
+		if (k == 10)
 		{
 			i = n;
-			while ((num[i - 1] == '9') && (i > 0))
+			while ((num[i - 1] == '9') && (i > 0) && (k == 10))
 			{
 				num[i - 1] = '0';
 				k = num[i - 2] - '0';
 				k += 1;
-				if (k != 10)
-					num[i - 2] = k + '0';
 				i--;
 			}
+			num[i - 1] = k + '0';
 			if (i == 0)
 				num = ft_strjoin(".", num);
 		}
+		else
+			num[n - 1] = k + '0';
 	}
 	num[n] = '\0';
 	return num;
@@ -109,7 +108,6 @@ void printFloat(t_pfstruct *data)
 		num = (long double)va_arg(data->args, long double);
 	else
 		num = (long double)va_arg(data->args, double);
-//	printf("%Lf\n", num);
 	if ((data->fs.precision == 0 && !data->fs.prZ) || data->fs.precision < 0)
 		data->fs.precision = 6;
 	if (num < 0 || data->fs.flag.plus)
@@ -123,6 +121,5 @@ void printFloat(t_pfstruct *data)
 	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= md(data->fs.wid))
 		data->fs.wid = 0;
 	printFloat2(data);
-//	ft_putstr(data->fs.fnl);
 }
 

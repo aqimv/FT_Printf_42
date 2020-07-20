@@ -20,7 +20,7 @@ int main() {
 //	printf("% -5.0f", 7.3);
 
 //	ft_printf("% #-05.0f", -0.0);
-//	printf("%s\n", fromBin(ft_ftoa_base2(0.999999)));
+	printf("%s\n", fromBin(ft_ftoa_base2(0.999999)));
 
 //	printf("%.*f", -1, 3.1415926535);
 
