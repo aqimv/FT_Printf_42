@@ -25,15 +25,15 @@ static void switchPrintValue(t_pfstruct *data)
 	else if (data->fs.type == '%')
 		printPercent(data);
 	else if (data->fs.type == 'u')
-		printUnsignedInt(data);
+		print_unsigned_int(data);
 	else if (data->fs.type == 'o')
 		printOctal(data);
 	else if (data->fs.type == 'x' || data->fs.type == 'X')
 		printHex(data);
 	else if (data->fs.type == 'p')
-		printPointer(data);
+		print_pointer(data);
 	else if (data->fs.type == 'f')
-		printFloat(data);
+		print_float(data);
 	deinit(data);
 }
 

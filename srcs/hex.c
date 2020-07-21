@@ -52,13 +52,13 @@ void printHex3(t_pfstruct *data, intmax_t num)
 			data->fs.wid -= 1;
 		}
 		data->fs.wid -= sharpHex(data, num);
-		data->pfreturn += writeChars(data->fs.wid - \
+		data->pfreturn += write_chars(data->fs.wid - \
 			(int)ft_strlen(data->fs.fnl), '0');
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
 	else
 	{
-		data->pfreturn = writeChars(data->fs.wid - \
+		data->pfreturn = write_chars(data->fs.wid - \
 			ft_strlen(data->fs.fnl) - (data->fs.sign ? 1 : 0) - \
 			(data->fs.flag.sharp && num != 0 ? 2 : 0), ' ');
 		if (data->fs.sign)
@@ -73,8 +73,7 @@ void printHex3(t_pfstruct *data, intmax_t num)
 
 void printHex2(t_pfstruct *data, intmax_t num)
 {
-	precisionZero(data);
-//	sharpHex(data, num);
+	precision_zero(data);
 	if (!data->fs.wid)
 	{
 		if (data->fs.sign)
@@ -93,7 +92,7 @@ void printHex2(t_pfstruct *data, intmax_t num)
 			data->fs.wid -= sharpHex(data, num);
 			data->pfreturn += ft_putstrcount(data->fs.fnl);
 			data->fs.wid -= ft_strlen(data->fs.fnl);
-			data->pfreturn += writeChars(data->fs.wid, ' ');
+			data->pfreturn += write_chars(data->fs.wid, ' ');
 		}
 		else
 			printHex3(data, num);

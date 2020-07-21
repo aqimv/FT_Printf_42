@@ -22,16 +22,16 @@ void printPercent(t_pfstruct *data)
 		{
 			width = data->fs.wid - 1;
 			if (data->fs.flag.zero)
-				data->pfreturn += writeChars(width, '0'); //нужно??
+				data->pfreturn += write_chars(width, '0'); //нужно??
 			else
-				data->pfreturn += writeChars(width, ' ');
+				data->pfreturn += write_chars(width, ' ');
 			data->pfreturn += write(1, "%", 1);
 		}
 		else if (data->fs.wid && data->fs.flag.minus)
 		{
 			data->pfreturn += write(1, "%", 1);
 			width = data->fs.wid - 1;
-			data->pfreturn += writeChars(width, ' ');
+			data->pfreturn += write_chars(width, ' ');
 		}
 		else
 			data->pfreturn += write(1, "%", 1);
@@ -48,16 +48,16 @@ void printChar(t_pfstruct *data)
 	{
 		width = data->fs.wid - 1;
 		if (data->fs.flag.zero)
-			data->pfreturn += writeChars(width, '0');
+			data->pfreturn += write_chars(width, '0');
 		else
-			data->pfreturn += writeChars(width, ' ');
+			data->pfreturn += write_chars(width, ' ');
 		data->pfreturn += write(1, &ch, 1);
 	}
 	else if (data->fs.wid && data->fs.flag.minus)
 	{
 		data->pfreturn += write(1, &ch, 1);
 		width = data->fs.wid - 1;
-		data->pfreturn += writeChars(width, ' ');
+		data->pfreturn += write_chars(width, ' ');
 	}
 	else
 		data->pfreturn += write(1, &ch, 1);

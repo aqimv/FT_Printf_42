@@ -12,17 +12,15 @@
 
 #include "ft_printf.h"
 
-
-
-char      *ft_ftoa_base2(long double num)
+char			*ft_ftoa_base2(long double num)
 {
-	int       i;
-	char   *ans;
+	int		i;
+	char	*ans;
 
 	ans = (char *)malloc(sizeof(char) * 151);
 	ans[150] = '\0';
 	i = 0;
-	while(num != 1.0 && i < 150)
+	while (num != 1.0 && i < 150)
 	{
 		num = num * 2;
 		ans[i] = (int)num + '0';
@@ -35,10 +33,10 @@ char      *ft_ftoa_base2(long double num)
 		ans[i] = '0';
 		i++;
 	}
-	return ans;
+	return (ans);
 }
 
-char       *subrounding(int k, char *num, int i)
+char			*subrounding(int k, char *num, int i)
 {
 	while ((num[i - 1] == '9') && (i > 0) && (k == 10))
 	{
@@ -50,20 +48,20 @@ char       *subrounding(int k, char *num, int i)
 	num[i - 1] = k + '0';
 	if (i == 0)
 		num = ft_strjoin(".", num);
-	return num;
+	return (num);
 }
 
-char      *rounding(char *num, int n, int whole)
+char			*rounding(char *num, int n, int whole)
 {
-	int       k;
+	int			k;
 
 	if ((n == 0) && (ft_strcmp(num, "5") == 0) && (whole % 2 == 0))
-		return "";
+		return ("");
 	k = num[n] - '0';
 	if (k >= 5)
 	{
 		if (n == 0)
-			return ".";
+			return (".");
 		k = num[n - 1] - '0';
 		k += 1;
 		if (k == 10)
@@ -72,18 +70,18 @@ char      *rounding(char *num, int n, int whole)
 			num[n - 1] = k + '0';
 	}
 	num[n] = '\0';
-	return num;
+	return (num);
 }
 
-char      *floatToString(long double num, int round)
+char			*float_to_string(long double num, int round)
 {
-	char   *integer;
-	char   *fraction;
-	int    whole;
-	char   *str;
+	char		*integer;
+	char		*fraction;
+	int			whole;
+	char		*str;
 
 	whole = num;
-	fraction = rounding(fromBin(ft_ftoa_base2(num - whole)), round, whole);
+	fraction = rounding(from_bin(ft_ftoa_base2(num - whole)), round, whole);
 	str = (char *)malloc(sizeof(char) * (round + 1));
 	str[round + 1] = '\0';
 	ft_memset(str, '0', round);
@@ -101,12 +99,12 @@ char      *floatToString(long double num, int round)
 	}
 	if (round != 0)
 		integer = ft_strjoin(integer, ".");
-	return ft_strjoin(integer, fraction);
+	return (ft_strjoin(integer, fraction));
 }
 
-void printFloat(t_pfstruct *data)
+void			print_float(t_pfstruct *data)
 {
-	long double num;
+	long double	num;
 
 	if (data->fs.size.bigL)
 		num = (long double)va_arg(data->args, long double);
@@ -116,7 +114,7 @@ void printFloat(t_pfstruct *data)
 		data->fs.precision = 6;
 	if (num < 0 || data->fs.flag.plus)
 		data->fs.sign = num >= 0 ? '+' : '-';
-	data->fs.fnl =  floatToString(mdDouble(num), data->fs.precision);
+	data->fs.fnl = float_to_string(mdDouble(num), data->fs.precision);
 	if (data->fs.sign)
 		data->fs.flag.space = 0;
 	if (data->fs.flag.minus)
@@ -124,6 +122,5 @@ void printFloat(t_pfstruct *data)
 	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= md(data->fs.wid) || \
 	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= md(data->fs.wid))
 		data->fs.wid = 0;
-	printFloat2(data);
+	print_float2(data);
 }
-

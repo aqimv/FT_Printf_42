@@ -10,21 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
 
-int md(int i)
+int							ft_putstrcount(char const *s)
 {
-	return i >= 0 ? i : i * -1;
-}
-long double mdDouble(long double i)
-{
-	return i >= 0 ? i : i * -1;
-}
-
-int	ft_putstrcount(char const *s)
-{
-	int count;
+	int						count;
 
 	count = 0;
 	if (!s)
@@ -38,9 +28,9 @@ int	ft_putstrcount(char const *s)
 	return (count);
 }
 
-int writeChars(int i, char ch)
+int							write_chars(int i, char ch)
 {
-	char count;
+	char					count;
 
 	count = 0;
 	while (i > 0)
@@ -76,10 +66,10 @@ char						*ft_itoa_base(uintmax_t num, uintmax_t not)
 	return (str);
 }
 
-void precisionZero(t_pfstruct *data)
+void						precision_zero(t_pfstruct *data)
 {
-	int precision;
-	char *buf;
+	int						precision;
+	char					*buf;
 
 	precision = data->fs.precision - (int)ft_strlen(data->fs.fnl);
 	while (precision > 0)
@@ -91,7 +81,7 @@ void precisionZero(t_pfstruct *data)
 	}
 }
 
-void signOrSpace(t_pfstruct *data)
+void						sign_or_space(t_pfstruct *data)
 {
 	if (data->fs.sign)
 	{

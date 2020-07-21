@@ -33,11 +33,11 @@ void printString2(t_pfstruct *data, int check, int len, char ch)
 	if (data->fs.flag.minus || check)
 	{
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
-		data->pfreturn += writeChars(len, ch);
+		data->pfreturn += write_chars(len, ch);
 	}
 	else
 	{
-		data->pfreturn += writeChars(len, ch);
+		data->pfreturn += write_chars(len, ch);
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
 }

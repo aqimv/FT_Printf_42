@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void printUInt3(t_pfstruct *data)
+void	print_uint3(t_pfstruct *data)
 {
 	if (data->fs.flag.zero)
 	{
@@ -21,13 +21,13 @@ void printUInt3(t_pfstruct *data)
 			data->pfreturn += write(1, &data->fs.sign, 1);
 			data->fs.wid -= 1;
 		}
-		data->pfreturn += writeChars(data->fs.wid - \
+		data->pfreturn += write_chars(data->fs.wid - \
 			(int)ft_strlen(data->fs.fnl), '0');
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
 	else
 	{
-		data->pfreturn = writeChars(data->fs.wid - \
+		data->pfreturn = write_chars(data->fs.wid - \
 			ft_strlen(data->fs.fnl) - (data->fs.sign ? 1 : 0), ' ');
 		if (data->fs.sign)
 		{
@@ -38,15 +38,16 @@ void printUInt3(t_pfstruct *data)
 	}
 }
 
-void printUInt2(t_pfstruct *data)
+void	print_uint2(t_pfstruct *data)
 {
-	precisionZero(data);
+	precision_zero(data);
 	if (!data->fs.wid)
 	{
 		if (data->fs.sign)
 			data->pfreturn += write(1, &data->fs.sign, 1);
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
-	} else
+	}
+	else
 	{
 		if (data->fs.flag.minus)
 		{
@@ -57,19 +58,20 @@ void printUInt2(t_pfstruct *data)
 			}
 			data->pfreturn += ft_putstrcount(data->fs.fnl);
 			data->fs.wid -= ft_strlen(data->fs.fnl);
-			data->pfreturn += writeChars(data->fs.wid, ' ');
+			data->pfreturn += write_chars(data->fs.wid, ' ');
 		}
 		else
-			printUInt3(data);
+			print_uint3(data);
 	}
 }
 
-void	printUnsignedInt(t_pfstruct *data)
+void	print_unsigned_int(t_pfstruct *data)
 {
-	intmax_t num;
+	intmax_t	num;
 
 	if (data->fs.size.ll)
-		num = (unsigned long long int)va_arg(data->args, unsigned long long int);
+		num = (unsigned long long int)va_arg(data->args, \
+		unsigned long long int);
 	else if (data->fs.size.l)
 		num = (unsigned long int)va_arg(data->args, unsigned long int);
 	else if (data->fs.size.h)
@@ -88,5 +90,5 @@ void	printUnsignedInt(t_pfstruct *data)
 	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= data->fs.wid || \
 	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= data->fs.wid)
 		data->fs.wid = 0;
-	printUInt2(data);
+	print_uint2(data);
 }

@@ -12,10 +12,28 @@
 
 #include "ft_printf.h"
 
-void printPointer(t_pfstruct *data)
+void			print_pointer2(t_pfstruct *data, int len)
 {
-	intmax_t p;
-	int len;
+	if (data->fs.flag.minus)
+	{
+		data->pfreturn += write_chars(data->fs.precision - len, '0');
+		data->pfreturn += ft_putstrcount("0x");
+		data->pfreturn += ft_putstrcount(data->fs.fnl);
+		data->pfreturn += write_chars(data->fs.wid - len - 2, ' ');
+	}
+	else
+	{
+		data->pfreturn += write_chars(data->fs.wid - len - 2, ' ');
+		data->pfreturn += write_chars(data->fs.precision - len, '0');
+		data->pfreturn += ft_putstrcount("0x");
+		data->pfreturn += ft_putstrcount(data->fs.fnl);
+	}
+}
+
+void			print_pointer(t_pfstruct *data)
+{
+	intmax_t	p;
+	int			len;
 
 	p = (unsigned long long int)va_arg(data->args, void *);
 	data->fs.fnl = p == 0 && data->fs.prZ && \
@@ -23,27 +41,11 @@ void printPointer(t_pfstruct *data)
 	len = ft_strlen(data->fs.fnl);
 	if (data->fs.wid - len - 2 < 1)
 	{
-		data->pfreturn += writeChars(data->fs.precision - len, '0');
+		data->pfreturn += write_chars(data->fs.precision - len, '0');
 		data->pfreturn += ft_putstrcount("0x");
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
 	else
-	{
-		if (data->fs.flag.minus)
-		{
-			data->pfreturn += writeChars(data->fs.precision - len, '0');
-			data->pfreturn += ft_putstrcount("0x");
-			data->pfreturn += ft_putstrcount(data->fs.fnl);
-			data->pfreturn += writeChars(data->fs.wid - len - 2, ' ');
-		}
-		else
-		{
-			data->pfreturn += writeChars(data->fs.wid - len - 2, ' ');
-			data->pfreturn += writeChars(data->fs.precision - len, '0');
-			data->pfreturn += ft_putstrcount("0x");
-			data->pfreturn += ft_putstrcount(data->fs.fnl);
-		}
-	}
-
+		print_pointer2(data, len);
 }
 
