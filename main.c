@@ -14,13 +14,14 @@ int main() {
 //	printf("%.3f\n", -33.9999);
 //	ft_printf("%.3f\n", -33.9999);
 //	ft_printf("%.15f\n", -33.1231231230002);
-	ft_printf("%05.1f", 7.3);
+	ft_printf("%.0f", 3.5);
+	ft_printf("%.0f", 4.5);
 //	printf("this %f float\n", 1.5);
 //	ft_printf("% #-5.0f", 7.3);
 //	printf("% -5.0f", 7.3);
 
 //	ft_printf("% #-05.0f", -0.0);
-	printf("%s\n", fromBin(ft_ftoa_base2(0.999999)));
+//	printf("%s\n", fromBin(ft_ftoa_base2(0.999999)));
 
 //	printf("%.*f", -1, 3.1415926535);
 

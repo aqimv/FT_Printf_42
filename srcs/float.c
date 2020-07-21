@@ -38,11 +38,13 @@ char      *ft_ftoa_base2(long double num)
 	return ans;
 }
 
-char      *rounding(char *num, int n)
+char      *rounding(char *num, int n, int whole)
 {
 	int       k;
 	int       i;
 
+	if ((n == 0) && (ft_strcmp(num, "5") == 0) && (whole % 2 == 0))
+		return "";
 	k = num[n] - '0';
 	if (k >= 5)
 	{
@@ -79,7 +81,7 @@ char      *floatToString(long double num, int round)
 	char   *str;
 
 	whole = num;
-	fraction = rounding(fromBin(ft_ftoa_base2(num - whole)), round);
+	fraction = rounding(fromBin(ft_ftoa_base2(num - whole)), round, whole);
 	str = (char *)malloc(sizeof(char) * (round + 1));
 	str[round + 1] = '\0';
 	ft_memset(str, '0', round);
