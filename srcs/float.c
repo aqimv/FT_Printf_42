@@ -38,10 +38,24 @@ char      *ft_ftoa_base2(long double num)
 	return ans;
 }
 
+char       *subrounding(int k, char *num, int i)
+{
+	while ((num[i - 1] == '9') && (i > 0) && (k == 10))
+	{
+		num[i - 1] = '0';
+		k = num[i - 2] - '0';
+		k += 1;
+		i--;
+	}
+	num[i - 1] = k + '0';
+	if (i == 0)
+		num = ft_strjoin(".", num);
+	return num;
+}
+
 char      *rounding(char *num, int n, int whole)
 {
 	int       k;
-	int       i;
 
 	if ((n == 0) && (ft_strcmp(num, "5") == 0) && (whole % 2 == 0))
 		return "";
@@ -53,19 +67,7 @@ char      *rounding(char *num, int n, int whole)
 		k = num[n - 1] - '0';
 		k += 1;
 		if (k == 10)
-		{
-			i = n;
-			while ((num[i - 1] == '9') && (i > 0) && (k == 10))
-			{
-				num[i - 1] = '0';
-				k = num[i - 2] - '0';
-				k += 1;
-				i--;
-			}
-			num[i - 1] = k + '0';
-			if (i == 0)
-				num = ft_strjoin(".", num);
-		}
+			num = subrounding(k, num, n);
 		else
 			num[n - 1] = k + '0';
 	}

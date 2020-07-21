@@ -14,14 +14,6 @@
 # define WIDTHANDACCURACY "0123456789*"
 # define SIZEPF "lhjztL"
 
-typedef struct		s_float
-{
-	char			*str1;
-	char			*str2;
-	char			sign;
-	char			precision;
-}					t_float;
-
 typedef struct		s_size
 {
 	int				l;
@@ -60,7 +52,6 @@ typedef struct		s_pfstruct
 	char			*str;
 	int				pfreturn;
 	t_fstring		fs;
-	t_float			fl;
 }					t_pfstruct;
 
 int					ft_printf(const char *format, ...);

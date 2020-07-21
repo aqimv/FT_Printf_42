@@ -109,6 +109,11 @@ void printInt(t_pfstruct *data)
 	if (num < 0 || data->fs.flag.plus)
 		data->fs.sign = num >= 0 ? '+' : '-';
 	num < 0 ? num *= -1 : num;
+	if (data->fs.wid < 0)
+	{
+		data->fs.flag.minus += 1;
+		data->fs.wid = md(data->fs.wid);
+	}
 	data->fs.fnl = num == 0 && data->fs.prZ && \
 	!data->fs.precision ? ft_strnew(1) : ft_itoa_base(num, 10);
 	if (data->fs.sign)
