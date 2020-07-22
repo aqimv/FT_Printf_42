@@ -10,15 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-
 # include "libft.h"
 # include <stdarg.h>
-
-#include <stdio.h> // убрать нахой
 
 # define SYMBOLSINFS "1234567890.+-#* lhjztL"
 # define TYPESPF "%cdifosuxXpn"
@@ -32,7 +28,7 @@ typedef struct		s_size
 	int				ll;
 	int				h;
 	int				hh;
-	int				bigL;
+	int				big_l;
 
 }					t_size;
 
@@ -55,7 +51,7 @@ typedef struct		s_fstring
 	t_size			size;
 	char			type;
 	char			sign;
-	int				prZ;
+	int				pr_z;
 }					t_fstring;
 
 typedef struct		s_pfstruct
@@ -97,6 +93,5 @@ void				deinit(t_pfstruct *data);
 void				pf_init(t_pfstruct *data);
 
 char				*from_bin(char *str);
-
 
 #endif

@@ -18,7 +18,7 @@ void		precision_string(t_pfstruct *data)
 
 	buf = data->fs.fnl;
 	if (data->fs.precision < (int)ft_strlen(data->fs.fnl) \
-	&& data->fs.prZ != 0 && data->fs.precision >= 0)
+	&& data->fs.pr_z != 0 && data->fs.precision >= 0)
 	{
 		data->fs.fnl = ft_strnew(data->fs.precision);
 		data->fs.fnl = ft_strncpy(data->fs.fnl, buf, \

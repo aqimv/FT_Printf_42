@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
 
-void	printFloat4(t_pfstruct *data)
+void		print_float4(t_pfstruct *data)
 {
 	if (data->fs.wid > 0)
 	{
@@ -32,7 +31,7 @@ void	printFloat4(t_pfstruct *data)
 	}
 }
 
-void printFloat3(t_pfstruct *data)
+void		print_float3(t_pfstruct *data)
 {
 	if (data->fs.flag.zero)
 	{
@@ -59,9 +58,10 @@ void printFloat3(t_pfstruct *data)
 	}
 }
 
-void print_float2(t_pfstruct *data)
+void		print_float2(t_pfstruct *data)
 {
-	char *buf;
+	char	*buf;
+
 	precision_zero(data);
 	if (data->fs.precision == 0 && data->fs.flag.sharp)
 	{
@@ -76,11 +76,12 @@ void print_float2(t_pfstruct *data)
 		else if (data->fs.flag.space)
 			data->pfreturn += write(1, " ", 1);
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
-	} else
+	}
+	else
 	{
 		if (data->fs.flag.minus || data->fs.wid < 0)
-			printFloat4(data);
+			print_float4(data);
 		else
-			printFloat3(data);
+			print_float3(data);
 	}
 }

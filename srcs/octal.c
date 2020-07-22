@@ -81,7 +81,7 @@ void			print_octal(t_pfstruct *data)
 	else
 		num = (unsigned int)va_arg(data->args, unsigned int);
 	data->fs.sign = data->fs.flag.plus ? '+' : 0;
-	data->fs.fnl = num == 0 && data->fs.prZ && \
+	data->fs.fnl = num == 0 && data->fs.pr_z && \
 	!data->fs.precision ? ft_strnew(1) : ft_itoa_base(num, 8);
 	if (data->fs.sign)
 		data->fs.flag.space = 0;

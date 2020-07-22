@@ -36,7 +36,7 @@ void			print_pointer(t_pfstruct *data)
 	int			len;
 
 	p = (unsigned long long int)va_arg(data->args, void *);
-	data->fs.fnl = p == 0 && data->fs.prZ && \
+	data->fs.fnl = p == 0 && data->fs.pr_z && \
 	!data->fs.precision ? ft_strnew(1) : ft_itoa_base(p, 16);
 	len = ft_strlen(data->fs.fnl);
 	if (data->fs.wid - len - 2 < 1)

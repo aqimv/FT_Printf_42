@@ -39,7 +39,7 @@ static int		newfs(t_pfstruct *data, int step, int i, int r)
 {
 	if (data->fs.str[i] == '.')
 	{
-		data->fs.prZ = 1;
+		data->fs.pr_z = 1;
 		newfs(data, 3, i + 1, 0);
 	}
 	else if (step == 1 && ft_strchr(FLAGSPF, data->fs.str[i]))

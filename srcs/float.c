@@ -106,11 +106,11 @@ void			print_float(t_pfstruct *data)
 {
 	long double	num;
 
-	if (data->fs.size.bigL)
+	if (data->fs.size.big_l)
 		num = (long double)va_arg(data->args, long double);
 	else
 		num = (long double)va_arg(data->args, double);
-	if ((data->fs.precision == 0 && !data->fs.prZ) || data->fs.precision < 0)
+	if ((data->fs.precision == 0 && !data->fs.pr_z) || data->fs.precision < 0)
 		data->fs.precision = 6;
 	if (num < 0 || data->fs.flag.plus)
 		data->fs.sign = num >= 0 ? '+' : '-';

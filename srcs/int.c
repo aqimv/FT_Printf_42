@@ -60,6 +60,13 @@ void			print_int3(t_pfstruct *data)
 
 void			print_int2(t_pfstruct *data)
 {
+	if (data->fs.sign)
+		data->fs.flag.space = 0;
+	if (data->fs.flag.minus || data->fs.precision)
+		data->fs.flag.zero = 0;
+	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= md(data->fs.wid) || \
+	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= md(data->fs.wid))
+		data->fs.wid = 0;
 	precision_zero(data);
 	if (data->fs.wid == 0)
 	{
@@ -97,17 +104,10 @@ void			print_int(t_pfstruct *data)
 	num < 0 ? num *= -1 : num;
 	if (data->fs.wid < 0)
 	{
-		data->fs.flag.minus += 1;
+		data->fs.flag.minus = 1;
 		data->fs.wid = md(data->fs.wid);
 	}
-	data->fs.fnl = num == 0 && data->fs.prZ && \
+	data->fs.fnl = num == 0 && data->fs.pr_z && \
 	!data->fs.precision ? ft_strnew(1) : ft_itoa_base(num, 10);
-	if (data->fs.sign)
-		data->fs.flag.space = 0;
-	if (data->fs.flag.minus || data->fs.precision)
-		data->fs.flag.zero = 0;
-	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= md(data->fs.wid) || \
-	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= md(data->fs.wid))
-		data->fs.wid = 0;
 	print_int2(data);
 }

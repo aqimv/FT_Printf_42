@@ -10,15 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
 
-char      *mul(char *s1)
+char		*mul(char *s1)
 {
-	int       i;
-	char   *result;
-	int       carry;
-	int       mul;
+	int		i;
+	char	*result;
+	int		carry;
+	int		mul;
 
 	carry = 0;
 	result = ft_strnew(0);
@@ -38,14 +37,14 @@ char      *mul(char *s1)
 	}
 	if (carry)
 		result = ft_strjoin(ft_itoa(carry), result);
-	return result;
+	return (result);
 }
 
-char      *multOnHalf(char *s1)
+char		*mult_on_half(char *s1)
 {
-	int       i;
-	char   *result;
-	char   *str;
+	int		i;
+	char	*result;
+	char	*str;
 
 	result = mul(s1);
 	i = ft_strlen(s1);
@@ -56,10 +55,10 @@ char      *multOnHalf(char *s1)
 		ft_memset(str, '0', i - ft_strlen(result) + 1);
 		result = ft_strjoin(str, result);
 	}
-	return result;
+	return (result);
 }
 
-int          ft_abs(int a, int b)
+int			ft_abs(int a, int b)
 {
 	if (a > b)
 		return (a - b);
@@ -67,16 +66,16 @@ int          ft_abs(int a, int b)
 		return (b - a);
 }
 
-char      *power2(int pow)
+char		*power2(int pow)
 {
-	char   *ans;
+	char	*ans;
 
 	pow--;
 	ans = "5";
 	while (pow != 0)
 	{
-		ans = multOnHalf(ans);
+		ans = mult_on_half(ans);
 		pow--;
 	}
-	return ans;
+	return (ans);
 }

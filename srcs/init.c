@@ -12,16 +12,16 @@
 
 #include "ft_printf.h"
 
-void initSize(t_pfstruct *data)
+void		init_size(t_pfstruct *data)
 {
 	data->fs.size.l = 0;
 	data->fs.size.ll = 0;
 	data->fs.size.h = 0;
 	data->fs.size.hh = 0;
-	data->fs.size.bigL = 0;
+	data->fs.size.big_l = 0;
 }
 
-void pf_init(t_pfstruct *data)
+void		pf_init(t_pfstruct *data)
 {
 	data->str = NULL;
 	data->fs.str = NULL;
@@ -30,27 +30,25 @@ void pf_init(t_pfstruct *data)
 	data->fs.wid = 0;
 	data->fs.precision = 0;
 	data->fs.sign = 0;
-	data->fs.prZ = 0;
-
+	data->fs.pr_z = 0;
 	data->fs.flag.zero = 0;
 	data->fs.flag.minus = 0;
 	data->fs.flag.plus = 0;
 	data->fs.flag.space = 0;
 	data->fs.flag.sharp = 0;
-
-	initSize(data);
+	init_size(data);
 }
 
-void deinitSize(t_pfstruct *data)
+void		deinit_size(t_pfstruct *data)
 {
 	data->fs.size.l = 0;
 	data->fs.size.ll = 0;
 	data->fs.size.h = 0;
 	data->fs.size.hh = 0;
-	data->fs.size.bigL = 0;
+	data->fs.size.big_l = 0;
 }
 
-void deinit(t_pfstruct *data)
+void		deinit(t_pfstruct *data)
 {
 	if (data->fs.str != NULL)
 		ft_strdel(&data->fs.str);
@@ -61,13 +59,11 @@ void deinit(t_pfstruct *data)
 	data->fs.wid = 0;
 	data->fs.precision = 0;
 	data->fs.sign = 0;
-	data->fs.prZ = 0;
-
+	data->fs.pr_z = 0;
 	data->fs.flag.zero = 0;
 	data->fs.flag.minus = 0;
 	data->fs.flag.plus = 0;
 	data->fs.flag.space = 0;
 	data->fs.flag.sharp = 0;
-
-	deinitSize(data);
+	deinit_size(data);
 }
