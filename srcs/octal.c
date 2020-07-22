@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void printOctal3(t_pfstruct *data)
+void			print_octal3(t_pfstruct *data)
 {
 	if (data->fs.flag.zero)
 	{
@@ -38,7 +38,7 @@ void printOctal3(t_pfstruct *data)
 	}
 }
 
-void printOctal2(t_pfstruct *data)
+void			print_octal2(t_pfstruct *data)
 {
 	precision_zero(data);
 	if (!data->fs.wid)
@@ -46,7 +46,8 @@ void printOctal2(t_pfstruct *data)
 		if (data->fs.sign)
 			data->pfreturn += write(1, &data->fs.sign, 1);
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
-	} else
+	}
+	else
 	{
 		if (data->fs.flag.minus)
 		{
@@ -60,16 +61,17 @@ void printOctal2(t_pfstruct *data)
 			data->pfreturn += write_chars(data->fs.wid, ' ');
 		}
 		else
-			printOctal3(data);
+			print_octal3(data);
 	}
 }
 
-void printOctal(t_pfstruct *data)
+void			print_octal(t_pfstruct *data)
 {
-	intmax_t num;
+	intmax_t	num;
 
 	if (data->fs.size.ll)
-		num = (unsigned long long int)va_arg(data->args, unsigned long long int);
+		num = (unsigned long long int)va_arg(data->args, \
+		unsigned long long int);
 	else if (data->fs.size.l)
 		num = (unsigned long int)va_arg(data->args, unsigned long int);
 	else if (data->fs.size.h)
@@ -88,5 +90,5 @@ void printOctal(t_pfstruct *data)
 	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= data->fs.wid || \
 	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= data->fs.wid)
 		data->fs.wid = 0;
-	printOctal2(data);
+	print_octal2(data);
 }

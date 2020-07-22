@@ -15,6 +15,7 @@ SRC = ft_printf.c \
 		float3.c \
 		utils.c \
 		utils2.c \
+		utils3.c \
 		unsignedint.c \
 		pointer.c \
 

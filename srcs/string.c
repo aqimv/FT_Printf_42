@@ -10,12 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
 
-void precisionString(t_pfstruct *data)
+void		precision_string(t_pfstruct *data)
 {
-	char *buf;
+	char	*buf;
 
 	buf = data->fs.fnl;
 	if (data->fs.precision < (int)ft_strlen(data->fs.fnl) \
@@ -28,7 +27,7 @@ void precisionString(t_pfstruct *data)
 	}
 }
 
-void printString2(t_pfstruct *data, int check, int len, char ch)
+void		print_string2(t_pfstruct *data, int check, int len, char ch)
 {
 	if (data->fs.flag.minus || check)
 	{
@@ -42,11 +41,11 @@ void printString2(t_pfstruct *data, int check, int len, char ch)
 	}
 }
 
-void printString(t_pfstruct *data)
+void		print_string(t_pfstruct *data)
 {
-	char ch;
-	int lenCh;
-	int checkW;
+	char	ch;
+	int		len_ch;
+	int		check_w;
 
 	ch = data->fs.flag.zero ? '0' : ' ';
 	data->fs.fnl = (char *)va_arg(data->args, char *);
@@ -54,12 +53,12 @@ void printString(t_pfstruct *data)
 		data->fs.fnl = ft_strdup("(null)");
 	else
 		data->fs.fnl = ft_strdup(data->fs.fnl);
-	precisionString(data);
-	checkW = data->fs.wid < 0 ? 1 : 0;
+	precision_string(data);
+	check_w = data->fs.wid < 0 ? 1 : 0;
 	data->fs.wid = data->fs.wid < 0 ? data->fs.wid * -1 : data->fs.wid;
-	lenCh = data->fs.wid - (int)ft_strlen(data->fs.fnl);
-	if (lenCh > 0)
-		printString2(data, checkW, lenCh, ch);
+	len_ch = data->fs.wid - (int)ft_strlen(data->fs.fnl);
+	if (len_ch > 0)
+		print_string2(data, check_w, len_ch, ch);
 	else
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 }

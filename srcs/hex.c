@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int sharpHex(t_pfstruct *data, intmax_t num)
+int				sharp_hex(t_pfstruct *data, intmax_t num)
 {
 	if (data->fs.flag.sharp && num != 0)
 	{
@@ -24,14 +24,14 @@ int sharpHex(t_pfstruct *data, intmax_t num)
 		{
 			data->pfreturn += ft_putstrcount("0x");
 		}
-		return 2;
+		return (2);
 	}
-	return 0;
+	return (0);
 }
 
-void big_x(t_pfstruct *data)
+void			big_x(t_pfstruct *data)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	while (data->fs.fnl[i])
@@ -42,7 +42,7 @@ void big_x(t_pfstruct *data)
 	}
 }
 
-void printHex3(t_pfstruct *data, intmax_t num)
+void			print_hex3(t_pfstruct *data, intmax_t num)
 {
 	if (data->fs.flag.zero)
 	{
@@ -51,7 +51,7 @@ void printHex3(t_pfstruct *data, intmax_t num)
 			data->pfreturn += write(1, &data->fs.sign, 1);
 			data->fs.wid -= 1;
 		}
-		data->fs.wid -= sharpHex(data, num);
+		data->fs.wid -= sharp_hex(data, num);
 		data->pfreturn += write_chars(data->fs.wid - \
 			(int)ft_strlen(data->fs.fnl), '0');
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
@@ -66,21 +66,22 @@ void printHex3(t_pfstruct *data, intmax_t num)
 			data->pfreturn += write(1, &data->fs.sign, 1);
 			data->fs.wid -= 1;
 		}
-		sharpHex(data, num);
+		sharp_hex(data, num);
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
 }
 
-void printHex2(t_pfstruct *data, intmax_t num)
+void			print_hex2(t_pfstruct *data, intmax_t num)
 {
 	precision_zero(data);
 	if (!data->fs.wid)
 	{
 		if (data->fs.sign)
 			data->pfreturn += write(1, &data->fs.sign, 1);
-		sharpHex(data, num);
+		sharp_hex(data, num);
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
-	} else
+	}
+	else
 	{
 		if (data->fs.flag.minus)
 		{
@@ -89,19 +90,19 @@ void printHex2(t_pfstruct *data, intmax_t num)
 				data->pfreturn += write(1, &data->fs.sign, 1);
 				data->fs.wid -= 1;
 			}
-			data->fs.wid -= sharpHex(data, num);
+			data->fs.wid -= sharp_hex(data, num);
 			data->pfreturn += ft_putstrcount(data->fs.fnl);
 			data->fs.wid -= ft_strlen(data->fs.fnl);
 			data->pfreturn += write_chars(data->fs.wid, ' ');
 		}
 		else
-			printHex3(data, num);
+			print_hex3(data, num);
 	}
 }
 
-void printHex(t_pfstruct *data)
+void			print_hex(t_pfstruct *data)
 {
-	intmax_t num;
+	intmax_t	num;
 
 	if (data->fs.size.ll)
 		num = (unsigned long long)va_arg(data->args, unsigned long long);
@@ -125,6 +126,5 @@ void printHex(t_pfstruct *data)
 	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= data->fs.wid || \
 	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= data->fs.wid)
 		data->fs.wid = 0;
-	printHex2(data, num);
+	print_hex2(data, num);
 }
-

@@ -13,7 +13,7 @@
 
 #include "ft_printf.h"
 
-void printPercent(t_pfstruct *data)
+void print_percent(t_pfstruct *data)
 {
 	{
 		int width;
@@ -38,7 +38,7 @@ void printPercent(t_pfstruct *data)
 	}
 }
 
-void printChar(t_pfstruct *data)
+void print_char(t_pfstruct *data)
 {
 	int width;
 	unsigned char ch;

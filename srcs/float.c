@@ -114,7 +114,7 @@ void			print_float(t_pfstruct *data)
 		data->fs.precision = 6;
 	if (num < 0 || data->fs.flag.plus)
 		data->fs.sign = num >= 0 ? '+' : '-';
-	data->fs.fnl = float_to_string(mdDouble(num), data->fs.precision);
+	data->fs.fnl = float_to_string(md_double(num), data->fs.precision);
 	if (data->fs.sign)
 		data->fs.flag.space = 0;
 	if (data->fs.flag.minus)

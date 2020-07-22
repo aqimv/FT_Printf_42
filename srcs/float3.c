@@ -59,7 +59,7 @@ void printFloat3(t_pfstruct *data)
 	}
 }
 
-void printFloat2(t_pfstruct *data)
+void print_float2(t_pfstruct *data)
 {
 	char *buf;
 	precision_zero(data);

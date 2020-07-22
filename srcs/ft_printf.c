@@ -1,5 +1,4 @@
 /* ************************************************************************** */
-/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
@@ -11,25 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
 
-static void switchPrintValue(t_pfstruct *data)
+static void		switch_print_value(t_pfstruct *data)
 {
 	if (data->fs.type == 'd' || data->fs.type == 'i')
-		printInt(data);
+		print_int(data);
 	else if (data->fs.type == 'c')
-		printChar(data);
+		print_char(data);
 	else if (data->fs.type == 's')
-		printString(data);
+		print_string(data);
 	else if (data->fs.type == '%')
-		printPercent(data);
+		print_percent(data);
 	else if (data->fs.type == 'u')
 		print_unsigned_int(data);
 	else if (data->fs.type == 'o')
-		printOctal(data);
+		print_octal(data);
 	else if (data->fs.type == 'x' || data->fs.type == 'X')
-		printHex(data);
+		print_hex(data);
 	else if (data->fs.type == 'p')
 		print_pointer(data);
 	else if (data->fs.type == 'f')
@@ -37,7 +35,7 @@ static void switchPrintValue(t_pfstruct *data)
 	deinit(data);
 }
 
-static int newfs(t_pfstruct *data, int step, int i, int r)
+static int		newfs(t_pfstruct *data, int step, int i, int r)
 {
 	if (data->fs.str[i] == '.')
 	{
@@ -45,14 +43,14 @@ static int newfs(t_pfstruct *data, int step, int i, int r)
 		newfs(data, 3, i + 1, 0);
 	}
 	else if (step == 1 && ft_strchr(FLAGSPF, data->fs.str[i]))
-		newfs(data, step, i + 1, setFlag(data, data->fs.str[i]));
+		newfs(data, step, i + 1, set_flag(data, data->fs.str[i]));
 	else if (step == 2 && ft_strchr(WIDTHANDACCURACY, data->fs.str[i]))
-		newfs(data, step, i + 1, setWidth(data, data->fs.str[i]));
+		newfs(data, step, i + 1, set_width(data, data->fs.str[i]));
 	else if (step == 3 && ft_strchr(WIDTHANDACCURACY, data->fs.str[i]))
-		newfs(data, step, i + 1, setPrecision(data, data->fs.str[i]));
+		newfs(data, step, i + 1, set_precision(data, data->fs.str[i]));
 	else if (step == 4 && ft_strchr(SIZEPF, data->fs.str[i]))
 	{
-		setSize(data, &i);
+		set_size(data, &i);
 		newfs(data, step, i + 1, 0);
 	}
 	else if (step == 5 && ft_strchr(TYPESPF, data->fs.str[i]))
@@ -62,10 +60,10 @@ static int newfs(t_pfstruct *data, int step, int i, int r)
 	return (data->fs.type + r);
 }
 
-static char *pars_fs(char *flag, t_pfstruct *data)
+static char		*pars_fs(char *flag, t_pfstruct *data)
 {
-	char *dup;
-	int i;
+	char		*dup;
+	int			i;
 
 	i = 0;
 	dup = (char *)ft_memalloc(sizeof(flag));
@@ -79,10 +77,10 @@ static char *pars_fs(char *flag, t_pfstruct *data)
 		dup[i] = *flag++;
 		data->fs.str = dup;
 	}
-	return flag;
+	return (flag);
 }
 
-static int parsformat(t_pfstruct *data)
+static int		parsformat(t_pfstruct *data)
 {
 	char *p;
 
@@ -99,22 +97,20 @@ static int parsformat(t_pfstruct *data)
 			p = pars_fs(p, data);
 			if (data->fs.str)
 				if (newfs(data, 1, 0, 0))
-					switchPrintValue(data);
+					switch_print_value(data);
 		}
 	}
-	return data->pfreturn;
+	return (data->pfreturn);
 }
 
-int		ft_printf(const char *format, ...)
+int				ft_printf(const char *format, ...)
 {
-	int result;
-	t_pfstruct data;
-	pf_init(&data);
+	int			result;
+	t_pfstruct	data;
 
+	pf_init(&data);
 	va_start(data.args, format);
 	data.str = (char *)format;
-
 	result = parsformat(&data);
-
 	return (result);
 }

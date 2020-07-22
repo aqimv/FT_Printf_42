@@ -48,4 +48,3 @@ void			print_pointer(t_pfstruct *data)
 	else
 		print_pointer2(data, len);
 }
-

@@ -10,24 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
 
-//void sign_or_space(t_pfstruct *data)
-//{
-//	if (data->fs.sign)
-//	{
-//		data->pfreturn += write(1, &data->fs.sign, 1);
-//		data->fs.wid -= 1;
-//	}
-//	else if (data->fs.flag.space)
-//	{
-//		data->pfreturn += write(1, " ", 1);
-//		data->fs.wid -= 1;
-//	}
-//}
-
-void printInt4(t_pfstruct *data)
+void			print_int4(t_pfstruct *data)
 {
 	if (data->fs.wid > 0)
 	{
@@ -46,13 +31,13 @@ void printInt4(t_pfstruct *data)
 	}
 }
 
-void printInt3(t_pfstruct *data)
+void			print_int3(t_pfstruct *data)
 {
 	if (data->fs.flag.zero)
 	{
 		sign_or_space(data);
 		data->pfreturn += write_chars(data->fs.wid - \
-            (int) ft_strlen(data->fs.fnl), '0');
+		(int)ft_strlen(data->fs.fnl), '0');
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
 	else
@@ -63,7 +48,7 @@ void printInt3(t_pfstruct *data)
 			data->fs.wid -= 1;
 		}
 		data->pfreturn = write_chars(data->fs.wid - \
-            ft_strlen(data->fs.fnl) - (data->fs.sign ? 1 : 0), ' ');
+		ft_strlen(data->fs.fnl) - (data->fs.sign ? 1 : 0), ' ');
 		if (data->fs.sign)
 		{
 			data->pfreturn += write(1, &data->fs.sign, 1);
@@ -73,7 +58,7 @@ void printInt3(t_pfstruct *data)
 	}
 }
 
-void printInt2(t_pfstruct *data)
+void			print_int2(t_pfstruct *data)
 {
 	precision_zero(data);
 	if (data->fs.wid == 0)
@@ -83,18 +68,19 @@ void printInt2(t_pfstruct *data)
 		else if (data->fs.flag.space)
 			data->pfreturn += write(1, " ", 1);
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
-	} else
+	}
+	else
 	{
 		if (data->fs.flag.minus || data->fs.wid < 0)
-			printInt4(data);
+			print_int4(data);
 		else
-			printInt3(data);
+			print_int3(data);
 	}
 }
 
-void printInt(t_pfstruct *data)
+void			print_int(t_pfstruct *data)
 {
-	intmax_t num;
+	intmax_t	num;
 
 	if (data->fs.size.ll)
 		num = (long long int)va_arg(data->args, long long int);
@@ -123,5 +109,5 @@ void printInt(t_pfstruct *data)
 	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= md(data->fs.wid) || \
 	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= md(data->fs.wid))
 		data->fs.wid = 0;
-	printInt2(data);
+	print_int2(data);
 }

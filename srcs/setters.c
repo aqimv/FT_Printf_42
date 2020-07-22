@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h> // убрать нахой
 
-int setFlag(t_pfstruct *data, char ch)
+int		set_flag(t_pfstruct *data, char ch)
 {
 	if (ch == '-')
 		data->fs.flag.minus = 1;
@@ -28,7 +27,7 @@ int setFlag(t_pfstruct *data, char ch)
 	return (0);
 }
 
-int setSize(t_pfstruct *data, int *i)
+int		set_size(t_pfstruct *data, int *i)
 {
 	if (data->fs.str[*i] != data->fs.str[*i + 1])
 	{
@@ -50,7 +49,7 @@ int setSize(t_pfstruct *data, int *i)
 	return (0);
 }
 
-int setWidth(t_pfstruct *data, char ch)
+int		set_width(t_pfstruct *data, char ch)
 {
 	if (ch == '*')
 		data->fs.wid = va_arg(data->args, int);
@@ -60,7 +59,8 @@ int setWidth(t_pfstruct *data, char ch)
 		data->fs.wid = (data->fs.wid * 10) + ft_atoi(&ch);
 	return (0);
 }
-int setPrecision(t_pfstruct *data, char ch)
+
+int		set_precision(t_pfstruct *data, char ch)
 {
 	if (ch == '*')
 		data->fs.precision = va_arg(data->args, int);

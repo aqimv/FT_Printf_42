@@ -12,12 +12,12 @@
 
 #include <ft_printf.h>
 
-int md(int i)
+int				md(int i)
 {
-	return i >= 0 ? i : i * -1;
+	return (i >= 0 ? i : i * -1);
 }
 
-long double mdDouble(long double i)
+long double		md_double(long double i)
 {
-	return i >= 0 ? i : i * -1;
+	return (i >= 0 ? i : i * -1);
 }

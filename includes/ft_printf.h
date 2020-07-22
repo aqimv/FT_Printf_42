@@ -67,17 +67,17 @@ typedef struct		s_pfstruct
 }					t_pfstruct;
 
 int					ft_printf(const char *format, ...);
-int					setFlag(t_pfstruct *data, char ch);
-int					setSize(t_pfstruct *data, int *i);
-int					setWidth(t_pfstruct *data, char ch);
-int					setPrecision(t_pfstruct *data, char ch);
-void				printInt(t_pfstruct *data);
-void				printChar(t_pfstruct *data);
-void				printString(t_pfstruct *data);
-void				printPercent(t_pfstruct *data);
+int					set_flag(t_pfstruct *data, char ch);
+int					set_size(t_pfstruct *data, int *i);
+int					set_width(t_pfstruct *data, char ch);
+int					set_precision(t_pfstruct *data, char ch);
+void				print_int(t_pfstruct *data);
+void				print_char(t_pfstruct *data);
+void				print_string(t_pfstruct *data);
+void				print_percent(t_pfstruct *data);
 void				print_unsigned_int(t_pfstruct *data);
-void				printOctal(t_pfstruct *data);
-void				printHex(t_pfstruct *data);
+void				print_octal(t_pfstruct *data);
+void				print_hex(t_pfstruct *data);
 void				print_pointer(t_pfstruct *data);
 void				print_float(t_pfstruct *data);
 void				print_float2(t_pfstruct *data);
@@ -87,7 +87,7 @@ char				*ft_itoa_base(uintmax_t num, uintmax_t not);
 void				precision_zero(t_pfstruct *data);
 int					ft_putstrcount(char const *s);
 int					md(int i);
-long double			mdDouble(long double i);
+long double			md_double(long double i);
 void				sign_or_space(t_pfstruct *data);
 
 char				*power2(int pow);
