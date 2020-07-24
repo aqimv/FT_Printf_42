@@ -45,7 +45,7 @@ char		*from_bin(char *str)
 {
 	char	*k;
 	int		i;
-	char 	*pow;
+	char	*pow;
 
 	k = ft_strnew(0);
 	i = 0;
@@ -60,4 +60,29 @@ char		*from_bin(char *str)
 	}
 	ft_strdel(&str);
 	return (k);
+}
+
+char		*ft_ftoa_base2(long double num)
+{
+	int		i;
+	char	*ans;
+
+	if (!(ans = (char *)malloc(sizeof(char) * 151)))
+		return (NULL);
+	ans[150] = '\0';
+	i = 0;
+	while (num != 1.0 && i < 150)
+	{
+		num = num * 2;
+		ans[i] = (int)num + '0';
+		if (num > 1)
+			num = num - 1;
+		i++;
+	}
+	while (i < 150)
+	{
+		ans[i] = '0';
+		i++;
+	}
+	return (ans);
 }

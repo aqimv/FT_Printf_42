@@ -22,9 +22,9 @@ long double		md_double(long double i)
 	return (i >= 0 ? i : i * -1);
 }
 
-char	*ft_strjoinfree(char **s1, char **s2)
+char			*ft_strjoinfree(char **s1, char **s2)
 {
-	char *res;
+	char		*res;
 
 	res = ft_strjoin(*s1, *s2);
 	if (s1 != NULL)

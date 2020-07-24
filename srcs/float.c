@@ -12,34 +12,10 @@
 
 #include "ft_printf.h"
 
-char			*ft_ftoa_base2(long double num)
-{
-	int		i;
-	char	*ans;
-
-	if (!(ans = (char *)malloc(sizeof(char) * 151)))
-		return (NULL);
-	ans[150] = '\0';
-	i = 0;
-	while (num != 1.0 && i < 150)
-	{
-		num = num * 2;
-		ans[i] = (int)num + '0';
-		if (num > 1)
-			num = num - 1;
-		i++;
-	}
-	while (i < 150)
-	{
-		ans[i] = '0';
-		i++;
-	}
-	return (ans);
-}
-
 char			*subrounding(int k, char *num, int i)
 {
 	char *buf;
+
 	while ((num[i - 1] == '9') && (i > 0) && (k == 10))
 	{
 		num[i - 1] = '0';
@@ -60,7 +36,6 @@ char			*subrounding(int k, char *num, int i)
 char			*rounding(char *num, int n, int whole)
 {
 	int			k;
-//	char		*buf;
 
 	if ((n == 0) && (ft_strcmp(num, "5") == 0) && (whole % 2 == 0))
 	{
@@ -83,44 +58,46 @@ char			*rounding(char *num, int n, int whole)
 			num[n - 1] = k + '0';
 	}
 	num[n] = '\0';
-//	if (num[n + 1])
-//	{
-//		buf = &num[n + 1];
-//		ft_strdel(&buf);
-//	}
 	return (num);
 }
 
-char			*float_to_string(long double num, int round)
+char			*frac(char *fraction, int round)
 {
-	char		*integer;
-	char		*fraction;
-	int			whole;
 	char		*str;
 	char		*buf;
 
-	whole = num;
-	fraction = rounding(from_bin(ft_ftoa_base2(num - whole)), round, whole);
 	str = (char *)malloc(sizeof(char) * (round + 1));
 	str[round] = '\0';
-	ft_memset(str, '0', round);
-	if (fraction[0] == '.')
-	{
-		whole += 1;
-		buf = fraction;
-		fraction = ft_strdup(&fraction[1]); // теряет первый элемент
-		ft_strdel(&buf);
-	}
-	integer = ft_itoa(whole);
+	ft_memset(str, '0', (size_t)round);
 	if ((int)ft_strlen(fraction) < round)
 	{
 		ft_bzero(str, ft_strlen(str));
-		ft_memset(str, '0', round - (int)ft_strlen(fraction));
+		ft_memset(str, '0', (size_t)round - ft_strlen(fraction));
 		buf = fraction;
 		fraction = ft_strjoin(fraction, str);
 		ft_strdel(&buf);
 	}
 	ft_strdel(&str);
+	return (fraction);
+}
+
+char			*float_to_string(long double num, int round, int whole)
+{
+	char		*integer;
+	char		*fraction;
+	char		*buf;
+
+	whole = (int)num;
+	fraction = rounding(from_bin(ft_ftoa_base2(num - whole)), round, whole);
+	if (fraction[0] == '.')
+	{
+		whole += 1;
+		buf = fraction;
+		fraction = ft_strdup(&fraction[1]);
+		ft_strdel(&buf);
+	}
+	integer = ft_itoa(whole);
+	fraction = frac(fraction, round);
 	if (round != 0)
 	{
 		buf = integer;
@@ -145,7 +122,7 @@ void			print_float(t_pfstruct *data)
 		data->fs.precision = 6;
 	if (num < 0 || data->fs.flag.plus)
 		data->fs.sign = num >= 0 ? '+' : '-';
-	data->fs.fnl = float_to_string(md_double(num), data->fs.precision);
+	data->fs.fnl = float_to_string(md_double(num), data->fs.precision, 0);
 	if (data->fs.sign)
 		data->fs.flag.space = 0;
 	if (data->fs.flag.minus)

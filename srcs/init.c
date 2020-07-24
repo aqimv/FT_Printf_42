@@ -52,7 +52,6 @@ void		deinit(t_pfstruct *data)
 {
 	if (data->fs.str != NULL)
 		ft_strdel(&data->fs.str);
-//	data->fs.str = NULL;
 	if (data->fs.fnl != NULL)
 		ft_strdel(&data->fs.fnl);
 	data->fs.type = 0;

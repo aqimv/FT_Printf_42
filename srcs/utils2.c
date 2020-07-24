@@ -12,15 +12,11 @@
 
 #include "ft_printf.h"
 
-char		*mult_on_half(char *s1)
+char		*mult_on_half(char *s1, int i, int a)
 {
-	char *result;
-	int i;
-	int x;
-	int a;
+	char	*result;
+	int		x;
 
-	i = 0;
-	a = 0;
 	result = ft_strnew(ft_strlen(s1) + 1);
 	ft_memset(result, '0', ft_strlen(s1) + 1);
 	while (s1[i])
@@ -35,7 +31,8 @@ char		*mult_on_half(char *s1)
 		{
 			result[i + 1] = (char)((x % 10) + '0');
 			a = x / 10;
-		} else
+		}
+		else
 			result[i + 1] = (char)((x + a) + '0');
 		i--;
 	}
@@ -54,7 +51,7 @@ char		*power2(int pow)
 	while (pow != 0)
 	{
 		buf = ans;
-		ans = mult_on_half(ans);
+		ans = mult_on_half(ans, 0, 0);
 		ft_strdel(&buf);
 		pow--;
 	}
