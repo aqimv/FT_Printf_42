@@ -104,17 +104,19 @@ char			*float_to_string(long double num, int round)
 	str = (char *)malloc(sizeof(char) * (round + 1));
 	str[round] = '\0';
 	ft_memset(str, '0', round);
-	buf = fraction;
 	if (fraction[0] == '.')
 	{
 		whole += 1;
-		fraction = &fraction[1]; // теряет первый элемент
+		buf = fraction;
+		fraction = ft_strdup(&fraction[1]); // теряет первый элемент
+		ft_strdel(&buf);
 	}
 	integer = ft_itoa(whole);
 	if ((int)ft_strlen(fraction) < round)
 	{
 		ft_bzero(str, ft_strlen(str));
 		ft_memset(str, '0', round - (int)ft_strlen(fraction));
+		buf = fraction;
 		fraction = ft_strjoin(fraction, str);
 		ft_strdel(&buf);
 	}
@@ -127,7 +129,7 @@ char			*float_to_string(long double num, int round)
 	}
 	buf = ft_strjoin(integer, fraction);
 	ft_strdel(&integer);
-//	ft_strdel(&fraction);
+	ft_strdel(&fraction);
 	return (buf);
 }
 
