@@ -77,6 +77,8 @@ static char		*pars_fs(char *flag, t_pfstruct *data)
 		dup[i] = *flag++;
 		data->fs.str = dup;
 	}
+	else
+		ft_strdel(&dup);
 	return (flag);
 }
 

@@ -85,6 +85,7 @@ int					ft_putstrcount(char const *s);
 int					md(int i);
 long double			md_double(long double i);
 void				sign_or_space(t_pfstruct *data);
+char				*ft_strjoinfree(char **s1, char **s2);
 
 char				*power2(int pow);
 int					ft_abs(int a, int b);

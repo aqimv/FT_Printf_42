@@ -12,69 +12,50 @@
 
 #include "ft_printf.h"
 
-char		*mul(char *s1)
-{
-	int		i;
-	char	*result;
-	int		carry;
-	int		mul;
-
-	carry = 0;
-	result = ft_strnew(0);
-	i = ft_strlen(s1) - 1;
-	while (i >= 0)
-	{
-		mul = ((s1[i] - '0') * 5) + carry;
-		if (mul >= 10)
-		{
-			carry = mul / 10;
-			mul = mul - (carry * 10);
-		}
-		else
-			carry = 0;
-		result = ft_strjoin(ft_itoa(mul), result);
-		i = i - 1;
-	}
-	if (carry)
-		result = ft_strjoin(ft_itoa(carry), result);
-	return (result);
-}
-
 char		*mult_on_half(char *s1)
 {
-	int		i;
-	char	*result;
-	char	*str;
+	char *result;
+	int i;
+	int x;
+	int a;
 
-	result = mul(s1);
-	i = ft_strlen(s1);
-	if (((int)ft_strlen(result) < (i + 1)) && (i != 1))
+	i = 0;
+	a = 0;
+	result = ft_strnew(ft_strlen(s1) + 1);
+	ft_memset(result, '0', ft_strlen(s1) + 1);
+	while (s1[i])
+		i++;
+	i--;
+	while (i >= 0)
 	{
-		str = (char *)malloc(sizeof(char) * (i - ft_strlen(result) + 2));
-		str[i - ft_strlen(result) + 2] = '\0';
-		ft_memset(str, '0', i - ft_strlen(result) + 1);
-		result = ft_strjoin(str, result);
+		x = (s1[i] - '0') * 5;
+		x += a;
+		a = 0;
+		if (x > 9)
+		{
+			result[i + 1] = (char)((x % 10) + '0');
+			a = x / 10;
+		} else
+			result[i + 1] = (char)((x + a) + '0');
+		i--;
 	}
+	if (a > 0)
+		result[i + 1] = (char)(a + '0');
 	return (result);
-}
-
-int			ft_abs(int a, int b)
-{
-	if (a > b)
-		return (a - b);
-	else
-		return (b - a);
 }
 
 char		*power2(int pow)
 {
 	char	*ans;
+	char	*buf;
 
 	pow--;
-	ans = "5";
+	ans = ft_strdup("5");
 	while (pow != 0)
 	{
+		buf = ans;
 		ans = mult_on_half(ans);
+		ft_strdel(&buf);
 		pow--;
 	}
 	return (ans);

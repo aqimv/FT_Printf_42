@@ -17,7 +17,8 @@ char			*ft_ftoa_base2(long double num)
 	int		i;
 	char	*ans;
 
-	ans = (char *)malloc(sizeof(char) * 151);
+	if (!(ans = (char *)malloc(sizeof(char) * 151)))
+		return (NULL);
 	ans[150] = '\0';
 	i = 0;
 	while (num != 1.0 && i < 150)
@@ -38,6 +39,7 @@ char			*ft_ftoa_base2(long double num)
 
 char			*subrounding(int k, char *num, int i)
 {
+	char *buf;
 	while ((num[i - 1] == '9') && (i > 0) && (k == 10))
 	{
 		num[i - 1] = '0';
@@ -47,21 +49,32 @@ char			*subrounding(int k, char *num, int i)
 	}
 	num[i - 1] = k + '0';
 	if (i == 0)
+	{
+		buf = num;
 		num = ft_strjoin(".", num);
+		ft_strdel(&buf);
+	}
 	return (num);
 }
 
 char			*rounding(char *num, int n, int whole)
 {
 	int			k;
+//	char		*buf;
 
 	if ((n == 0) && (ft_strcmp(num, "5") == 0) && (whole % 2 == 0))
-		return ("");
+	{
+		ft_strdel(&num);
+		return (ft_strdup(""));
+	}
 	k = num[n] - '0';
 	if (k >= 5)
 	{
 		if (n == 0)
-			return (".");
+		{
+			ft_strdel(&num);
+			return (ft_strdup("."));
+		}
 		k = num[n - 1] - '0';
 		k += 1;
 		if (k == 10)
@@ -70,6 +83,11 @@ char			*rounding(char *num, int n, int whole)
 			num[n - 1] = k + '0';
 	}
 	num[n] = '\0';
+//	if (num[n + 1])
+//	{
+//		buf = &num[n + 1];
+//		ft_strdel(&buf);
+//	}
 	return (num);
 }
 
@@ -79,16 +97,18 @@ char			*float_to_string(long double num, int round)
 	char		*fraction;
 	int			whole;
 	char		*str;
+	char		*buf;
 
 	whole = num;
 	fraction = rounding(from_bin(ft_ftoa_base2(num - whole)), round, whole);
 	str = (char *)malloc(sizeof(char) * (round + 1));
-	str[round + 1] = '\0';
+	str[round] = '\0';
 	ft_memset(str, '0', round);
+	buf = fraction;
 	if (fraction[0] == '.')
 	{
 		whole += 1;
-		fraction = &fraction[1];
+		fraction = &fraction[1]; // теряет первый элемент
 	}
 	integer = ft_itoa(whole);
 	if ((int)ft_strlen(fraction) < round)
@@ -96,10 +116,19 @@ char			*float_to_string(long double num, int round)
 		ft_bzero(str, ft_strlen(str));
 		ft_memset(str, '0', round - (int)ft_strlen(fraction));
 		fraction = ft_strjoin(fraction, str);
+		ft_strdel(&buf);
 	}
+	ft_strdel(&str);
 	if (round != 0)
+	{
+		buf = integer;
 		integer = ft_strjoin(integer, ".");
-	return (ft_strjoin(integer, fraction));
+		ft_strdel(&buf);
+	}
+	buf = ft_strjoin(integer, fraction);
+	ft_strdel(&integer);
+//	ft_strdel(&fraction);
+	return (buf);
 }
 
 void			print_float(t_pfstruct *data)
