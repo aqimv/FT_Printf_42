@@ -16,7 +16,7 @@ void			print_pointer2(t_pfstruct *data, int len)
 {
 	if (data->fs.flag.minus)
 	{
-        data->pfreturn += ft_putstrcount("0x");
+		data->pfreturn += ft_putstrcount("0x");
 		data->pfreturn += write_chars(data->fs.precision - len, '0');
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 		data->pfreturn += write_chars(data->fs.wid - len - 2, ' ');
@@ -24,7 +24,7 @@ void			print_pointer2(t_pfstruct *data, int len)
 	else
 	{
 		data->pfreturn += write_chars(data->fs.wid - len - 2, ' ');
-        data->pfreturn += ft_putstrcount("0x");
+		data->pfreturn += ft_putstrcount("0x");
 		data->pfreturn += write_chars(data->fs.precision - len, '0');
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
@@ -41,7 +41,7 @@ void			print_pointer(t_pfstruct *data)
 	len = ft_strlen(data->fs.fnl);
 	if (data->fs.wid - len - 2 < 1)
 	{
-        data->pfreturn += ft_putstrcount("0x");
+		data->pfreturn += ft_putstrcount("0x");
 		data->pfreturn += write_chars(data->fs.precision - len, '0');
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}

@@ -1,3 +1,27 @@
+Test  19 (c_allprintable_width) : FAILED.
+    First line of code: {return test("%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c      expected output : "  !  "   #$ %  &   '( )  *   +, -  .   /0 1  2   34 5  6   78 9  :   ;< =  >   ?@ A  B   CD E  F   GH I  J   KL M  N   OP Q  R   ST U  V   WX Y  Z   ["
+      your output     : "                             !                             "                                       #         $                   %                    "
+      expected (nonprintable as hex) : "  !  "   #$ %  &   '( )  *   +, -  .   /0 1  2   34 5  6   78 9  :   ;< =  >   ?@ A  B   CD E  F   GH I  J   KL M  N   OP Q  R   ST U  V   WX Y  Z   ["
+      actual   (nonprintable as hex) : "                             !                             "                                       #         $                   %                    "
+
+Test  21 (c_128_255_width) : FAILED.
+    First line of code: {return test("%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c      expected output : "Ä Å  Ç   ÉÑ Ö  Ü   áà â  ä   ãå ç  é   èê ë  í   ìî ï  ñ   óò ô  ö   õú ù  û   ü† °  ¢   £§ •  ¶   ß® ©  ™   ´¨ ≠  Æ   Ø∞ ±  ≤   ≥¥ µ  ∂   ∑∏ π  ∫   ª"
+      your output     : "         Ä                   Å                             Ç                                       É         Ñ                   Ö                    "
+      expected (nonprintable as hex) : "\x80 \x81  \x82   \x83\x84 \x85  \x86   \x87\x88 \x89  \x8a   \x8b\x8c \x8d  \x8e   \x8f\x90 \x91  \x92   \x93\x94 \x95  \x96   \x97\x98 \x99  \x9a   \x9b\x9c \x9d  \x9e   \x9f\xa0 \xa1  \xa2   \xa3\xa4 \xa5  \xa6   \xa7\xa8 \xa9  \xaa   \xab\xac \xad  \xae   \xaf\xb0 \xb1  \xb2   \xb3\xb4 \xb5  \xb6   \xb7\xb8 \xb9  \xba   \xbb"
+      actual   (nonprintable as hex) : "         \x80                   \x81                             \x82                                       \x83         \x84                   \x85                    "
+
+Test  22 (c_allprintable_width_lj) : FAILED.
+    First line of code: {return test("%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1      expected output : "  !  "   #$ %  &   '( )  *   +, -  .   /0 1  2   34 5  6   78 9  :   ;< =  >   ?@ A  B   CD E  F   GH I  J   KL M  N   OP Q  R   ST U  V   WX Y  Z   ["
+      your output     : "                    !                             "                                       #         $                   %                             "
+      expected (nonprintable as hex) : "  !  "   #$ %  &   '( )  *   +, -  .   /0 1  2   34 5  6   78 9  :   ;< =  >   ?@ A  B   CD E  F   GH I  J   KL M  N   OP Q  R   ST U  V   WX Y  Z   ["
+      actual   (nonprintable as hex) : "                    !                             "                                       #         $                   %                             "
+
+Test  24 (c_128_255_width_lj) : FAILED.
+    First line of code: {return test("%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4      expected output : "ÄÅ Ç  É   ÑÖ Ü  á   àâ ä  ã   åç é  è   êë í  ì   îï ñ  ó   òô ö  õ   úù û  ü   †° ¢  £   §• ¶  ß   ®© ™  ´   ¨≠ Æ  Ø   ∞± ≤  ≥   ¥µ ∂  ∑   ∏π ∫  ª   "
+      your output     : "Ä         Å                   Ç                             É                                       Ñ         Ö                   Ü                   "
+      expected (nonprintable as hex) : "\x80\x81 \x82  \x83   \x84\x85 \x86  \x87   \x88\x89 \x8a  \x8b   \x8c\x8d \x8e  \x8f   \x90\x91 \x92  \x93   \x94\x95 \x96  \x97   \x98\x99 \x9a  \x9b   \x9c\x9d \x9e  \x9f   \xa0\xa1 \xa2  \xa3   \xa4\xa5 \xa6  \xa7   \xa8\xa9 \xaa  \xab   \xac\xad \xae  \xaf   \xb0\xb1 \xb2  \xb3   \xb4\xb5 \xb6  \xb7   \xb8\xb9 \xba  \xbb   "
+      actual   (nonprintable as hex) : "\x80         \x81                   \x82                             \x83                                       \x84         \x85                   \x86                   "
+
 Test 141 (notrequired_s_undefbehav_4_flags_sp_padded_diff_order_1) : FAILED.
     First line of code: {return test("%+- 07.06s", s_hidden);}
       expected output : "hi low "
@@ -10778,21 +10802,21 @@ Test 4185 (bonus_g_neg_prec_star_03) : FAILED.
 Test 4216 (bonus_n_format_only_prec_star) : FAILED.
     First line of code: {return test("pft%.*ntest%d", 5, &n, 123); (void)n;}
       expected output : "pfttest123"
-      your output     : "pfttest207640496"
+      your output     : "pfttest158660528"
       expected (nonprintable as hex) : "pfttest123"
-      actual   (nonprintable as hex) : "pfttest207640496"
+      actual   (nonprintable as hex) : "pfttest158660528"
 
 Test 4217 (bonus_n_format_only_w_star) : FAILED.
     First line of code: {return test("pft%*.ntest%d", 5, &n, 123); (void)n;}
       expected output : "pfttest123"
-      your output     : "pfttest207640496"
+      your output     : "pfttest158660528"
       expected (nonprintable as hex) : "pfttest123"
-      actual   (nonprintable as hex) : "pfttest207640496"
+      actual   (nonprintable as hex) : "pfttest158660528"
 
 Test 4218 (bonus_n_format_only_wprec_star) : FAILED.
     First line of code: {return test("pft%*.*ntest%d", 5, 5, &n, 123); (void)n;}
       expected output : "pfttest123"
-      your output     : "pfttest207640496"
+      your output     : "pfttest158660528"
       expected (nonprintable as hex) : "pfttest123"
-      actual   (nonprintable as hex) : "pfttest207640496"
+      actual   (nonprintable as hex) : "pfttest158660528"
 
